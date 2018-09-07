@@ -1,0 +1,1393 @@
+Age,Sex,Condition,Mouse.Genotyping,ID,Timepoint,Genotype,DaysOfEE,DaysOfEE0
+8.5,M,Enriched,Heterozygous,901,Pre1,CREB +/-,-4,0
+8.5,M,Standard,Heterozygous,899,Pre1,CREB +/-,-4,0
+8.5,M,Standard,Heterozygous,898,Pre1,CREB +/-,-4,0
+9.5,M,Enriched,Wildtype,891,Pre1,CREB +/+,-4,0
+9.5,M,Standard,Wildtype,893,Pre1,CREB +/+,-4,0
+8.5,M,Enriched,Heterozygous,901,Pre2,CREB +/-,-3,0
+8.5,M,Standard,Heterozygous,899,Pre2,CREB +/-,-3,0
+9.5,M,Enriched,Heterozygous,889,Pre2,CREB +/-,-3,0
+8.5,M,Standard,Heterozygous,898,Pre2,CREB +/-,-3,0
+9.5,F,Enriched,Heterozygous,895,Pre2,CREB +/-,-3,0
+9.5,M,Enriched,Wildtype,891,Pre2,CREB +/+,-3,0
+9.5,M,Standard,Wildtype,893,Pre2,CREB +/+,-3,0
+8.5,M,Enriched,Heterozygous,901,24h,CREB +/-,1,1
+8.5,M,Standard,Heterozygous,899,24h,CREB +/-,1,1
+9.5,M,Enriched,Heterozygous,889,24h,CREB +/-,1,1
+8.5,M,Standard,Heterozygous,898,24h,CREB +/-,1,1
+9.5,F,Enriched,Heterozygous,895,24h,CREB +/-,1,1
+9.5,M,Enriched,Wildtype,891,24h,CREB +/+,1,1
+9.5,M,Standard,Wildtype,893,24h,CREB +/+,1,1
+8.5,M,Enriched,Heterozygous,901,48h,CREB +/-,2,2
+8.5,M,Standard,Heterozygous,899,48h,CREB +/-,2,2
+9.5,M,Enriched,Heterozygous,889,48h,CREB +/-,2,2
+8.5,M,Standard,Heterozygous,898,48h,CREB +/-,2,2
+9.5,F,Enriched,Heterozygous,895,48h,CREB +/-,2,2
+9.5,M,Enriched,Wildtype,891,48h,CREB +/+,2,2
+9.5,M,Standard,Wildtype,893,48h,CREB +/+,2,2
+8.5,M,Enriched,Heterozygous,901,1 week,CREB +/-,8,8
+8.5,M,Standard,Heterozygous,899,1 week,CREB +/-,8,8
+9.5,M,Enriched,Heterozygous,889,1 week,CREB +/-,8,8
+8.5,M,Standard,Heterozygous,898,1 week,CREB +/-,8,8
+9.5,F,Enriched,Heterozygous,895,1 week,CREB +/-,8,8
+9.5,M,Enriched,Wildtype,891,1 week,CREB +/+,8,8
+9.5,M,Standard,Wildtype,893,1 week,CREB +/+,8,8
+8.5,M,Enriched,Heterozygous,901,2 week,CREB +/-,16,16
+8.5,M,Standard,Heterozygous,899,2 week,CREB +/-,16,16
+9.5,M,Enriched,Heterozygous,889,2 week,CREB +/-,16,16
+8.5,M,Standard,Heterozygous,898,2 week,CREB +/-,16,16
+9.5,F,Enriched,Heterozygous,895,2 week,CREB +/-,16,16
+9.5,M,Enriched,Wildtype,891,2 week,CREB +/+,16,16
+9.5,M,Standard,Wildtype,893,2 week,CREB +/+,16,16
+8.5,M,Enriched,Homozygous,900,Pre1,CREB -/-,-4,0
+9.5,M,Enriched,Heterozygous,890,Pre1,CREB +/-,-4,0
+8.5,M,Standard,Homozygous,902,Pre1,CREB -/-,-4,0
+8.5,M,Enriched,Homozygous,900,Pre2,CREB -/-,-3,0
+9.5,M,Enriched,Heterozygous,890,Pre2,CREB +/-,-3,0
+9.5,M,Standard,Heterozygous,892,Pre2,CREB +/-,-3,0
+9.5,F,Enriched,Wildtype,894,Pre2,CREB +/+,-3,0
+9.5,F,Enriched,Homozygous,897,Pre2,CREB -/-,-3,0
+8.5,M,Standard,Homozygous,902,Pre2,CREB -/-,-3,0
+8.5,F,Enriched,Wildtype,905,Pre2,CREB +/+,-3,0
+8.5,M,Enriched,Homozygous,900,24h,CREB -/-,1,1
+9.5,M,Enriched,Heterozygous,890,24h,CREB +/-,1,1
+9.5,M,Standard,Heterozygous,892,24h,CREB +/-,1,1
+9.5,F,Enriched,Wildtype,894,24h,CREB +/+,1,1
+9.5,F,Enriched,Homozygous,897,24h,CREB -/-,1,1
+8.5,M,Standard,Homozygous,902,24h,CREB -/-,1,1
+8.5,F,Enriched,Wildtype,905,24h,CREB +/+,1,1
+8.5,M,Enriched,Homozygous,900,48h,CREB -/-,2,2
+9.5,M,Enriched,Heterozygous,890,48h,CREB +/-,2,2
+9.5,M,Standard,Heterozygous,892,48h,CREB +/-,2,2
+9.5,F,Enriched,Wildtype,894,48h,CREB +/+,2,2
+9.5,F,Enriched,Homozygous,897,48h,CREB -/-,2,2
+8.5,M,Standard,Homozygous,902,48h,CREB -/-,2,2
+8.5,F,Enriched,Wildtype,905,48h,CREB +/+,2,2
+8.5,M,Enriched,Homozygous,900,1 week,CREB -/-,8,8
+9.5,M,Enriched,Heterozygous,890,1 week,CREB +/-,8,8
+9.5,M,Standard,Heterozygous,892,1 week,CREB +/-,8,8
+9.5,F,Enriched,Wildtype,894,1 week,CREB +/+,8,8
+9.5,F,Enriched,Homozygous,897,1 week,CREB -/-,8,8
+8.5,M,Standard,Homozygous,902,1 week,CREB -/-,8,8
+8.5,F,Enriched,Wildtype,905,1 week,CREB +/+,8,8
+8.5,M,Enriched,Homozygous,900,2 week,CREB -/-,16,16
+9.5,M,Enriched,Heterozygous,890,2 week,CREB +/-,16,16
+9.5,M,Standard,Heterozygous,892,2 week,CREB +/-,16,16
+9.5,F,Enriched,Wildtype,894,2 week,CREB +/+,16,16
+9.5,F,Enriched,Homozygous,897,2 week,CREB -/-,16,16
+8.5,M,Standard,Homozygous,902,2 week,CREB -/-,16,16
+8.5,F,Enriched,Wildtype,905,2 week,CREB +/+,16,16
+9.3,M,Enriched,Heterozygous,906,Pre1,CREB +/-,-4,0
+9.3,M,Enriched,Homozygous,909,Pre1,CREB -/-,-4,0
+9.3,M,Enriched,Heterozygous,907,Pre1,CREB +/-,-4,0
+9.3,M,Enriched,Heterozygous,908,Pre1,CREB +/-,-4,0
+9.3,M,Enriched,Homozygous,910,Pre1,CREB -/-,-4,0
+9.3,M,Enriched,Heterozygous,906,Pre2,CREB +/-,-3,0
+9.3,M,Enriched,Homozygous,909,Pre2,CREB -/-,-3,0
+9.3,M,Enriched,Heterozygous,907,Pre2,CREB +/-,-3,0
+9.3,M,Enriched,Heterozygous,908,Pre2,CREB +/-,-3,0
+9.3,M,Enriched,Homozygous,910,Pre2,CREB -/-,-3,0
+9.3,M,Enriched,Homozygous,909,24h,CREB -/-,1,1
+9.3,M,Enriched,Heterozygous,907,24h,CREB +/-,1,1
+9.3,M,Enriched,Heterozygous,908,24h,CREB +/-,1,1
+9.3,M,Enriched,Homozygous,910,24h,CREB -/-,1,1
+9.3,M,Enriched,Heterozygous,906,48h,CREB +/-,2,2
+9.3,M,Enriched,Homozygous,909,48h,CREB -/-,2,2
+9.3,M,Enriched,Heterozygous,907,48h,CREB +/-,2,2
+9.3,M,Enriched,Heterozygous,908,48h,CREB +/-,2,2
+9.3,M,Enriched,Homozygous,910,48h,CREB -/-,2,2
+9.3,M,Enriched,Heterozygous,906,1 week,CREB +/-,8,8
+9.3,M,Enriched,Homozygous,909,1 week,CREB -/-,8,8
+9.3,M,Enriched,Heterozygous,907,1 week,CREB +/-,8,8
+9.3,M,Enriched,Heterozygous,908,1 week,CREB +/-,8,8
+9.3,M,Enriched,Homozygous,910,1 week,CREB -/-,8,8
+9.3,M,Enriched,Heterozygous,906,2 week,CREB +/-,16,16
+9.3,M,Enriched,Homozygous,909,2 week,CREB -/-,16,16
+9.3,M,Enriched,Heterozygous,907,2 week,CREB +/-,16,16
+9.3,M,Enriched,Heterozygous,908,2 week,CREB +/-,16,16
+9.3,M,Enriched,Homozygous,910,2 week,CREB -/-,16,16
+8.1,M,Enriched,Homozygous,919,Pre1,CREB -/-,-4,0
+8.1,M,Enriched,Heterozygous,917,Pre1,CREB +/-,-4,0
+8.1,M,Standard,Homozygous,920,Pre1,CREB -/-,-4,0
+8.1,M,Standard,Heterozygous,918,Pre1,CREB +/-,-4,0
+8.1,M,Standard,Wildtype,928,Pre1,CREB +/+,-4,0
+8.1,M,Standard,Wildtype,929,Pre1,CREB +/+,-4,0
+8.1,M,Standard,Heterozygous,931,Pre1,CREB +/-,-4,0
+8.1,M,Enriched,Homozygous,919,Pre2,CREB -/-,-3,0
+8.1,M,Enriched,Heterozygous,917,Pre2,CREB +/-,-3,0
+8.1,M,Standard,Homozygous,920,Pre2,CREB -/-,-3,0
+8.1,M,Standard,Heterozygous,918,Pre2,CREB +/-,-3,0
+8.1,M,Standard,Wildtype,928,Pre2,CREB +/+,-3,0
+8.1,M,Standard,Wildtype,929,Pre2,CREB +/+,-3,0
+8.1,M,Standard,Heterozygous,931,Pre2,CREB +/-,-3,0
+8.1,M,Enriched,Homozygous,919,24h,CREB -/-,1,1
+8.1,M,Enriched,Heterozygous,917,24h,CREB +/-,1,1
+8.1,M,Standard,Homozygous,920,24h,CREB -/-,1,1
+8.1,M,Standard,Heterozygous,918,24h,CREB +/-,1,1
+8.1,M,Standard,Wildtype,928,24h,CREB +/+,1,1
+8.1,M,Standard,Wildtype,929,24h,CREB +/+,1,1
+8.1,M,Standard,Heterozygous,931,24h,CREB +/-,1,1
+8.1,M,Enriched,Homozygous,919,48h,CREB -/-,2,2
+8.1,M,Enriched,Heterozygous,917,48h,CREB +/-,2,2
+8.1,M,Standard,Homozygous,920,48h,CREB -/-,2,2
+8.1,M,Standard,Heterozygous,918,48h,CREB +/-,2,2
+8.1,M,Standard,Wildtype,928,48h,CREB +/+,2,2
+8.1,M,Standard,Wildtype,929,48h,CREB +/+,2,2
+8.1,M,Standard,Heterozygous,931,48h,CREB +/-,2,2
+8.1,M,Enriched,Homozygous,919,2 week,CREB -/-,16,16
+8.1,M,Enriched,Heterozygous,917,2 week,CREB +/-,16,16
+8.1,M,Standard,Homozygous,920,2 week,CREB -/-,16,16
+8.1,M,Standard,Heterozygous,918,2 week,CREB +/-,16,16
+8.1,M,Standard,Wildtype,928,2 week,CREB +/+,16,16
+8.1,M,Standard,Wildtype,929,2 week,CREB +/+,16,16
+8.1,M,Standard,Heterozygous,931,2 week,CREB +/-,16,16
+8.1,M,Enriched,Wildtype,915,Pre1,CREB +/+,-4,0
+8.1,M,Enriched,Heterozygous,916,Pre1,CREB +/-,-4,0
+8.1,M,Enriched,Wildtype,921,Pre1,CREB +/+,-4,0
+8.1,M,Standard,Wildtype,930,Pre1,CREB +/+,-4,0
+8.1,M,Standard,Heterozygous,934,Pre1,CREB +/-,-4,0
+8.1,M,Standard,Homozygous,932,Pre1,CREB -/-,-4,0
+8.1,M,Standard,Heterozygous,933,Pre1,CREB +/-,-4,0
+8.1,M,Enriched,Wildtype,915,Pre2,CREB +/+,-3,0
+8.1,M,Enriched,Heterozygous,916,Pre2,CREB +/-,-3,0
+8.1,M,Enriched,Wildtype,921,Pre2,CREB +/+,-3,0
+8.1,M,Standard,Wildtype,930,Pre2,CREB +/+,-3,0
+8.1,M,Standard,Heterozygous,934,Pre2,CREB +/-,-3,0
+8.1,M,Standard,Homozygous,932,Pre2,CREB -/-,-3,0
+8.1,M,Standard,Heterozygous,933,Pre2,CREB +/-,-3,0
+8.1,M,Enriched,Wildtype,915,24h,CREB +/+,1,1
+8.1,M,Enriched,Heterozygous,916,24h,CREB +/-,1,1
+8.1,M,Enriched,Wildtype,921,24h,CREB +/+,1,1
+8.1,M,Standard,Wildtype,930,24h,CREB +/+,1,1
+8.1,M,Standard,Heterozygous,934,24h,CREB +/-,1,1
+8.1,M,Standard,Homozygous,932,24h,CREB -/-,1,1
+8.1,M,Standard,Heterozygous,933,24h,CREB +/-,1,1
+8.1,M,Enriched,Wildtype,915,48h,CREB +/+,2,2
+8.1,M,Enriched,Heterozygous,916,48h,CREB +/-,2,2
+8.1,M,Enriched,Wildtype,921,48h,CREB +/+,2,2
+8.1,M,Standard,Wildtype,930,48h,CREB +/+,2,2
+8.1,M,Standard,Heterozygous,934,48h,CREB +/-,2,2
+8.1,M,Standard,Homozygous,932,48h,CREB -/-,2,2
+8.1,M,Standard,Heterozygous,933,48h,CREB +/-,2,2
+8.1,M,Enriched,Wildtype,915,2 week,CREB +/+,16,16
+8.1,M,Enriched,Heterozygous,916,2 week,CREB +/-,16,16
+8.1,M,Enriched,Wildtype,921,2 week,CREB +/+,16,16
+8.1,M,Standard,Wildtype,930,2 week,CREB +/+,16,16
+8.1,M,Standard,Heterozygous,934,2 week,CREB +/-,16,16
+8.1,M,Standard,Homozygous,932,2 week,CREB -/-,16,16
+8.1,M,Standard,Heterozygous,933,2 week,CREB +/-,16,16
+9.8,M,Enriched,Homozygous,968,Pre1,CREB -/-,-4,0
+9.5,M,Enriched,Heterozygous,972,Pre1,CREB +/-,-4,0
+9.8,M,Standard,Wildtype,963,Pre1,CREB +/+,-4,0
+9.8,M,Standard,Heterozygous,964,Pre1,CREB +/-,-4,0
+10.1,M,Enriched,Wildtype,952,Pre1,CREB +/+,-4,0
+10.1,M,Enriched,Heterozygous,955,Pre1,CREB +/-,-4,0
+10.1,M,Enriched,Homozygous,959,Pre1,CREB -/-,-4,0
+9.8,M,Enriched,Homozygous,968,Pre2,CREB -/-,-3,0
+9.8,M,Standard,Wildtype,963,Pre2,CREB +/+,-3,0
+9.8,M,Standard,Heterozygous,964,Pre2,CREB +/-,-3,0
+10.1,M,Enriched,Wildtype,952,Pre2,CREB +/+,-3,0
+10.1,M,Enriched,Heterozygous,955,Pre2,CREB +/-,-3,0
+9.8,M,Enriched,Homozygous,968,24h,CREB -/-,1,1
+9.5,M,Enriched,Heterozygous,972,24h,CREB +/-,1,1
+9.8,M,Standard,Wildtype,963,24h,CREB +/+,1,1
+9.8,M,Standard,Heterozygous,964,24h,CREB +/-,1,1
+10.1,M,Enriched,Wildtype,952,24h,CREB +/+,1,1
+10.1,M,Enriched,Heterozygous,955,24h,CREB +/-,1,1
+10.1,M,Enriched,Homozygous,959,24h,CREB -/-,1,1
+9.8,M,Enriched,Homozygous,968,48h,CREB -/-,2,2
+9.5,M,Enriched,Heterozygous,972,48h,CREB +/-,2,2
+9.8,M,Standard,Wildtype,963,48h,CREB +/+,2,2
+9.8,M,Standard,Heterozygous,964,48h,CREB +/-,2,2
+10.1,M,Enriched,Wildtype,952,48h,CREB +/+,2,2
+10.1,M,Enriched,Heterozygous,955,48h,CREB +/-,2,2
+10.1,M,Enriched,Homozygous,959,48h,CREB -/-,2,2
+9.8,M,Enriched,Homozygous,968,1 week,CREB -/-,8,8
+9.5,M,Enriched,Heterozygous,972,1 week,CREB +/-,8,8
+9.8,M,Standard,Wildtype,963,1 week,CREB +/+,8,8
+9.8,M,Standard,Heterozygous,964,1 week,CREB +/-,8,8
+10.1,M,Enriched,Wildtype,952,1 week,CREB +/+,8,8
+10.1,M,Enriched,Homozygous,959,1 week,CREB -/-,8,8
+9.8,M,Enriched,Homozygous,968,2 week,CREB -/-,16,16
+9.5,M,Enriched,Heterozygous,972,2 week,CREB +/-,16,16
+9.8,M,Standard,Wildtype,963,2 week,CREB +/+,16,16
+9.8,M,Standard,Heterozygous,964,2 week,CREB +/-,16,16
+10.1,M,Enriched,Wildtype,952,2 week,CREB +/+,16,16
+10.1,M,Enriched,Heterozygous,955,2 week,CREB +/-,16,16
+10.1,M,Enriched,Homozygous,959,2 week,CREB -/-,16,16
+10.1,M,Enriched,Heterozygous,960,Pre1,CREB +/-,-4,0
+9.5,M,Enriched,Heterozygous,973,Pre1,CREB +/-,-4,0
+9.8,M,Standard,Heterozygous,966,Pre1,CREB +/-,-4,0
+9.8,M,Standard,Homozygous,967,Pre1,CREB -/-,-4,0
+9.8,M,Standard,Wildtype,965,Pre1,CREB +/+,-4,0
+9.5,M,Enriched,Wildtype,975,Pre1,CREB +/+,-4,0
+10.1,M,Enriched,Heterozygous,960,Pre2,CREB +/-,-3,0
+10.1,M,Enriched,Wildtype,961,Pre2,CREB +/+,-3,0
+9.5,M,Enriched,Heterozygous,973,Pre2,CREB +/-,-3,0
+9.8,M,Standard,Heterozygous,966,Pre2,CREB +/-,-3,0
+9.8,M,Standard,Homozygous,967,Pre2,CREB -/-,-3,0
+9.8,M,Standard,Wildtype,965,Pre2,CREB +/+,-3,0
+9.5,M,Enriched,Wildtype,975,Pre2,CREB +/+,-3,0
+10.1,M,Enriched,Heterozygous,960,24h,CREB +/-,1,1
+10.1,M,Enriched,Wildtype,961,24h,CREB +/+,1,1
+9.5,M,Enriched,Heterozygous,973,24h,CREB +/-,1,1
+9.8,M,Standard,Heterozygous,966,24h,CREB +/-,1,1
+9.8,M,Standard,Homozygous,967,24h,CREB -/-,1,1
+9.8,M,Standard,Wildtype,965,24h,CREB +/+,1,1
+9.5,M,Enriched,Wildtype,975,24h,CREB +/+,1,1
+10.1,M,Enriched,Heterozygous,960,48h,CREB +/-,2,2
+10.1,M,Enriched,Wildtype,961,48h,CREB +/+,2,2
+9.5,M,Enriched,Heterozygous,973,48h,CREB +/-,2,2
+9.8,M,Standard,Heterozygous,966,48h,CREB +/-,2,2
+9.8,M,Standard,Homozygous,967,48h,CREB -/-,2,2
+9.8,M,Standard,Wildtype,965,48h,CREB +/+,2,2
+9.5,M,Enriched,Wildtype,975,48h,CREB +/+,2,2
+10.1,M,Enriched,Heterozygous,960,1 week,CREB +/-,8,8
+10.1,M,Enriched,Wildtype,961,1 week,CREB +/+,8,8
+9.5,M,Enriched,Heterozygous,973,1 week,CREB +/-,8,8
+9.8,M,Standard,Heterozygous,966,1 week,CREB +/-,8,8
+9.8,M,Standard,Homozygous,967,1 week,CREB -/-,8,8
+9.8,M,Standard,Wildtype,965,1 week,CREB +/+,8,8
+9.5,M,Enriched,Wildtype,975,1 week,CREB +/+,8,8
+10.1,M,Enriched,Heterozygous,960,2 week,CREB +/-,16,16
+10.1,M,Enriched,Wildtype,961,2 week,CREB +/+,16,16
+9.5,M,Enriched,Heterozygous,973,2 week,CREB +/-,16,16
+9.8,M,Standard,Heterozygous,966,2 week,CREB +/-,16,16
+9.8,M,Standard,Homozygous,967,2 week,CREB -/-,16,16
+9.8,M,Standard,Wildtype,965,2 week,CREB +/+,16,16
+9.5,M,Enriched,Wildtype,975,2 week,CREB +/+,16,16
+8.4,F,Enriched,Wildtype,1005,Pre1,CREB +/+,-4,0
+8.7,F,Enriched,Heterozygous,992,Pre1,CREB +/-,-4,0
+8.4,F,Enriched,Wildtype,1007,Pre1,CREB +/+,-4,0
+9.1,F,Standard,Wildtype,983,Pre1,CREB +/+,-4,0
+9.1,F,Standard,Homozygous,984,Pre1,CREB -/-,-4,0
+8.4,M,Standard,Wildtype,998,Pre1,CREB +/+,-4,0
+8.4,M,Standard,Heterozygous,1000,Pre1,CREB +/-,-4,0
+8.4,F,Enriched,Wildtype,1005,Pre2,CREB +/+,-3,0
+8.7,F,Enriched,Heterozygous,992,Pre2,CREB +/-,-3,0
+8.4,F,Enriched,Wildtype,1007,Pre2,CREB +/+,-3,0
+9.1,F,Standard,Wildtype,983,Pre2,CREB +/+,-3,0
+9.1,F,Standard,Homozygous,984,Pre2,CREB -/-,-3,0
+8.4,M,Standard,Wildtype,998,Pre2,CREB +/+,-3,0
+8.4,M,Standard,Heterozygous,1000,Pre2,CREB +/-,-3,0
+8.4,F,Enriched,Wildtype,1005,48h,CREB +/+,2,2
+8.7,F,Enriched,Heterozygous,992,48h,CREB +/-,2,2
+8.4,F,Enriched,Wildtype,1007,48h,CREB +/+,2,2
+9.1,F,Standard,Wildtype,983,48h,CREB +/+,2,2
+9.1,F,Standard,Homozygous,984,48h,CREB -/-,2,2
+8.4,M,Standard,Wildtype,998,48h,CREB +/+,2,2
+8.4,M,Standard,Heterozygous,1000,48h,CREB +/-,2,2
+8.4,F,Enriched,Wildtype,1005,1 week,CREB +/+,8,8
+8.7,F,Enriched,Heterozygous,992,1 week,CREB +/-,8,8
+8.4,F,Enriched,Wildtype,1007,1 week,CREB +/+,8,8
+9.1,F,Standard,Wildtype,983,1 week,CREB +/+,8,8
+9.1,F,Standard,Homozygous,984,1 week,CREB -/-,8,8
+8.4,M,Standard,Wildtype,998,1 week,CREB +/+,8,8
+8.4,M,Standard,Heterozygous,1000,1 week,CREB +/-,8,8
+8.4,F,Enriched,Wildtype,1005,2 week,CREB +/+,16,16
+8.7,F,Enriched,Heterozygous,992,2 week,CREB +/-,16,16
+8.4,F,Enriched,Wildtype,1007,2 week,CREB +/+,16,16
+9.1,F,Standard,Wildtype,983,2 week,CREB +/+,16,16
+9.1,F,Standard,Homozygous,984,2 week,CREB -/-,16,16
+8.4,M,Standard,Wildtype,998,2 week,CREB +/+,16,16
+8.4,M,Standard,Heterozygous,1000,2 week,CREB +/-,16,16
+8.4,F,Enriched,Homozygous,1003,Pre1,CREB -/-,-4,0
+8.4,F,Enriched,Heterozygous,1004,Pre1,CREB +/-,-4,0
+9.1,F,Standard,Wildtype,981,Pre1,CREB +/+,-4,0
+9.1,F,Standard,Heterozygous,982,Pre1,CREB +/-,-4,0
+9.1,F,Standard,Heterozygous,985,Pre1,CREB +/-,-4,0
+8.4,M,Standard,Wildtype,999,Pre1,CREB +/+,-4,0
+8.4,M,Standard,Homozygous,997,Pre1,CREB -/-,-4,0
+8.4,F,Enriched,Homozygous,1003,Pre2,CREB -/-,-3,0
+8.4,F,Enriched,Heterozygous,1004,Pre2,CREB +/-,-3,0
+9.1,F,Standard,Wildtype,981,Pre2,CREB +/+,-3,0
+9.1,F,Standard,Heterozygous,982,Pre2,CREB +/-,-3,0
+9.1,F,Standard,Heterozygous,985,Pre2,CREB +/-,-3,0
+8.4,M,Standard,Wildtype,999,Pre2,CREB +/+,-3,0
+8.4,M,Standard,Homozygous,997,Pre2,CREB -/-,-3,0
+8.4,F,Enriched,Heterozygous,1004,48h,CREB +/-,2,2
+9.1,F,Standard,Wildtype,981,48h,CREB +/+,2,2
+9.1,F,Standard,Heterozygous,982,48h,CREB +/-,2,2
+9.1,F,Standard,Heterozygous,985,48h,CREB +/-,2,2
+8.4,M,Standard,Wildtype,999,48h,CREB +/+,2,2
+8.4,M,Standard,Homozygous,997,48h,CREB -/-,2,2
+8.4,F,Enriched,Homozygous,1003,1 week,CREB -/-,8,8
+9.1,F,Standard,Wildtype,981,1 week,CREB +/+,8,8
+9.1,F,Standard,Heterozygous,982,1 week,CREB +/-,8,8
+9.1,F,Standard,Heterozygous,985,1 week,CREB +/-,8,8
+8.4,M,Standard,Wildtype,999,1 week,CREB +/+,8,8
+8.4,M,Standard,Homozygous,997,1 week,CREB -/-,8,8
+8.4,F,Enriched,Homozygous,1003,2 week,CREB -/-,16,16
+8.4,F,Enriched,Heterozygous,1004,2 week,CREB +/-,16,16
+9.1,F,Standard,Wildtype,981,2 week,CREB +/+,16,16
+9.1,F,Standard,Heterozygous,982,2 week,CREB +/-,16,16
+9.1,F,Standard,Heterozygous,985,2 week,CREB +/-,16,16
+8.4,M,Standard,Wildtype,999,2 week,CREB +/+,16,16
+8.4,M,Standard,Homozygous,997,2 week,CREB -/-,16,16
+7.4,F,Enriched,Wildtype,1058,48h,CREB +/+,2,2
+7.4,F,Standard,Heterozygous,1055,48h,CREB +/-,2,2
+7.4,F,Standard,Wildtype,1056,48h,CREB +/+,2,2
+7.4,F,Standard,Homozygous,1057,48h,CREB -/-,2,2
+7.2,M,Standard,Heterozygous,1061,48h,CREB +/-,2,2
+7.2,M,Standard,Wildtype,1063,48h,CREB +/+,2,2
+7.4,F,Enriched,Wildtype,1058,Pre1,CREB +/+,-4,0
+7.4,F,Standard,Heterozygous,1055,Pre1,CREB +/-,-4,0
+7.4,F,Standard,Wildtype,1056,Pre1,CREB +/+,-4,0
+7.4,F,Standard,Homozygous,1057,Pre1,CREB -/-,-4,0
+7.2,M,Standard,Heterozygous,1061,Pre1,CREB +/-,-4,0
+7.2,M,Standard,Wildtype,1063,Pre1,CREB +/+,-4,0
+7.4,F,Enriched,Wildtype,1058,Pre2,CREB +/+,-3,0
+7.4,F,Standard,Heterozygous,1055,Pre2,CREB +/-,-3,0
+7.4,F,Standard,Wildtype,1056,Pre2,CREB +/+,-3,0
+7.2,M,Standard,Heterozygous,1061,Pre2,CREB +/-,-3,0
+7.2,M,Standard,Wildtype,1063,Pre2,CREB +/+,-3,0
+7.4,F,Enriched,Wildtype,1058,1 week,CREB +/+,8,8
+7.4,F,Standard,Wildtype,1056,1 week,CREB +/+,8,8
+7.4,F,Standard,Homozygous,1057,1 week,CREB -/-,8,8
+7.2,M,Standard,Heterozygous,1061,1 week,CREB +/-,8,8
+7.2,M,Standard,Wildtype,1063,1 week,CREB +/+,8,8
+7.4,F,Enriched,Wildtype,1058,2 week,CREB +/+,16,16
+7.4,F,Standard,Heterozygous,1055,2 week,CREB +/-,16,16
+7.4,F,Standard,Wildtype,1056,2 week,CREB +/+,16,16
+7.4,F,Standard,Homozygous,1057,2 week,CREB -/-,16,16
+7.2,M,Standard,Heterozygous,1061,2 week,CREB +/-,16,16
+7.2,M,Standard,Wildtype,1063,2 week,CREB +/+,16,16
+7.4,F,Enriched,Wildtype,1046,48h,CREB +/+,2,2
+7.4,F,Enriched,Heterozygous,1047,48h,CREB +/-,2,2
+7.4,F,Enriched,Homozygous,1048,48h,CREB -/-,2,2
+7.1,F,Standard,Wildtype,1075,48h,CREB +/+,2,2
+6.9,F,Standard,Wildtype,1086,48h,CREB +/+,2,2
+7.1,M,Standard,Heterozygous,1073,48h,CREB +/-,2,2
+7.1,M,Standard,Homozygous,1074,48h,CREB -/-,2,2
+7.4,F,Enriched,Wildtype,1046,Pre1,CREB +/+,-4,0
+7.4,F,Enriched,Heterozygous,1047,Pre1,CREB +/-,-4,0
+7.4,F,Enriched,Homozygous,1048,Pre1,CREB -/-,-4,0
+7.1,F,Standard,Wildtype,1075,Pre1,CREB +/+,-4,0
+6.9,F,Standard,Wildtype,1086,Pre1,CREB +/+,-4,0
+7.1,M,Standard,Heterozygous,1073,Pre1,CREB +/-,-4,0
+7.1,M,Standard,Homozygous,1074,Pre1,CREB -/-,-4,0
+7.4,F,Enriched,Wildtype,1046,Pre2,CREB +/+,-3,0
+7.4,F,Enriched,Heterozygous,1047,Pre2,CREB +/-,-3,0
+7.4,F,Enriched,Homozygous,1048,Pre2,CREB -/-,-3,0
+7.1,F,Standard,Wildtype,1075,Pre2,CREB +/+,-3,0
+6.9,F,Standard,Wildtype,1086,Pre2,CREB +/+,-3,0
+7.1,M,Standard,Heterozygous,1073,Pre2,CREB +/-,-3,0
+7.1,M,Standard,Homozygous,1074,Pre2,CREB -/-,-3,0
+7.4,F,Enriched,Wildtype,1046,1 week,CREB +/+,8,8
+7.4,F,Enriched,Heterozygous,1047,1 week,CREB +/-,8,8
+7.4,F,Enriched,Homozygous,1048,1 week,CREB -/-,8,8
+7.1,F,Standard,Wildtype,1075,1 week,CREB +/+,8,8
+6.9,F,Standard,Wildtype,1086,1 week,CREB +/+,8,8
+7.1,M,Standard,Heterozygous,1073,1 week,CREB +/-,8,8
+7.4,F,Enriched,Wildtype,1046,2 week,CREB +/+,16,16
+7.4,F,Enriched,Heterozygous,1047,2 week,CREB +/-,16,16
+7.4,F,Enriched,Homozygous,1048,2 week,CREB -/-,16,16
+7.1,F,Standard,Wildtype,1075,2 week,CREB +/+,16,16
+6.9,F,Standard,Wildtype,1086,2 week,CREB +/+,16,16
+7.1,M,Standard,Heterozygous,1073,2 week,CREB +/-,16,16
+7.1,M,Standard,Homozygous,1074,2 week,CREB -/-,16,16
+6.1,F,Standard,Wildtype,1097,48h,CREB +/+,2,2
+6.1,F,Standard,Heterozygous,1099,48h,CREB +/-,2,2
+6.1,F,Enriched,Heterozygous,1104,48h,CREB +/-,2,2
+6.1,F,Enriched,Homozygous,1105,48h,CREB -/-,2,2
+5.9,F,Enriched,Wildtype,1108,48h,CREB +/+,2,2
+6.4,M,Standard,Homozygous,1089,48h,CREB -/-,2,2
+6.4,M,Standard,Wildtype,1090,48h,CREB +/+,2,2
+6.1,F,Standard,Wildtype,1097,Pre1,CREB +/+,-4,0
+6.1,F,Standard,Heterozygous,1099,Pre1,CREB +/-,-4,0
+6.1,F,Enriched,Heterozygous,1104,Pre1,CREB +/-,-4,0
+6.1,F,Enriched,Homozygous,1105,Pre1,CREB -/-,-4,0
+5.9,F,Enriched,Wildtype,1108,Pre1,CREB +/+,-4,0
+6.4,M,Standard,Homozygous,1089,Pre1,CREB -/-,-4,0
+6.4,M,Standard,Wildtype,1090,Pre1,CREB +/+,-4,0
+6.1,F,Standard,Wildtype,1097,Pre2,CREB +/+,-3,0
+6.1,F,Standard,Heterozygous,1099,Pre2,CREB +/-,-3,0
+6.1,F,Enriched,Heterozygous,1104,Pre2,CREB +/-,-3,0
+6.1,F,Enriched,Homozygous,1105,Pre2,CREB -/-,-3,0
+5.9,F,Enriched,Wildtype,1108,Pre2,CREB +/+,-3,0
+6.4,M,Standard,Homozygous,1089,Pre2,CREB -/-,-3,0
+6.4,M,Standard,Wildtype,1090,Pre2,CREB +/+,-3,0
+6.1,F,Standard,Wildtype,1097,1 week,CREB +/+,8,8
+6.1,F,Standard,Heterozygous,1099,1 week,CREB +/-,8,8
+6.1,F,Enriched,Heterozygous,1104,1 week,CREB +/-,8,8
+6.1,F,Enriched,Homozygous,1105,1 week,CREB -/-,8,8
+5.9,F,Enriched,Wildtype,1108,1 week,CREB +/+,8,8
+6.4,M,Standard,Homozygous,1089,1 week,CREB -/-,8,8
+6.4,M,Standard,Wildtype,1090,1 week,CREB +/+,8,8
+6.1,F,Standard,Wildtype,1097,2 week,CREB +/+,16,16
+6.1,F,Standard,Heterozygous,1099,2 week,CREB +/-,16,16
+6.1,F,Enriched,Heterozygous,1104,2 week,CREB +/-,16,16
+6.1,F,Enriched,Homozygous,1105,2 week,CREB -/-,16,16
+5.9,F,Enriched,Wildtype,1108,2 week,CREB +/+,16,16
+6.4,M,Standard,Homozygous,1089,2 week,CREB -/-,16,16
+6.4,M,Standard,Wildtype,1090,2 week,CREB +/+,16,16
+6.1,F,Standard,Heterozygous,1101,48h,CREB +/-,2,2
+6.1,F,Standard,Wildtype,1103,48h,CREB +/+,2,2
+5.9,F,Standard,Homozygous,1109,48h,CREB -/-,2,2
+6.1,F,Enriched,Wildtype,1098,48h,CREB +/+,2,2
+6.1,F,Enriched,Heterozygous,1100,48h,CREB +/-,2,2
+5.9,M,Standard,Heterozygous,1106,48h,CREB +/-,2,2
+5.9,M,Standard,Homozygous,1107,48h,CREB -/-,2,2
+6.1,F,Standard,Wildtype,1103,Pre1,CREB +/+,-4,0
+5.9,F,Standard,Homozygous,1109,Pre1,CREB -/-,-4,0
+6.1,F,Enriched,Wildtype,1098,Pre1,CREB +/+,-4,0
+5.9,M,Standard,Heterozygous,1106,Pre1,CREB +/-,-4,0
+5.9,M,Standard,Homozygous,1107,Pre1,CREB -/-,-4,0
+6.1,F,Standard,Heterozygous,1101,Pre2,CREB +/-,-3,0
+6.1,F,Standard,Wildtype,1103,Pre2,CREB +/+,-3,0
+5.9,F,Standard,Homozygous,1109,Pre2,CREB -/-,-3,0
+6.1,F,Enriched,Wildtype,1098,Pre2,CREB +/+,-3,0
+6.1,F,Enriched,Heterozygous,1100,Pre2,CREB +/-,-3,0
+5.9,M,Standard,Heterozygous,1106,Pre2,CREB +/-,-3,0
+5.9,M,Standard,Homozygous,1107,Pre2,CREB -/-,-3,0
+6.1,F,Standard,Heterozygous,1101,1 week,CREB +/-,8,8
+6.1,F,Standard,Wildtype,1103,1 week,CREB +/+,8,8
+5.9,F,Standard,Homozygous,1109,1 week,CREB -/-,8,8
+6.1,F,Enriched,Wildtype,1098,1 week,CREB +/+,8,8
+6.1,F,Enriched,Heterozygous,1100,1 week,CREB +/-,8,8
+5.9,M,Standard,Heterozygous,1106,1 week,CREB +/-,8,8
+5.9,M,Standard,Homozygous,1107,1 week,CREB -/-,8,8
+6.1,F,Standard,Heterozygous,1101,2 week,CREB +/-,16,16
+6.1,F,Standard,Wildtype,1103,2 week,CREB +/+,16,16
+5.9,F,Standard,Homozygous,1109,2 week,CREB -/-,16,16
+6.1,F,Enriched,Wildtype,1098,2 week,CREB +/+,16,16
+6.1,F,Enriched,Heterozygous,1100,2 week,CREB +/-,16,16
+5.9,M,Standard,Heterozygous,1106,2 week,CREB +/-,16,16
+5.9,M,Standard,Homozygous,1107,2 week,CREB -/-,16,16
+6.4,F,Enriched,Wildtype,1134,48h,CREB +/+,2,2
+6.4,F,Enriched,Heterozygous,1135,48h,CREB +/-,2,2
+5.9,F,Enriched,Homozygous,1117,48h,CREB -/-,2,2
+5.9,F,Enriched,Wildtype,1139,48h,CREB +/+,2,2
+6.1,F,Standard,Heterozygous,1140,48h,CREB +/-,2,2
+6.1,F,Standard,Wildtype,1127,48h,CREB +/+,2,2
+6.1,F,Standard,Heterozygous,1121,48h,CREB +/-,2,2
+6.4,F,Enriched,Wildtype,1134,Pre1,CREB +/+,-4,0
+5.9,F,Enriched,Homozygous,1117,Pre1,CREB -/-,-4,0
+5.9,F,Enriched,Wildtype,1139,Pre1,CREB +/+,-4,0
+6.1,F,Standard,Heterozygous,1140,Pre1,CREB +/-,-4,0
+6.1,F,Standard,Wildtype,1127,Pre1,CREB +/+,-4,0
+6.1,F,Standard,Heterozygous,1121,Pre1,CREB +/-,-4,0
+6.4,F,Enriched,Wildtype,1134,Pre2,CREB +/+,-3,0
+6.4,F,Enriched,Heterozygous,1135,Pre2,CREB +/-,-3,0
+5.9,F,Enriched,Homozygous,1117,Pre2,CREB -/-,-3,0
+5.9,F,Enriched,Wildtype,1139,Pre2,CREB +/+,-3,0
+6.1,F,Standard,Heterozygous,1140,Pre2,CREB +/-,-3,0
+6.1,F,Standard,Wildtype,1127,Pre2,CREB +/+,-3,0
+6.1,F,Standard,Heterozygous,1121,Pre2,CREB +/-,-3,0
+6.4,F,Enriched,Wildtype,1134,1 week,CREB +/+,8,8
+6.4,F,Enriched,Heterozygous,1135,1 week,CREB +/-,8,8
+5.9,F,Enriched,Homozygous,1117,1 week,CREB -/-,8,8
+5.9,F,Enriched,Wildtype,1139,1 week,CREB +/+,8,8
+6.1,F,Standard,Heterozygous,1140,1 week,CREB +/-,8,8
+6.1,F,Standard,Wildtype,1127,1 week,CREB +/+,8,8
+6.1,F,Standard,Heterozygous,1121,1 week,CREB +/-,8,8
+6.4,F,Enriched,Wildtype,1134,2 week,CREB +/+,16,16
+6.4,F,Enriched,Heterozygous,1135,2 week,CREB +/-,16,16
+5.9,F,Enriched,Homozygous,1117,2 week,CREB -/-,16,16
+5.9,F,Enriched,Wildtype,1139,2 week,CREB +/+,16,16
+6.1,F,Standard,Heterozygous,1140,2 week,CREB +/-,16,16
+6.1,F,Standard,Wildtype,1127,2 week,CREB +/+,16,16
+6.1,F,Standard,Heterozygous,1121,2 week,CREB +/-,16,16
+5.9,F,Standard,Homozygous,1122,48h,CREB -/-,2,2
+6.1,F,Standard,Wildtype,1114,48h,CREB +/+,2,2
+6.1,F,Enriched,Heterozygous,1113,48h,CREB +/-,2,2
+6.1,F,Enriched,Wildtype,1137,48h,CREB +/+,2,2
+6.1,F,Enriched,Homozygous,1120,48h,CREB -/-,2,2
+5.9,F,Enriched,Heterozygous,1128,48h,CREB +/-,2,2
+6.1,F,Enriched,Wildtype,1136,48h,CREB +/+,2,2
+6.1,F,Enriched,Wildtype,1136,Pre1,CREB +/+,-4,0
+5.9,F,Enriched,Heterozygous,1128,Pre1,CREB +/-,-4,0
+6.1,F,Enriched,Homozygous,1120,Pre1,CREB -/-,-4,0
+6.1,F,Enriched,Wildtype,1137,Pre1,CREB +/+,-4,0
+6.1,F,Enriched,Heterozygous,1113,Pre1,CREB +/-,-4,0
+6.1,F,Standard,Wildtype,1114,Pre1,CREB +/+,-4,0
+5.9,F,Standard,Homozygous,1122,Pre1,CREB -/-,-4,0
+5.9,F,Standard,Homozygous,1122,Pre2,CREB -/-,-3,0
+6.1,F,Standard,Wildtype,1114,Pre2,CREB +/+,-3,0
+6.1,F,Enriched,Heterozygous,1113,Pre2,CREB +/-,-3,0
+6.1,F,Enriched,Wildtype,1137,Pre2,CREB +/+,-3,0
+6.1,F,Enriched,Homozygous,1120,Pre2,CREB -/-,-3,0
+5.9,F,Enriched,Heterozygous,1128,Pre2,CREB +/-,-3,0
+6.1,F,Enriched,Wildtype,1136,Pre2,CREB +/+,-3,0
+5.9,F,Standard,Homozygous,1122,1 week,CREB -/-,8,8
+6.1,F,Standard,Wildtype,1114,1 week,CREB +/+,8,8
+6.1,F,Enriched,Heterozygous,1113,1 week,CREB +/-,8,8
+6.1,F,Enriched,Wildtype,1137,1 week,CREB +/+,8,8
+6.1,F,Enriched,Homozygous,1120,1 week,CREB -/-,8,8
+5.9,F,Enriched,Heterozygous,1128,1 week,CREB +/-,8,8
+6.1,F,Enriched,Wildtype,1136,1 week,CREB +/+,8,8
+5.9,F,Standard,Homozygous,1122,2 week,CREB -/-,16,16
+6.1,F,Standard,Wildtype,1114,2 week,CREB +/+,16,16
+6.1,F,Enriched,Heterozygous,1113,2 week,CREB +/-,16,16
+6.1,F,Enriched,Wildtype,1137,2 week,CREB +/+,16,16
+5.9,F,Enriched,Heterozygous,1128,2 week,CREB +/-,16,16
+6.1,F,Enriched,Wildtype,1136,2 week,CREB +/+,16,16
+8.1,M,Enriched,Homozygous,1142,48h,CREB -/-,2,2
+8.1,M,Enriched,Heterozygous,1143,48h,CREB +/-,2,2
+7.4,F,Exercise,Wildtype,1160,48h,CREB +/+,2,2
+7.9,M,Standard,Homozygous,1149,48h,CREB -/-,2,2
+7.9,M,Standard,Wildtype,1154,48h,CREB +/+,2,2
+8.1,F,Exercise,Homozygous,1147,48h,CREB -/-,2,2
+8.1,F,Exercise,Heterozygous,1148,48h,CREB +/-,2,2
+8.1,M,Enriched,Homozygous,1142,Pre1,CREB -/-,-4,0
+8.1,M,Enriched,Heterozygous,1143,Pre1,CREB +/-,-4,0
+7.4,F,Exercise,Wildtype,1160,Pre1,CREB +/+,-4,0
+7.9,M,Standard,Homozygous,1149,Pre1,CREB -/-,-4,0
+7.9,M,Standard,Wildtype,1154,Pre1,CREB +/+,-4,0
+8.1,F,Exercise,Homozygous,1147,Pre1,CREB -/-,-4,0
+8.1,F,Exercise,Heterozygous,1148,Pre1,CREB +/-,-4,0
+8.1,M,Enriched,Homozygous,1142,Pre2,CREB -/-,-3,0
+8.1,M,Enriched,Heterozygous,1143,Pre2,CREB +/-,-3,0
+7.4,F,Exercise,Wildtype,1160,Pre2,CREB +/+,-3,0
+7.9,M,Standard,Homozygous,1149,Pre2,CREB -/-,-3,0
+7.9,M,Standard,Wildtype,1154,Pre2,CREB +/+,-3,0
+8.1,F,Exercise,Homozygous,1147,Pre2,CREB -/-,-3,0
+8.1,F,Exercise,Heterozygous,1148,Pre2,CREB +/-,-3,0
+8.1,M,Enriched,Homozygous,1142,1 week,CREB -/-,8,8
+8.1,M,Enriched,Heterozygous,1143,1 week,CREB +/-,8,8
+7.4,F,Exercise,Wildtype,1160,1 week,CREB +/+,8,8
+7.9,M,Standard,Homozygous,1149,1 week,CREB -/-,8,8
+7.9,M,Standard,Wildtype,1154,1 week,CREB +/+,8,8
+8.1,F,Exercise,Homozygous,1147,1 week,CREB -/-,8,8
+8.1,F,Exercise,Heterozygous,1148,1 week,CREB +/-,8,8
+8.1,M,Enriched,Homozygous,1142,2 week,CREB -/-,16,16
+8.1,M,Enriched,Heterozygous,1143,2 week,CREB +/-,16,16
+7.4,F,Exercise,Wildtype,1160,2 week,CREB +/+,16,16
+7.9,M,Standard,Homozygous,1149,2 week,CREB -/-,16,16
+7.9,M,Standard,Wildtype,1154,2 week,CREB +/+,16,16
+8.1,F,Exercise,Homozygous,1147,2 week,CREB -/-,16,16
+8.1,F,Exercise,Heterozygous,1148,2 week,CREB +/-,16,16
+8.1,M,Enriched,Wildtype,1144,48h,CREB +/+,2,2
+7.9,M,Enriched,Homozygous,1150,48h,CREB -/-,2,2
+8.1,F,Exercise,Homozygous,1145,48h,CREB -/-,2,2
+8.1,F,Isolated Standard,Homozygous,1146,48h,CREB -/-,2,2
+7.4,M,Standard,Heterozygous,1159,48h,CREB +/-,2,2
+7.4,F,Isolated Standard,Heterozygous,1161,48h,CREB +/-,2,2
+7.4,F,Isolated Standard,Wildtype,1162,48h,CREB +/+,2,2
+8.1,M,Enriched,Wildtype,1144,Pre1,CREB +/+,-4,0
+7.9,M,Enriched,Homozygous,1150,Pre1,CREB -/-,-4,0
+8.1,F,Exercise,Homozygous,1145,Pre1,CREB -/-,-4,0
+7.4,M,Standard,Heterozygous,1159,Pre1,CREB +/-,-4,0
+7.4,F,Isolated Standard,Heterozygous,1161,Pre1,CREB +/-,-4,0
+7.4,F,Isolated Standard,Wildtype,1162,Pre1,CREB +/+,-4,0
+8.1,M,Enriched,Wildtype,1144,Pre2,CREB +/+,-3,0
+7.9,M,Enriched,Homozygous,1150,Pre2,CREB -/-,-3,0
+8.1,F,Exercise,Homozygous,1145,Pre2,CREB -/-,-3,0
+8.1,F,Isolated Standard,Homozygous,1146,Pre2,CREB -/-,-3,0
+7.4,M,Standard,Heterozygous,1159,Pre2,CREB +/-,-3,0
+7.4,F,Isolated Standard,Heterozygous,1161,Pre2,CREB +/-,-3,0
+7.4,F,Isolated Standard,Wildtype,1162,Pre2,CREB +/+,-3,0
+8.1,M,Enriched,Wildtype,1144,1 week,CREB +/+,8,8
+8.1,F,Exercise,Homozygous,1145,1 week,CREB -/-,8,8
+8.1,F,Isolated Standard,Homozygous,1146,1 week,CREB -/-,8,8
+7.4,M,Standard,Heterozygous,1159,1 week,CREB +/-,8,8
+7.4,F,Isolated Standard,Heterozygous,1161,1 week,CREB +/-,8,8
+7.4,F,Isolated Standard,Wildtype,1162,1 week,CREB +/+,8,8
+8.1,M,Enriched,Wildtype,1144,2 week,CREB +/+,16,16
+7.9,M,Enriched,Homozygous,1150,2 week,CREB -/-,16,16
+8.1,F,Exercise,Homozygous,1145,2 week,CREB -/-,16,16
+8.1,F,Isolated Standard,Homozygous,1146,2 week,CREB -/-,16,16
+7.4,M,Standard,Heterozygous,1159,2 week,CREB +/-,16,16
+7.4,F,Isolated Standard,Heterozygous,1161,2 week,CREB +/-,16,16
+7.4,F,Isolated Standard,Wildtype,1162,2 week,CREB +/+,16,16
+5.7,F,Exercise,Wildtype,1205,48h,CREB +/+,2,2
+5.7,F,Isolated Standard,Wildtype,1206,48h,CREB +/+,2,2
+7.2,M,Enriched,Heterozygous,1164,48h,CREB +/-,2,2
+7.2,M,Enriched,Wildtype,1163,48h,CREB +/+,2,2
+6.8,F,Exercise,Homozygous,1175,48h,CREB -/-,2,2
+6.8,F,Isolated Standard,Wildtype,1173,48h,CREB +/+,2,2
+5.8,M,Standard,Heterozygous,1186,48h,CREB +/-,2,2
+5.7,F,Exercise,Wildtype,1205,Pre1,CREB +/+,-4,0
+5.7,F,Isolated Standard,Wildtype,1206,Pre1,CREB +/+,-4,0
+7.2,M,Enriched,Heterozygous,1164,Pre1,CREB +/-,-4,0
+7.2,M,Enriched,Wildtype,1163,Pre1,CREB +/+,-4,0
+6.8,F,Exercise,Homozygous,1175,Pre1,CREB -/-,-4,0
+6.8,F,Isolated Standard,Wildtype,1173,Pre1,CREB +/+,-4,0
+5.8,M,Standard,Heterozygous,1186,Pre1,CREB +/-,-4,0
+5.7,F,Exercise,Wildtype,1205,Pre2,CREB +/+,-3,0
+7.2,M,Enriched,Heterozygous,1164,Pre2,CREB +/-,-3,0
+7.2,M,Enriched,Wildtype,1163,Pre2,CREB +/+,-3,0
+6.8,F,Exercise,Homozygous,1175,Pre2,CREB -/-,-3,0
+6.8,F,Isolated Standard,Wildtype,1173,Pre2,CREB +/+,-3,0
+5.8,M,Standard,Heterozygous,1186,Pre2,CREB +/-,-3,0
+5.7,F,Exercise,Wildtype,1205,1 week,CREB +/+,8,8
+5.7,F,Isolated Standard,Wildtype,1206,1 week,CREB +/+,8,8
+7.2,M,Enriched,Heterozygous,1164,1 week,CREB +/-,8,8
+7.2,M,Enriched,Wildtype,1163,1 week,CREB +/+,8,8
+6.8,F,Exercise,Homozygous,1175,1 week,CREB -/-,8,8
+6.8,F,Isolated Standard,Wildtype,1173,1 week,CREB +/+,8,8
+5.8,M,Standard,Heterozygous,1186,1 week,CREB +/-,8,8
+5.7,F,Exercise,Wildtype,1205,2 week,CREB +/+,16,16
+5.7,F,Isolated Standard,Wildtype,1206,2 week,CREB +/+,16,16
+7.2,M,Enriched,Wildtype,1163,2 week,CREB +/+,16,16
+6.8,F,Isolated Standard,Wildtype,1173,2 week,CREB +/+,16,16
+5.8,M,Standard,Heterozygous,1186,2 week,CREB +/-,16,16
+6.8,M,Enriched,Wildtype,1176,48h,CREB +/+,2,2
+7.2,M,Enriched,Homozygous,1165,48h,CREB -/-,2,2
+7.2,F,Exercise,Wildtype,1169,48h,CREB +/+,2,2
+5.5,M,Standard,Heterozygous,1232,48h,CREB +/-,2,2
+5.7,M,Standard,Homozygous,1200,48h,CREB -/-,2,2
+5.5,M,Standard,Wildtype,1233,48h,CREB +/+,2,2
+6.8,M,Enriched,Wildtype,1176,Pre1,CREB +/+,-4,0
+7.2,M,Enriched,Homozygous,1165,Pre1,CREB -/-,-4,0
+7.2,F,Exercise,Wildtype,1169,Pre1,CREB +/+,-4,0
+5.5,M,Standard,Heterozygous,1232,Pre1,CREB +/-,-4,0
+5.7,M,Standard,Homozygous,1200,Pre1,CREB -/-,-4,0
+5.5,M,Standard,Wildtype,1233,Pre1,CREB +/+,-4,0
+6.8,M,Enriched,Wildtype,1176,Pre2,CREB +/+,-3,0
+7.2,M,Enriched,Homozygous,1165,Pre2,CREB -/-,-3,0
+7.2,F,Exercise,Wildtype,1169,Pre2,CREB +/+,-3,0
+5.5,M,Standard,Heterozygous,1232,Pre2,CREB +/-,-3,0
+5.7,M,Standard,Homozygous,1200,Pre2,CREB -/-,-3,0
+5.5,M,Standard,Wildtype,1233,Pre2,CREB +/+,-3,0
+6.8,M,Enriched,Wildtype,1176,1 week,CREB +/+,8,8
+7.2,M,Enriched,Homozygous,1165,1 week,CREB -/-,8,8
+7.2,F,Exercise,Wildtype,1169,1 week,CREB +/+,8,8
+5.5,M,Standard,Heterozygous,1232,1 week,CREB +/-,8,8
+5.7,M,Standard,Homozygous,1200,1 week,CREB -/-,8,8
+5.5,M,Standard,Wildtype,1233,1 week,CREB +/+,8,8
+6.8,M,Enriched,Wildtype,1176,2 week,CREB +/+,16,16
+7.2,M,Enriched,Homozygous,1165,2 week,CREB -/-,16,16
+7.2,F,Exercise,Wildtype,1169,2 week,CREB +/+,16,16
+5.5,M,Standard,Heterozygous,1232,2 week,CREB +/-,16,16
+5.7,M,Standard,Homozygous,1200,2 week,CREB -/-,16,16
+5.5,M,Standard,Wildtype,1233,2 week,CREB +/+,16,16
+5.8,M,Isolated Standard,Wildtype,1185,48h,CREB +/+,2,2
+5.5,M,Enriched,Wildtype,1228,48h,CREB +/+,2,2
+5.5,M,Standard,Wildtype,1227,48h,CREB +/+,2,2
+5.7,M,Standard,Heterozygous,1208,48h,CREB +/-,2,2
+5.5,F,Exercise,Heterozygous,1222,48h,CREB +/-,2,2
+5.5,F,Exercise,Wildtype,1224,48h,CREB +/+,2,2
+5.8,M,Isolated Standard,Wildtype,1185,Pre1,CREB +/+,-4,0
+5.5,M,Enriched,Wildtype,1228,Pre1,CREB +/+,-4,0
+5.5,M,Standard,Wildtype,1227,Pre1,CREB +/+,-4,0
+5.7,M,Standard,Heterozygous,1208,Pre1,CREB +/-,-4,0
+5.5,F,Exercise,Heterozygous,1222,Pre1,CREB +/-,-4,0
+5.5,F,Exercise,Wildtype,1224,Pre1,CREB +/+,-4,0
+5.8,M,Isolated Standard,Wildtype,1185,1 week,CREB +/+,8,8
+5.5,M,Enriched,Wildtype,1228,1 week,CREB +/+,8,8
+5.5,M,Standard,Wildtype,1227,1 week,CREB +/+,8,8
+5.7,M,Standard,Heterozygous,1208,1 week,CREB +/-,8,8
+5.5,F,Exercise,Wildtype,1224,1 week,CREB +/+,8,8
+5.8,M,Isolated Standard,Wildtype,1185,2 week,CREB +/+,16,16
+5.5,M,Enriched,Wildtype,1228,2 week,CREB +/+,16,16
+5.5,M,Standard,Wildtype,1227,2 week,CREB +/+,16,16
+5.7,M,Standard,Heterozygous,1208,2 week,CREB +/-,16,16
+5.5,F,Exercise,Heterozygous,1222,2 week,CREB +/-,16,16
+5.5,F,Exercise,Wildtype,1224,2 week,CREB +/+,16,16
+5.5,F,Isolated Standard,Wildtype,1223,48h,CREB +/+,2,2
+5.7,M,Standard,Wildtype,1209,48h,CREB +/+,2,2
+5.5,M,Standard,Homozygous,1239,48h,CREB -/-,2,2
+5.5,F,Exercise,Homozygous,1225,48h,CREB -/-,2,2
+5.8,M,Exercise,Wildtype,1187,48h,CREB +/+,2,2
+5.5,M,Enriched,Homozygous,1229,48h,CREB -/-,2,2
+5.5,F,Isolated Standard,Wildtype,1223,Pre1,CREB +/+,-4,0
+5.7,M,Standard,Wildtype,1209,Pre1,CREB +/+,-4,0
+5.5,M,Standard,Homozygous,1239,Pre1,CREB -/-,-4,0
+5.5,F,Exercise,Homozygous,1225,Pre1,CREB -/-,-4,0
+5.8,M,Exercise,Wildtype,1187,Pre1,CREB +/+,-4,0
+5.5,M,Enriched,Homozygous,1229,Pre1,CREB -/-,-4,0
+5.5,F,Isolated Standard,Wildtype,1223,1 week,CREB +/+,8,8
+5.7,M,Standard,Wildtype,1209,1 week,CREB +/+,8,8
+5.5,M,Standard,Homozygous,1239,1 week,CREB -/-,8,8
+5.5,F,Exercise,Homozygous,1225,1 week,CREB -/-,8,8
+5.8,M,Exercise,Wildtype,1187,1 week,CREB +/+,8,8
+5.5,M,Enriched,Homozygous,1229,1 week,CREB -/-,8,8
+5.5,F,Isolated Standard,Wildtype,1223,2 week,CREB +/+,16,16
+5.7,M,Standard,Wildtype,1209,2 week,CREB +/+,16,16
+5.5,M,Standard,Homozygous,1239,2 week,CREB -/-,16,16
+5.5,F,Exercise,Homozygous,1225,2 week,CREB -/-,16,16
+5.8,M,Exercise,Wildtype,1187,2 week,CREB +/+,16,16
+5.5,M,Enriched,Homozygous,1229,2 week,CREB -/-,16,16
+3.8,M,Standard,Homozygous,1252,48h,CREB -/-,2,2
+3.7,M,Standard,Heterozygous,1262,48h,CREB +/-,2,2
+3.8,M,Enriched,Wildtype,1249,48h,CREB +/+,2,2
+3.7,M,Exercise,Wildtype,1267,48h,CREB +/+,2,2
+3.8,F,Exercise,Homozygous,1260,48h,CREB -/-,2,2
+3.8,F,Isolated Standard,Wildtype,1261,48h,CREB +/+,2,2
+3.8,M,Standard,Homozygous,1252,Pre1,CREB -/-,-4,0
+3.7,M,Standard,Heterozygous,1262,Pre1,CREB +/-,-4,0
+3.8,M,Enriched,Wildtype,1249,Pre1,CREB +/+,-4,0
+3.8,M,Enriched,Homozygous,1250,Pre1,CREB -/-,-4,0
+3.7,M,Exercise,Wildtype,1267,Pre1,CREB +/+,-4,0
+3.8,F,Exercise,Homozygous,1260,Pre1,CREB -/-,-4,0
+3.8,F,Isolated Standard,Wildtype,1261,Pre1,CREB +/+,-4,0
+3.8,M,Standard,Homozygous,1252,Pre2,CREB -/-,-3,0
+3.7,M,Standard,Heterozygous,1262,Pre2,CREB +/-,-3,0
+3.8,M,Enriched,Wildtype,1249,Pre2,CREB +/+,-3,0
+3.8,M,Enriched,Homozygous,1250,Pre2,CREB -/-,-3,0
+3.7,M,Exercise,Wildtype,1267,Pre2,CREB +/+,-3,0
+3.8,F,Exercise,Homozygous,1260,Pre2,CREB -/-,-3,0
+3.8,F,Isolated Standard,Wildtype,1261,Pre2,CREB +/+,-3,0
+3.8,M,Standard,Homozygous,1252,1 week,CREB -/-,8,8
+3.7,M,Standard,Heterozygous,1262,1 week,CREB +/-,8,8
+3.8,M,Enriched,Wildtype,1249,1 week,CREB +/+,8,8
+3.8,M,Enriched,Homozygous,1250,1 week,CREB -/-,8,8
+3.7,M,Exercise,Wildtype,1267,1 week,CREB +/+,8,8
+3.8,F,Exercise,Homozygous,1260,1 week,CREB -/-,8,8
+3.8,F,Isolated Standard,Wildtype,1261,1 week,CREB +/+,8,8
+3.8,M,Standard,Homozygous,1252,2 week,CREB -/-,16,16
+3.7,M,Standard,Heterozygous,1262,2 week,CREB +/-,16,16
+3.8,M,Enriched,Wildtype,1249,2 week,CREB +/+,16,16
+3.8,M,Enriched,Homozygous,1250,2 week,CREB -/-,16,16
+3.7,M,Exercise,Wildtype,1267,2 week,CREB +/+,16,16
+3.8,F,Exercise,Homozygous,1260,2 week,CREB -/-,16,16
+3.8,F,Isolated Standard,Wildtype,1261,2 week,CREB +/+,16,16
+3.8,F,Exercise,Homozygous,1258,48h,CREB -/-,2,2
+3.8,F,Isolated Standard,Wildtype,1259,48h,CREB +/+,2,2
+3.7,M,Standard,Homozygous,1263,48h,CREB -/-,2,2
+3.7,M,Standard,Wildtype,1265,48h,CREB +/+,2,2
+3.7,M,Isolated Standard,Wildtype,1266,48h,CREB +/+,2,2
+3.8,M,Enriched,Heterozygous,1251,48h,CREB +/-,2,2
+3.7,M,Enriched,Heterozygous,1264,48h,CREB +/-,2,2
+3.8,F,Exercise,Homozygous,1258,Pre1,CREB -/-,-4,0
+3.8,F,Isolated Standard,Wildtype,1259,Pre1,CREB +/+,-4,0
+3.7,M,Standard,Homozygous,1263,Pre1,CREB -/-,-4,0
+3.7,M,Standard,Wildtype,1265,Pre1,CREB +/+,-4,0
+3.7,M,Isolated Standard,Wildtype,1266,Pre1,CREB +/+,-4,0
+3.8,M,Enriched,Heterozygous,1251,Pre1,CREB +/-,-4,0
+3.7,M,Enriched,Heterozygous,1264,Pre1,CREB +/-,-4,0
+3.8,F,Exercise,Homozygous,1258,Pre2,CREB -/-,-3,0
+3.8,F,Isolated Standard,Wildtype,1259,Pre2,CREB +/+,-3,0
+3.7,M,Standard,Homozygous,1263,Pre2,CREB -/-,-3,0
+3.7,M,Standard,Wildtype,1265,Pre2,CREB +/+,-3,0
+3.7,M,Isolated Standard,Wildtype,1266,Pre2,CREB +/+,-3,0
+3.8,M,Enriched,Heterozygous,1251,Pre2,CREB +/-,-3,0
+3.7,M,Enriched,Heterozygous,1264,Pre2,CREB +/-,-3,0
+3.8,F,Exercise,Homozygous,1258,1 week,CREB -/-,8,8
+3.8,F,Isolated Standard,Wildtype,1259,1 week,CREB +/+,8,8
+3.7,M,Standard,Homozygous,1263,1 week,CREB -/-,8,8
+3.7,M,Standard,Wildtype,1265,1 week,CREB +/+,8,8
+3.7,M,Isolated Standard,Wildtype,1266,1 week,CREB +/+,8,8
+3.8,M,Enriched,Heterozygous,1251,1 week,CREB +/-,8,8
+3.7,M,Enriched,Heterozygous,1264,1 week,CREB +/-,8,8
+3.8,F,Exercise,Homozygous,1258,2 week,CREB -/-,16,16
+3.8,F,Isolated Standard,Wildtype,1259,2 week,CREB +/+,16,16
+3.7,M,Standard,Homozygous,1263,2 week,CREB -/-,16,16
+3.7,M,Standard,Wildtype,1265,2 week,CREB +/+,16,16
+3.7,M,Isolated Standard,Wildtype,1266,2 week,CREB +/+,16,16
+3.8,M,Enriched,Heterozygous,1251,2 week,CREB +/-,16,16
+3.7,M,Enriched,Heterozygous,1264,2 week,CREB +/-,16,16
+6.9,F,Exercise,Heterozygous,1295,48h,CREB +/-,2,2
+6.9,F,Isolated Standard,Heterozygous,1296,48h,CREB +/-,2,2
+6.9,M,Exercise,Homozygous,1290,48h,CREB -/-,2,2
+6.9,M,Isolated Standard,Heterozygous,1284,48h,CREB +/-,2,2
+7.1,F,Standard,Homozygous,1277,48h,CREB -/-,2,2
+6.9,F,Exercise,Heterozygous,1295,Pre1,CREB +/-,-4,0
+6.9,F,Isolated Standard,Heterozygous,1296,Pre1,CREB +/-,-4,0
+6.9,M,Exercise,Homozygous,1290,Pre1,CREB -/-,-4,0
+6.9,M,Isolated Standard,Heterozygous,1284,Pre1,CREB +/-,-4,0
+7.1,F,Standard,Homozygous,1277,Pre1,CREB -/-,-4,0
+6.9,F,Exercise,Heterozygous,1295,Pre2,CREB +/-,-3,0
+6.9,F,Isolated Standard,Heterozygous,1296,Pre2,CREB +/-,-3,0
+6.9,M,Exercise,Homozygous,1290,Pre2,CREB -/-,-3,0
+6.9,M,Isolated Standard,Heterozygous,1284,Pre2,CREB +/-,-3,0
+7.1,F,Standard,Homozygous,1277,Pre2,CREB -/-,-3,0
+6.9,F,Exercise,Heterozygous,1295,1 week,CREB +/-,8,8
+6.9,F,Isolated Standard,Heterozygous,1296,1 week,CREB +/-,8,8
+6.9,M,Exercise,Homozygous,1290,1 week,CREB -/-,8,8
+6.9,M,Isolated Standard,Heterozygous,1284,1 week,CREB +/-,8,8
+7.1,F,Standard,Homozygous,1277,1 week,CREB -/-,8,8
+6.9,F,Exercise,Heterozygous,1295,2 week,CREB +/-,16,16
+6.9,F,Isolated Standard,Heterozygous,1296,2 week,CREB +/-,16,16
+6.9,M,Exercise,Homozygous,1290,2 week,CREB -/-,16,16
+6.9,M,Isolated Standard,Heterozygous,1284,2 week,CREB +/-,16,16
+7.1,F,Standard,Homozygous,1277,2 week,CREB -/-,16,16
+6.9,M,Exercise,Wildtype,1291,48h,CREB +/+,2,2
+6.9,M,Exercise,Heterozygous,1292,48h,CREB +/-,2,2
+6.9,M,Isolated Standard,Wildtype,1282,48h,CREB +/+,2,2
+6.9,M,Isolated Standard,Heterozygous,1283,48h,CREB +/-,2,2
+7.1,F,Standard,Wildtype,1278,48h,CREB +/+,2,2
+6.9,F,Standard,Heterozygous,1293,48h,CREB +/-,2,2
+6.9,M,Exercise,Wildtype,1291,Pre1,CREB +/+,-4,0
+6.9,M,Exercise,Heterozygous,1292,Pre1,CREB +/-,-4,0
+6.9,M,Isolated Standard,Wildtype,1282,Pre1,CREB +/+,-4,0
+7.1,F,Standard,Wildtype,1278,Pre1,CREB +/+,-4,0
+6.9,F,Standard,Heterozygous,1293,Pre1,CREB +/-,-4,0
+6.9,M,Exercise,Wildtype,1291,Pre2,CREB +/+,-3,0
+6.9,M,Exercise,Heterozygous,1292,Pre2,CREB +/-,-3,0
+6.9,M,Isolated Standard,Wildtype,1282,Pre2,CREB +/+,-3,0
+6.9,M,Isolated Standard,Heterozygous,1283,Pre2,CREB +/-,-3,0
+7.1,F,Standard,Wildtype,1278,Pre2,CREB +/+,-3,0
+6.9,F,Standard,Heterozygous,1293,Pre2,CREB +/-,-3,0
+6.9,M,Exercise,Wildtype,1291,1 week,CREB +/+,8,8
+6.9,M,Exercise,Heterozygous,1292,1 week,CREB +/-,8,8
+6.9,M,Isolated Standard,Wildtype,1282,1 week,CREB +/+,8,8
+6.9,M,Isolated Standard,Heterozygous,1283,1 week,CREB +/-,8,8
+7.1,F,Standard,Wildtype,1278,1 week,CREB +/+,8,8
+6.9,F,Standard,Heterozygous,1293,1 week,CREB +/-,8,8
+6.9,M,Exercise,Wildtype,1291,2 week,CREB +/+,16,16
+6.9,M,Exercise,Heterozygous,1292,2 week,CREB +/-,16,16
+6.9,M,Isolated Standard,Wildtype,1282,2 week,CREB +/+,16,16
+6.9,M,Isolated Standard,Heterozygous,1283,2 week,CREB +/-,16,16
+7.1,F,Standard,Wildtype,1278,2 week,CREB +/+,16,16
+6.9,F,Standard,Heterozygous,1293,2 week,CREB +/-,16,16
+6.4,F,Exercise,Wildtype,1310,48h,CREB +/+,2,2
+6.4,F,Standard,Wildtype,1311,48h,CREB +/+,2,2
+6.5,F,Enriched,Heterozygous,1304,48h,CREB +/-,2,2
+6.5,F,Enriched,Wildtype,1305,48h,CREB +/+,2,2
+6.4,F,Isolated Standard,Wildtype,1309,48h,CREB +/+,2,2
+6.5,M,Exercise,Wildtype,1303,48h,CREB +/+,2,2
+6.5,M,Isolated Standard,Wildtype,1300,48h,CREB +/+,2,2
+6.4,F,Exercise,Wildtype,1310,Pre1,CREB +/+,-4,0
+6.4,F,Standard,Wildtype,1311,Pre1,CREB +/+,-4,0
+6.5,F,Enriched,Heterozygous,1304,Pre1,CREB +/-,-4,0
+6.5,F,Enriched,Wildtype,1305,Pre1,CREB +/+,-4,0
+6.4,F,Isolated Standard,Wildtype,1309,Pre1,CREB +/+,-4,0
+6.5,M,Exercise,Wildtype,1303,Pre1,CREB +/+,-4,0
+6.5,M,Isolated Standard,Wildtype,1300,Pre1,CREB +/+,-4,0
+6.4,F,Exercise,Wildtype,1310,Pre2,CREB +/+,-3,0
+6.4,F,Standard,Wildtype,1311,Pre2,CREB +/+,-3,0
+6.5,F,Enriched,Heterozygous,1304,Pre2,CREB +/-,-3,0
+6.5,F,Enriched,Wildtype,1305,Pre2,CREB +/+,-3,0
+6.4,F,Isolated Standard,Wildtype,1309,Pre2,CREB +/+,-3,0
+6.5,M,Exercise,Wildtype,1303,Pre2,CREB +/+,-3,0
+6.5,M,Isolated Standard,Wildtype,1300,Pre2,CREB +/+,-3,0
+6.4,F,Exercise,Wildtype,1310,1 week,CREB +/+,8,8
+6.4,F,Standard,Wildtype,1311,1 week,CREB +/+,8,8
+6.5,F,Enriched,Heterozygous,1304,1 week,CREB +/-,8,8
+6.5,F,Enriched,Wildtype,1305,1 week,CREB +/+,8,8
+6.4,F,Isolated Standard,Wildtype,1309,1 week,CREB +/+,8,8
+6.5,M,Exercise,Wildtype,1303,1 week,CREB +/+,8,8
+6.5,M,Isolated Standard,Wildtype,1300,1 week,CREB +/+,8,8
+6.4,F,Exercise,Wildtype,1310,2 week,CREB +/+,16,16
+6.4,F,Standard,Wildtype,1311,2 week,CREB +/+,16,16
+6.5,F,Enriched,Heterozygous,1304,2 week,CREB +/-,16,16
+6.5,F,Enriched,Wildtype,1305,2 week,CREB +/+,16,16
+6.4,F,Isolated Standard,Wildtype,1309,2 week,CREB +/+,16,16
+6.5,M,Exercise,Wildtype,1303,2 week,CREB +/+,16,16
+6.5,M,Isolated Standard,Wildtype,1300,2 week,CREB +/+,16,16
+6.4,F,Standard,Heterozygous,1312,48h,CREB +/-,2,2
+6.1,F,Standard,Homozygous,1316,48h,CREB -/-,2,2
+6.1,F,Enriched,Homozygous,1321,48h,CREB -/-,2,2
+6.5,M,Exercise,Homozygous,1301,48h,CREB -/-,2,2
+6.5,M,Isolated Standard,Homozygous,1298,48h,CREB -/-,2,2
+6.5,M,Isolated Standard,Heterozygous,1299,48h,CREB +/-,2,2
+6.4,F,Standard,Heterozygous,1312,Pre1,CREB +/-,-4,0
+6.1,F,Enriched,Homozygous,1321,Pre1,CREB -/-,-4,0
+6.5,M,Exercise,Homozygous,1301,Pre1,CREB -/-,-4,0
+6.5,M,Isolated Standard,Homozygous,1298,Pre1,CREB -/-,-4,0
+6.5,M,Isolated Standard,Heterozygous,1299,Pre1,CREB +/-,-4,0
+6.4,F,Standard,Heterozygous,1312,Pre2,CREB +/-,-3,0
+6.1,F,Standard,Homozygous,1316,Pre2,CREB -/-,-3,0
+6.1,F,Enriched,Homozygous,1321,Pre2,CREB -/-,-3,0
+6.5,M,Exercise,Homozygous,1301,Pre2,CREB -/-,-3,0
+6.5,M,Isolated Standard,Homozygous,1298,Pre2,CREB -/-,-3,0
+6.5,M,Isolated Standard,Heterozygous,1299,Pre2,CREB +/-,-3,0
+6.4,F,Standard,Heterozygous,1312,1 week,CREB +/-,8,8
+6.1,F,Standard,Homozygous,1316,1 week,CREB -/-,8,8
+6.1,F,Enriched,Homozygous,1321,1 week,CREB -/-,8,8
+6.5,M,Exercise,Homozygous,1301,1 week,CREB -/-,8,8
+6.5,M,Isolated Standard,Homozygous,1298,1 week,CREB -/-,8,8
+6.5,M,Isolated Standard,Heterozygous,1299,1 week,CREB +/-,8,8
+6.4,F,Standard,Heterozygous,1312,2 week,CREB +/-,16,16
+6.1,F,Standard,Homozygous,1316,2 week,CREB -/-,16,16
+6.1,F,Enriched,Homozygous,1321,2 week,CREB -/-,16,16
+6.5,M,Exercise,Homozygous,1301,2 week,CREB -/-,16,16
+6.5,M,Isolated Standard,Homozygous,1298,2 week,CREB -/-,16,16
+6.5,M,Isolated Standard,Heterozygous,1299,2 week,CREB +/-,16,16
+4.4,F,Enriched,Heterozygous,1349,48h,CREB +/-,2,2
+4.4,F,Enriched,Homozygous,1343,48h,CREB -/-,2,2
+4.4,M,Exercise,Heterozygous,1339,48h,CREB +/-,2,2
+4.5,F,Standard,Homozygous,1336,48h,CREB -/-,2,2
+4.4,F,Standard,Wildtype,1351,48h,CREB +/+,2,2
+4.5,M,Isolated Standard,Heterozygous,1333,48h,CREB +/-,2,2
+4.4,M,Isolated Standard,Heterozygous,1348,48h,CREB +/-,2,2
+4.4,F,Enriched,Heterozygous,1349,Pre1,CREB +/-,-4,0
+4.4,M,Exercise,Heterozygous,1339,Pre1,CREB +/-,-4,0
+4.5,F,Standard,Homozygous,1336,Pre1,CREB -/-,-4,0
+4.4,F,Standard,Wildtype,1351,Pre1,CREB +/+,-4,0
+4.5,M,Isolated Standard,Heterozygous,1333,Pre1,CREB +/-,-4,0
+4.4,M,Isolated Standard,Heterozygous,1348,Pre1,CREB +/-,-4,0
+4.4,F,Enriched,Heterozygous,1349,Pre2,CREB +/-,-3,0
+4.4,F,Enriched,Homozygous,1343,Pre2,CREB -/-,-3,0
+4.4,M,Exercise,Heterozygous,1339,Pre2,CREB +/-,-3,0
+4.4,F,Standard,Wildtype,1351,Pre2,CREB +/+,-3,0
+4.5,M,Isolated Standard,Heterozygous,1333,Pre2,CREB +/-,-3,0
+4.4,M,Isolated Standard,Heterozygous,1348,Pre2,CREB +/-,-3,0
+4.4,F,Enriched,Heterozygous,1349,1 week,CREB +/-,8,8
+4.4,F,Enriched,Homozygous,1343,1 week,CREB -/-,8,8
+4.4,M,Exercise,Heterozygous,1339,1 week,CREB +/-,8,8
+4.5,F,Standard,Homozygous,1336,1 week,CREB -/-,8,8
+4.4,F,Standard,Wildtype,1351,1 week,CREB +/+,8,8
+4.5,M,Isolated Standard,Heterozygous,1333,1 week,CREB +/-,8,8
+4.4,M,Isolated Standard,Heterozygous,1348,1 week,CREB +/-,8,8
+4.4,F,Enriched,Heterozygous,1349,2 week,CREB +/-,16,16
+4.4,F,Enriched,Homozygous,1343,2 week,CREB -/-,16,16
+4.4,M,Exercise,Heterozygous,1339,2 week,CREB +/-,16,16
+4.5,F,Standard,Homozygous,1336,2 week,CREB -/-,16,16
+4.4,F,Standard,Wildtype,1351,2 week,CREB +/+,16,16
+4.5,M,Isolated Standard,Heterozygous,1333,2 week,CREB +/-,16,16
+4.4,M,Isolated Standard,Heterozygous,1348,2 week,CREB +/-,16,16
+4.5,F,Enriched,Wildtype,1335,48h,CREB +/+,2,2
+4.5,F,Enriched,Homozygous,1337,48h,CREB -/-,2,2
+4.5,M,Exercise,Wildtype,1331,48h,CREB +/+,2,2
+4.5,M,Exercise,Heterozygous,1334,48h,CREB +/-,2,2
+4.4,F,Standard,Homozygous,1342,48h,CREB -/-,2,2
+4.1,F,Standard,Heterozygous,1358,48h,CREB +/-,2,2
+4.5,M,Isolated Standard,Wildtype,1330,48h,CREB +/+,2,2
+4.5,F,Enriched,Wildtype,1335,Pre1,CREB +/+,-4,0
+4.5,F,Enriched,Homozygous,1337,Pre1,CREB -/-,-4,0
+4.5,M,Exercise,Wildtype,1331,Pre1,CREB +/+,-4,0
+4.5,M,Exercise,Heterozygous,1334,Pre1,CREB +/-,-4,0
+4.4,F,Standard,Homozygous,1342,Pre1,CREB -/-,-4,0
+4.1,F,Standard,Heterozygous,1358,Pre1,CREB +/-,-4,0
+4.5,M,Isolated Standard,Wildtype,1330,Pre1,CREB +/+,-4,0
+4.5,F,Enriched,Wildtype,1335,Pre2,CREB +/+,-3,0
+4.5,F,Enriched,Homozygous,1337,Pre2,CREB -/-,-3,0
+4.5,M,Exercise,Wildtype,1331,Pre2,CREB +/+,-3,0
+4.5,M,Exercise,Heterozygous,1334,Pre2,CREB +/-,-3,0
+4.4,F,Standard,Homozygous,1342,Pre2,CREB -/-,-3,0
+4.1,F,Standard,Heterozygous,1358,Pre2,CREB +/-,-3,0
+4.5,M,Isolated Standard,Wildtype,1330,Pre2,CREB +/+,-3,0
+4.5,F,Enriched,Wildtype,1335,1 week,CREB +/+,8,8
+4.5,F,Enriched,Homozygous,1337,1 week,CREB -/-,8,8
+4.5,M,Exercise,Wildtype,1331,1 week,CREB +/+,8,8
+4.5,M,Exercise,Heterozygous,1334,1 week,CREB +/-,8,8
+4.4,F,Standard,Homozygous,1342,1 week,CREB -/-,8,8
+4.1,F,Standard,Heterozygous,1358,1 week,CREB +/-,8,8
+4.5,M,Isolated Standard,Wildtype,1330,1 week,CREB +/+,8,8
+4.5,F,Enriched,Wildtype,1335,2 week,CREB +/+,16,16
+4.5,F,Enriched,Homozygous,1337,2 week,CREB -/-,16,16
+4.5,M,Exercise,Wildtype,1331,2 week,CREB +/+,16,16
+4.5,M,Exercise,Heterozygous,1334,2 week,CREB +/-,16,16
+4.4,F,Standard,Homozygous,1342,2 week,CREB -/-,16,16
+4.1,F,Standard,Heterozygous,1358,2 week,CREB +/-,16,16
+4.5,M,Isolated Standard,Wildtype,1330,2 week,CREB +/+,16,16
+5.3,F,Isolated Standard,Homozygous,1368,48h,CREB -/-,2,2
+5.3,F,Exercise,Homozygous,1367,48h,CREB -/-,2,2
+4.1,F,Exercise,Homozygous,1355,48h,CREB -/-,2,2
+4.1,F,Exercise,Wildtype,1356,48h,CREB +/+,2,2
+4.4,M,Enriched,Homozygous,1346,48h,CREB -/-,2,2
+4.5,F,Isolated Standard,Wildtype,1338,48h,CREB +/+,2,2
+5.3,F,Isolated Standard,Homozygous,1368,Pre1,CREB -/-,-4,0
+4.1,F,Exercise,Homozygous,1355,Pre1,CREB -/-,-4,0
+4.1,F,Exercise,Wildtype,1356,Pre1,CREB +/+,-4,0
+4.4,M,Enriched,Homozygous,1346,Pre1,CREB -/-,-4,0
+4.5,F,Isolated Standard,Wildtype,1338,Pre1,CREB +/+,-4,0
+5.3,F,Isolated Standard,Homozygous,1368,Pre2,CREB -/-,-3,0
+5.3,F,Exercise,Homozygous,1367,Pre2,CREB -/-,-3,0
+4.1,F,Exercise,Wildtype,1356,Pre2,CREB +/+,-3,0
+4.4,M,Enriched,Homozygous,1346,Pre2,CREB -/-,-3,0
+4.5,F,Isolated Standard,Wildtype,1338,Pre2,CREB +/+,-3,0
+5.3,F,Isolated Standard,Homozygous,1368,1 week,CREB -/-,8,8
+5.3,F,Exercise,Homozygous,1367,1 week,CREB -/-,8,8
+4.1,F,Exercise,Homozygous,1355,1 week,CREB -/-,8,8
+4.1,F,Exercise,Wildtype,1356,1 week,CREB +/+,8,8
+4.4,M,Enriched,Homozygous,1346,1 week,CREB -/-,8,8
+4.5,F,Isolated Standard,Wildtype,1338,1 week,CREB +/+,8,8
+5.3,F,Isolated Standard,Homozygous,1368,2 week,CREB -/-,16,16
+5.3,F,Exercise,Homozygous,1367,2 week,CREB -/-,16,16
+4.1,F,Exercise,Homozygous,1355,2 week,CREB -/-,16,16
+4.1,F,Exercise,Wildtype,1356,2 week,CREB +/+,16,16
+4.4,M,Enriched,Homozygous,1346,2 week,CREB -/-,16,16
+4.5,F,Isolated Standard,Wildtype,1338,2 week,CREB +/+,16,16
+5.3,F,Exercise,Heterozygous,1363,48h,CREB +/-,2,2
+5.3,F,Isolated Standard,Heterozygous,1365,48h,CREB +/-,2,2
+4.1,F,Isolated Standard,Homozygous,1353,48h,CREB -/-,2,2
+4.1,F,Exercise,Homozygous,1354,48h,CREB -/-,2,2
+4.1,F,Exercise,Heterozygous,1357,48h,CREB +/-,2,2
+4.4,M,Enriched,Heterozygous,1347,48h,CREB +/-,2,2
+4.1,F,Isolated Standard,Heterozygous,1359,48h,CREB +/-,2,2
+5.3,F,Exercise,Heterozygous,1363,Pre1,CREB +/-,-4,0
+5.3,F,Isolated Standard,Heterozygous,1365,Pre1,CREB +/-,-4,0
+4.1,F,Isolated Standard,Homozygous,1353,Pre1,CREB -/-,-4,0
+4.1,F,Exercise,Homozygous,1354,Pre1,CREB -/-,-4,0
+4.1,F,Exercise,Heterozygous,1357,Pre1,CREB +/-,-4,0
+4.4,M,Enriched,Heterozygous,1347,Pre1,CREB +/-,-4,0
+4.1,F,Isolated Standard,Heterozygous,1359,Pre1,CREB +/-,-4,0
+5.3,F,Exercise,Heterozygous,1363,Pre2,CREB +/-,-3,0
+5.3,F,Isolated Standard,Heterozygous,1365,Pre2,CREB +/-,-3,0
+4.1,F,Isolated Standard,Homozygous,1353,Pre2,CREB -/-,-3,0
+4.1,F,Exercise,Homozygous,1354,Pre2,CREB -/-,-3,0
+4.1,F,Exercise,Heterozygous,1357,Pre2,CREB +/-,-3,0
+4.4,M,Enriched,Heterozygous,1347,Pre2,CREB +/-,-3,0
+4.1,F,Isolated Standard,Heterozygous,1359,Pre2,CREB +/-,-3,0
+5.3,F,Exercise,Heterozygous,1363,1 week,CREB +/-,8,8
+5.3,F,Isolated Standard,Heterozygous,1365,1 week,CREB +/-,8,8
+4.1,F,Isolated Standard,Homozygous,1353,1 week,CREB -/-,8,8
+4.1,F,Exercise,Homozygous,1354,1 week,CREB -/-,8,8
+4.1,F,Exercise,Heterozygous,1357,1 week,CREB +/-,8,8
+4.4,M,Enriched,Heterozygous,1347,1 week,CREB +/-,8,8
+4.1,F,Isolated Standard,Heterozygous,1359,1 week,CREB +/-,8,8
+5.3,F,Exercise,Heterozygous,1363,2 week,CREB +/-,16,16
+5.3,F,Isolated Standard,Heterozygous,1365,2 week,CREB +/-,16,16
+4.1,F,Isolated Standard,Homozygous,1353,2 week,CREB -/-,16,16
+4.1,F,Exercise,Homozygous,1354,2 week,CREB -/-,16,16
+4.1,F,Exercise,Heterozygous,1357,2 week,CREB +/-,16,16
+4.4,M,Enriched,Heterozygous,1347,2 week,CREB +/-,16,16
+4.1,F,Isolated Standard,Heterozygous,1359,2 week,CREB +/-,16,16
+5.3,M,Isolated Standard,Homozygous,1371,48h,CREB -/-,2,2
+5.1,M,Exercise,Homozygous,1377,48h,CREB -/-,2,2
+5.1,M,Isolated Standard,Homozygous,1376,48h,CREB -/-,2,2
+4.8,M,Exercise,Homozygous,1386,48h,CREB -/-,2,2
+4.8,M,Isolated Standard,Homozygous,1388,48h,CREB -/-,2,2
+5.3,M,Isolated Standard,Homozygous,1371,Pre1,CREB -/-,-4,0
+5.1,M,Exercise,Homozygous,1377,Pre1,CREB -/-,-4,0
+5.1,M,Isolated Standard,Homozygous,1376,Pre1,CREB -/-,-4,0
+4.8,M,Exercise,Homozygous,1386,Pre1,CREB -/-,-4,0
+4.8,M,Isolated Standard,Homozygous,1388,Pre1,CREB -/-,-4,0
+5.3,M,Isolated Standard,Homozygous,1371,Pre2,CREB -/-,-3,0
+5.1,M,Isolated Standard,Homozygous,1376,Pre2,CREB -/-,-3,0
+4.8,M,Exercise,Homozygous,1386,Pre2,CREB -/-,-3,0
+4.8,M,Isolated Standard,Homozygous,1388,Pre2,CREB -/-,-3,0
+5.3,M,Isolated Standard,Homozygous,1371,1 week,CREB -/-,8,8
+5.1,M,Exercise,Homozygous,1377,1 week,CREB -/-,8,8
+5.1,M,Isolated Standard,Homozygous,1376,1 week,CREB -/-,8,8
+4.8,M,Exercise,Homozygous,1386,1 week,CREB -/-,8,8
+4.8,M,Isolated Standard,Homozygous,1388,1 week,CREB -/-,8,8
+5.3,M,Isolated Standard,Homozygous,1371,2 week,CREB -/-,16,16
+5.1,M,Exercise,Homozygous,1377,2 week,CREB -/-,16,16
+5.1,M,Isolated Standard,Homozygous,1376,2 week,CREB -/-,16,16
+4.8,M,Exercise,Homozygous,1386,2 week,CREB -/-,16,16
+4.8,M,Isolated Standard,Homozygous,1388,2 week,CREB -/-,16,16
+5.1,M,Exercise,Wildtype,1375,48h,CREB +/+,2,2
+5.1,M,Isolated Standard,Wildtype,1378,48h,CREB +/+,2,2
+4.8,M,Exercise,Homozygous,1387,48h,CREB -/-,2,2
+4.8,F,Isolated Standard,Homozygous,1390,48h,CREB -/-,2,2
+4.8,F,Exercise,Heterozygous,1392,48h,CREB +/-,2,2
+4.6,F,Isolated Standard,Heterozygous,1397,48h,CREB +/-,2,2
+4.8,M,Isolated Standard,Homozygous,1384,48h,CREB -/-,2,2
+5.1,M,Exercise,Wildtype,1375,Pre1,CREB +/+,-4,0
+5.1,M,Isolated Standard,Wildtype,1378,Pre1,CREB +/+,-4,0
+4.8,M,Exercise,Homozygous,1387,Pre1,CREB -/-,-4,0
+4.8,F,Isolated Standard,Homozygous,1390,Pre1,CREB -/-,-4,0
+4.6,F,Isolated Standard,Heterozygous,1397,Pre1,CREB +/-,-4,0
+4.8,M,Isolated Standard,Homozygous,1384,Pre1,CREB -/-,-4,0
+5.1,M,Exercise,Wildtype,1375,Pre2,CREB +/+,-3,0
+5.1,M,Isolated Standard,Wildtype,1378,Pre2,CREB +/+,-3,0
+4.8,M,Exercise,Homozygous,1387,Pre2,CREB -/-,-3,0
+4.8,F,Isolated Standard,Homozygous,1390,Pre2,CREB -/-,-3,0
+4.8,F,Exercise,Heterozygous,1392,Pre2,CREB +/-,-3,0
+4.6,F,Isolated Standard,Heterozygous,1397,Pre2,CREB +/-,-3,0
+4.8,M,Isolated Standard,Homozygous,1384,Pre2,CREB -/-,-3,0
+5.1,M,Exercise,Wildtype,1375,1 week,CREB +/+,8,8
+5.1,M,Isolated Standard,Wildtype,1378,1 week,CREB +/+,8,8
+4.8,M,Exercise,Homozygous,1387,1 week,CREB -/-,8,8
+4.8,F,Isolated Standard,Homozygous,1390,1 week,CREB -/-,8,8
+4.8,F,Exercise,Heterozygous,1392,1 week,CREB +/-,8,8
+4.6,F,Isolated Standard,Heterozygous,1397,1 week,CREB +/-,8,8
+4.8,M,Isolated Standard,Homozygous,1384,1 week,CREB -/-,8,8
+5.1,M,Exercise,Wildtype,1375,2 week,CREB +/+,16,16
+5.1,M,Isolated Standard,Wildtype,1378,2 week,CREB +/+,16,16
+4.8,M,Exercise,Homozygous,1387,2 week,CREB -/-,16,16
+4.8,F,Isolated Standard,Homozygous,1390,2 week,CREB -/-,16,16
+4.8,F,Exercise,Heterozygous,1392,2 week,CREB +/-,16,16
+4.6,F,Isolated Standard,Heterozygous,1397,2 week,CREB +/-,16,16
+4.8,M,Isolated Standard,Homozygous,1384,2 week,CREB -/-,16,16
+3.1,F,Exercise,Wildtype,1409,48h,CREB +/+,2,2
+3.1,F,Isolated Standard,Wildtype,1410,48h,CREB +/+,2,2
+3.5,F,Exercise,Homozygous,1402,48h,CREB -/-,2,2
+3.5,F,Exercise,Wildtype,1403,48h,CREB +/+,2,2
+3.5,F,Isolated Standard,Heterozygous,1404,48h,CREB +/-,2,2
+3.5,F,Isolated Standard,Homozygous,1405,48h,CREB -/-,2,2
+3.5,F,Exercise,Heterozygous,1406,48h,CREB +/-,2,2
+3.1,F,Exercise,Wildtype,1409,Pre1,CREB +/+,-4,0
+3.1,F,Isolated Standard,Wildtype,1410,Pre1,CREB +/+,-4,0
+3.5,F,Exercise,Homozygous,1402,Pre1,CREB -/-,-4,0
+3.5,F,Exercise,Wildtype,1403,Pre1,CREB +/+,-4,0
+3.5,F,Isolated Standard,Heterozygous,1404,Pre1,CREB +/-,-4,0
+3.5,F,Isolated Standard,Homozygous,1405,Pre1,CREB -/-,-4,0
+3.5,F,Exercise,Heterozygous,1406,Pre1,CREB +/-,-4,0
+3.1,F,Exercise,Wildtype,1409,Pre2,CREB +/+,-3,0
+3.1,F,Isolated Standard,Wildtype,1410,Pre2,CREB +/+,-3,0
+3.5,F,Exercise,Homozygous,1402,Pre2,CREB -/-,-3,0
+3.5,F,Exercise,Wildtype,1403,Pre2,CREB +/+,-3,0
+3.5,F,Isolated Standard,Heterozygous,1404,Pre2,CREB +/-,-3,0
+3.5,F,Isolated Standard,Homozygous,1405,Pre2,CREB -/-,-3,0
+3.5,F,Exercise,Heterozygous,1406,Pre2,CREB +/-,-3,0
+3.1,F,Exercise,Wildtype,1409,1 week,CREB +/+,8,8
+3.1,F,Isolated Standard,Wildtype,1410,1 week,CREB +/+,8,8
+3.5,F,Exercise,Homozygous,1402,1 week,CREB -/-,8,8
+3.5,F,Exercise,Wildtype,1403,1 week,CREB +/+,8,8
+3.5,F,Isolated Standard,Heterozygous,1404,1 week,CREB +/-,8,8
+3.5,F,Isolated Standard,Homozygous,1405,1 week,CREB -/-,8,8
+3.5,F,Exercise,Heterozygous,1406,1 week,CREB +/-,8,8
+3.1,F,Exercise,Wildtype,1409,2 week,CREB +/+,16,16
+3.1,F,Isolated Standard,Wildtype,1410,2 week,CREB +/+,16,16
+3.5,F,Exercise,Homozygous,1402,2 week,CREB -/-,16,16
+3.5,F,Exercise,Wildtype,1403,2 week,CREB +/+,16,16
+3.5,F,Isolated Standard,Heterozygous,1404,2 week,CREB +/-,16,16
+3.5,F,Isolated Standard,Homozygous,1405,2 week,CREB -/-,16,16
+3.5,F,Exercise,Heterozygous,1406,2 week,CREB +/-,16,16
+3.1,F,Isolated Standard,Heterozygous,1411,48h,CREB +/-,2,2
+3.5,M,Exercise,Homozygous,1399,48h,CREB -/-,2,2
+3.5,M,Isolated Standard,Homozygous,1400,48h,CREB -/-,2,2
+3.5,M,Exercise,Heterozygous,1401,48h,CREB +/-,2,2
+3.1,M,Isolated Standard,Homozygous,1407,48h,CREB -/-,2,2
+3.1,M,Exercise,Wildtype,1408,48h,CREB +/+,2,2
+3.1,F,Isolated Standard,Heterozygous,1411,Pre1,CREB +/-,-4,0
+3.5,M,Exercise,Homozygous,1399,Pre1,CREB -/-,-4,0
+3.5,M,Isolated Standard,Homozygous,1400,Pre1,CREB -/-,-4,0
+3.5,M,Exercise,Heterozygous,1401,Pre1,CREB +/-,-4,0
+3.1,M,Isolated Standard,Homozygous,1407,Pre1,CREB -/-,-4,0
+3.1,M,Exercise,Wildtype,1408,Pre1,CREB +/+,-4,0
+3.1,F,Isolated Standard,Heterozygous,1411,Pre2,CREB +/-,-3,0
+3.5,M,Exercise,Homozygous,1399,Pre2,CREB -/-,-3,0
+3.5,M,Isolated Standard,Homozygous,1400,Pre2,CREB -/-,-3,0
+3.5,M,Exercise,Heterozygous,1401,Pre2,CREB +/-,-3,0
+3.1,M,Isolated Standard,Homozygous,1407,Pre2,CREB -/-,-3,0
+3.1,M,Exercise,Wildtype,1408,Pre2,CREB +/+,-3,0
+3.1,F,Isolated Standard,Heterozygous,1411,1 week,CREB +/-,8,8
+3.5,M,Exercise,Homozygous,1399,1 week,CREB -/-,8,8
+3.5,M,Isolated Standard,Homozygous,1400,1 week,CREB -/-,8,8
+3.5,M,Exercise,Heterozygous,1401,1 week,CREB +/-,8,8
+3.1,M,Isolated Standard,Homozygous,1407,1 week,CREB -/-,8,8
+3.1,M,Exercise,Wildtype,1408,1 week,CREB +/+,8,8
+3.1,F,Isolated Standard,Heterozygous,1411,2 week,CREB +/-,16,16
+3.5,M,Exercise,Homozygous,1399,2 week,CREB -/-,16,16
+3.5,M,Isolated Standard,Homozygous,1400,2 week,CREB -/-,16,16
+3.5,M,Exercise,Heterozygous,1401,2 week,CREB +/-,16,16
+3.1,M,Isolated Standard,Homozygous,1407,2 week,CREB -/-,16,16
+3.1,M,Exercise,Wildtype,1408,2 week,CREB +/+,16,16
+4.3,F,Isolated Standard,Homozygous,1436,48h,CREB -/-,2,2
+4.4,M,Exercise,Heterozygous,1429,48h,CREB +/-,2,2
+4.4,M,Isolated Standard,Wildtype,1430,48h,CREB +/+,2,2
+4.3,M,Isolated Standard,Wildtype,1434,48h,CREB +/+,2,2
+4.3,M,Exercise,Homozygous,1435,48h,CREB -/-,2,2
+4.7,F,Exercise,Heterozygous,1425,48h,CREB +/-,2,2
+4.7,F,Isolated Standard,Homozygous,1427,48h,CREB -/-,2,2
+4.3,F,Isolated Standard,Homozygous,1436,Pre1,CREB -/-,-4,0
+4.4,M,Exercise,Heterozygous,1429,Pre1,CREB +/-,-4,0
+4.4,M,Isolated Standard,Wildtype,1430,Pre1,CREB +/+,-4,0
+4.3,M,Isolated Standard,Wildtype,1434,Pre1,CREB +/+,-4,0
+4.3,M,Exercise,Homozygous,1435,Pre1,CREB -/-,-4,0
+4.7,F,Exercise,Heterozygous,1425,Pre1,CREB +/-,-4,0
+4.7,F,Isolated Standard,Homozygous,1427,Pre1,CREB -/-,-4,0
+4.3,F,Isolated Standard,Homozygous,1436,Pre2,CREB -/-,-3,0
+4.4,M,Exercise,Heterozygous,1429,Pre2,CREB +/-,-3,0
+4.4,M,Isolated Standard,Wildtype,1430,Pre2,CREB +/+,-3,0
+4.3,M,Isolated Standard,Wildtype,1434,Pre2,CREB +/+,-3,0
+4.3,M,Exercise,Homozygous,1435,Pre2,CREB -/-,-3,0
+4.7,F,Exercise,Heterozygous,1425,Pre2,CREB +/-,-3,0
+4.7,F,Isolated Standard,Homozygous,1427,Pre2,CREB -/-,-3,0
+4.3,F,Isolated Standard,Homozygous,1436,1 week,CREB -/-,8,8
+4.4,M,Exercise,Heterozygous,1429,1 week,CREB +/-,8,8
+4.4,M,Isolated Standard,Wildtype,1430,1 week,CREB +/+,8,8
+4.3,M,Isolated Standard,Wildtype,1434,1 week,CREB +/+,8,8
+4.3,M,Exercise,Homozygous,1435,1 week,CREB -/-,8,8
+4.7,F,Exercise,Heterozygous,1425,1 week,CREB +/-,8,8
+4.7,F,Isolated Standard,Homozygous,1427,1 week,CREB -/-,8,8
+4.3,F,Isolated Standard,Homozygous,1436,2 week,CREB -/-,16,16
+4.4,M,Exercise,Heterozygous,1429,2 week,CREB +/-,16,16
+4.4,M,Isolated Standard,Wildtype,1430,2 week,CREB +/+,16,16
+4.3,M,Isolated Standard,Wildtype,1434,2 week,CREB +/+,16,16
+4.3,M,Exercise,Homozygous,1435,2 week,CREB -/-,16,16
+4.7,F,Exercise,Heterozygous,1425,2 week,CREB +/-,16,16
+4.7,F,Isolated Standard,Homozygous,1427,2 week,CREB -/-,16,16
+7.7,M,Exercise,Homozygous,1460,48h,CREB -/-,2,2
+7.7,M,Exercise,Wildtype,1461,48h,CREB +/+,2,2
+7.7,M,Exercise,Heterozygous,1462,48h,CREB +/-,2,2
+7.5,M,Standard,Wildtype,1466,48h,CREB +/+,2,2
+7.5,M,Standard,Wildtype,1467,48h,CREB +/+,2,2
+7.5,M,Standard,Homozygous,1468,48h,CREB -/-,2,2
+7.5,M,Standard,Homozygous,1469,48h,CREB -/-,2,2
+7.7,M,Exercise,Homozygous,1460,Pre1,CREB -/-,-4,0
+7.7,M,Exercise,Wildtype,1461,Pre1,CREB +/+,-4,0
+7.7,M,Exercise,Heterozygous,1462,Pre1,CREB +/-,-4,0
+7.5,M,Standard,Wildtype,1466,Pre1,CREB +/+,-4,0
+7.5,M,Standard,Wildtype,1467,Pre1,CREB +/+,-4,0
+7.5,M,Standard,Homozygous,1468,Pre1,CREB -/-,-4,0
+7.5,M,Standard,Homozygous,1469,Pre1,CREB -/-,-4,0
+7.7,M,Exercise,Homozygous,1460,Pre2,CREB -/-,-3,0
+7.7,M,Exercise,Wildtype,1461,Pre2,CREB +/+,-3,0
+7.7,M,Exercise,Heterozygous,1462,Pre2,CREB +/-,-3,0
+7.5,M,Standard,Wildtype,1466,Pre2,CREB +/+,-3,0
+7.5,M,Standard,Wildtype,1467,Pre2,CREB +/+,-3,0
+7.5,M,Standard,Homozygous,1468,Pre2,CREB -/-,-3,0
+7.5,M,Standard,Homozygous,1469,Pre2,CREB -/-,-3,0
+7.7,M,Exercise,Homozygous,1460,1 week,CREB -/-,8,8
+7.7,M,Exercise,Wildtype,1461,1 week,CREB +/+,8,8
+7.7,M,Exercise,Heterozygous,1462,1 week,CREB +/-,8,8
+7.5,M,Standard,Wildtype,1466,1 week,CREB +/+,8,8
+7.5,M,Standard,Wildtype,1467,1 week,CREB +/+,8,8
+7.5,M,Standard,Homozygous,1468,1 week,CREB -/-,8,8
+7.5,M,Standard,Homozygous,1469,1 week,CREB -/-,8,8
+7.7,M,Exercise,Homozygous,1460,2 week,CREB -/-,16,16
+7.7,M,Exercise,Wildtype,1461,2 week,CREB +/+,16,16
+7.7,M,Exercise,Heterozygous,1462,2 week,CREB +/-,16,16
+7.5,M,Standard,Wildtype,1466,2 week,CREB +/+,16,16
+7.5,M,Standard,Wildtype,1467,2 week,CREB +/+,16,16
+7.5,M,Standard,Homozygous,1468,2 week,CREB -/-,16,16
+7.5,M,Standard,Homozygous,1469,2 week,CREB -/-,16,16
+5.2,M,Enriched,Homozygous,1479,48h,CREB -/-,2,2
+4.9,M,Enriched,Wildtype,1486,48h,CREB +/+,2,2
+4.5,M,Exercise,Wildtype,1504,48h,CREB +/+,2,2
+4.5,M,Standard,Wildtype,1505,48h,CREB +/+,2,2
+4.5,M,Standard,Heterozygous,1496,48h,CREB +/-,2,2
+4.5,M,Standard,Homozygous,1497,48h,CREB -/-,2,2
+5.2,M,Enriched,Homozygous,1479,Pre1,CREB -/-,-4,0
+4.9,M,Enriched,Wildtype,1486,Pre1,CREB +/+,-4,0
+4.5,M,Exercise,Wildtype,1504,Pre1,CREB +/+,-4,0
+4.5,M,Standard,Wildtype,1505,Pre1,CREB +/+,-4,0
+4.5,M,Standard,Heterozygous,1496,Pre1,CREB +/-,-4,0
+4.5,M,Standard,Homozygous,1497,Pre1,CREB -/-,-4,0
+5.2,M,Enriched,Homozygous,1479,Pre2,CREB -/-,-3,0
+4.9,M,Enriched,Wildtype,1486,Pre2,CREB +/+,-3,0
+4.5,M,Exercise,Wildtype,1504,Pre2,CREB +/+,-3,0
+4.5,M,Standard,Wildtype,1505,Pre2,CREB +/+,-3,0
+4.5,M,Standard,Heterozygous,1496,Pre2,CREB +/-,-3,0
+4.5,M,Standard,Homozygous,1497,Pre2,CREB -/-,-3,0
+5.2,M,Enriched,Homozygous,1479,1 week,CREB -/-,8,8
+4.9,M,Enriched,Wildtype,1486,1 week,CREB +/+,8,8
+4.5,M,Exercise,Wildtype,1504,1 week,CREB +/+,8,8
+4.5,M,Standard,Wildtype,1505,1 week,CREB +/+,8,8
+4.5,M,Standard,Heterozygous,1496,1 week,CREB +/-,8,8
+4.5,M,Standard,Homozygous,1497,1 week,CREB -/-,8,8
+5.2,M,Enriched,Homozygous,1479,2 week,CREB -/-,16,16
+4.9,M,Enriched,Wildtype,1486,2 week,CREB +/+,16,16
+4.5,M,Exercise,Wildtype,1504,2 week,CREB +/+,16,16
+4.5,M,Standard,Wildtype,1505,2 week,CREB +/+,16,16
+4.5,M,Standard,Heterozygous,1496,2 week,CREB +/-,16,16
+4.5,M,Standard,Homozygous,1497,2 week,CREB -/-,16,16
+3.5,M,Exercise,Homozygous,1525,48h,CREB -/-,2,2
+3.5,M,Exercise,Heterozygous,1526,48h,CREB +/-,2,2
+3.5,M,Enriched,Homozygous,1529,48h,CREB -/-,2,2
+3.5,M,Enriched,Heterozygous,1527,48h,CREB +/-,2,2
+3.5,M,Enriched,Wildtype,1530,48h,CREB +/+,2,2
+3.5,M,Exercise,Homozygous,1525,Pre1,CREB -/-,-4,0
+3.5,M,Exercise,Heterozygous,1526,Pre1,CREB +/-,-4,0
+3.5,M,Enriched,Homozygous,1529,Pre1,CREB -/-,-4,0
+3.5,M,Enriched,Heterozygous,1527,Pre1,CREB +/-,-4,0
+3.5,M,Enriched,Wildtype,1530,Pre1,CREB +/+,-4,0
+3.5,M,Exercise,Homozygous,1525,Pre2,CREB -/-,-3,0
+3.5,M,Exercise,Heterozygous,1526,Pre2,CREB +/-,-3,0
+3.5,M,Enriched,Homozygous,1529,Pre2,CREB -/-,-3,0
+3.5,M,Enriched,Heterozygous,1527,Pre2,CREB +/-,-3,0
+3.5,M,Enriched,Wildtype,1530,Pre2,CREB +/+,-3,0
+3.5,M,Exercise,Homozygous,1525,1 week,CREB -/-,8,8
+3.5,M,Exercise,Heterozygous,1526,1 week,CREB +/-,8,8
+3.5,M,Enriched,Homozygous,1529,1 week,CREB -/-,8,8
+3.5,M,Enriched,Heterozygous,1527,1 week,CREB +/-,8,8
+3.5,M,Enriched,Wildtype,1530,1 week,CREB +/+,8,8
+3.5,M,Enriched,Homozygous,1529,2 week,CREB -/-,16,16
+3.5,M,Enriched,Heterozygous,1527,2 week,CREB +/-,16,16
+3.5,M,Enriched,Wildtype,1530,2 week,CREB +/+,16,16
+3.5,M,Exercise,Homozygous,1525,2 week,CREB -/-,16,16
+3.5,M,Exercise,Heterozygous,1526,2 week,CREB +/-,16,16
+8.4,M,Enriched,Heterozygous,1540,48h,CREB +/-,2,2
+8.1,M,Enriched,Wildtype,1551,48h,CREB +/+,2,2
+8.1,M,Enriched,Heterozygous,1552,48h,CREB +/-,2,2
+8.4,M,Standard,Homozygous,1541,48h,CREB -/-,2,2
+8.4,M,Standard,Heterozygous,1542,48h,CREB +/-,2,2
+8.4,M,Enriched,Heterozygous,1540,Pre1,CREB +/-,-4,0
+8.1,M,Enriched,Wildtype,1551,Pre1,CREB +/+,-4,0
+8.1,M,Enriched,Heterozygous,1552,Pre1,CREB +/-,-4,0
+8.4,M,Standard,Homozygous,1541,Pre1,CREB -/-,-4,0
+8.4,M,Standard,Heterozygous,1542,Pre1,CREB +/-,-4,0
+8.4,M,Enriched,Heterozygous,1540,Pre2,CREB +/-,-3,0
+8.1,M,Enriched,Wildtype,1551,Pre2,CREB +/+,-3,0
+8.1,M,Enriched,Heterozygous,1552,Pre2,CREB +/-,-3,0
+8.4,M,Standard,Homozygous,1541,Pre2,CREB -/-,-3,0
+8.4,M,Standard,Heterozygous,1542,Pre2,CREB +/-,-3,0
+8.5,M,Exercise,Homozygous,1533,Pre2,CREB -/-,-3,0
+8.4,M,Enriched,Heterozygous,1540,1 week,CREB +/-,8,8
+8.4,M,Standard,Homozygous,1541,1 week,CREB -/-,8,8
+8.1,M,Enriched,Wildtype,1551,1 week,CREB +/+,8,8
+8.1,M,Enriched,Heterozygous,1552,1 week,CREB +/-,8,8
+8.4,M,Standard,Heterozygous,1542,1 week,CREB +/-,8,8
+8.5,M,Exercise,Homozygous,1533,1 week,CREB -/-,8,8
+8.4,M,Enriched,Heterozygous,1540,2 week,CREB +/-,16,16
+8.1,M,Enriched,Wildtype,1551,2 week,CREB +/+,16,16
+8.1,M,Enriched,Heterozygous,1552,2 week,CREB +/-,16,16
+8.4,M,Standard,Homozygous,1541,2 week,CREB -/-,16,16
+8.4,M,Standard,Heterozygous,1542,2 week,CREB +/-,16,16
+8.5,M,Exercise,Homozygous,1533,2 week,CREB -/-,16,16
+8.2,M,Enriched,Wildtype,1546,48h,CREB +/+,2,2
+8.2,M,Enriched,Heterozygous,1547,48h,CREB +/-,2,2
+8.5,M,Enriched,Homozygous,1535,48h,CREB -/-,2,2
+8.1,M,Standard,Heterozygous,1550,48h,CREB +/-,2,2
+7.8,M,Standard,Heterozygous,1558,48h,CREB +/-,2,2
+8.4,M,Exercise,Heterozygous,1539,48h,CREB +/-,2,2
+7.8,M,Exercise,Homozygous,1559,48h,CREB -/-,2,2
+8.2,M,Enriched,Wildtype,1546,Pre1,CREB +/+,-4,0
+8.2,M,Enriched,Heterozygous,1547,Pre1,CREB +/-,-4,0
+8.5,M,Enriched,Homozygous,1535,Pre1,CREB -/-,-4,0
+8.1,M,Standard,Heterozygous,1550,Pre1,CREB +/-,-4,0
+7.8,M,Standard,Heterozygous,1558,Pre1,CREB +/-,-4,0
+8.4,M,Exercise,Heterozygous,1539,Pre1,CREB +/-,-4,0
+7.8,M,Exercise,Homozygous,1559,Pre1,CREB -/-,-4,0
+8.2,M,Enriched,Heterozygous,1547,Pre2,CREB +/-,-3,0
+8.5,M,Enriched,Homozygous,1535,Pre2,CREB -/-,-3,0
+8.1,M,Standard,Heterozygous,1550,Pre2,CREB +/-,-3,0
+7.8,M,Standard,Heterozygous,1558,Pre2,CREB +/-,-3,0
+8.4,M,Exercise,Heterozygous,1539,Pre2,CREB +/-,-3,0
+7.8,M,Exercise,Homozygous,1559,Pre2,CREB -/-,-3,0
+8.2,M,Enriched,Heterozygous,1547,1 week,CREB +/-,8,8
+8.5,M,Enriched,Homozygous,1535,1 week,CREB -/-,8,8
+8.1,M,Standard,Heterozygous,1550,1 week,CREB +/-,8,8
+7.8,M,Standard,Heterozygous,1558,1 week,CREB +/-,8,8
+8.4,M,Exercise,Heterozygous,1539,1 week,CREB +/-,8,8
+7.8,M,Exercise,Homozygous,1559,1 week,CREB -/-,8,8
+8.2,M,Enriched,Wildtype,1546,2 week,CREB +/+,16,16
+8.2,M,Enriched,Heterozygous,1547,2 week,CREB +/-,16,16
+8.5,M,Enriched,Homozygous,1535,2 week,CREB -/-,16,16
+8.1,M,Standard,Heterozygous,1550,2 week,CREB +/-,16,16
+7.8,M,Standard,Heterozygous,1558,2 week,CREB +/-,16,16
+8.4,M,Exercise,Heterozygous,1539,2 week,CREB +/-,16,16
+7.8,M,Exercise,Homozygous,1559,2 week,CREB -/-,16,16
+7.4,M,Standard,Homozygous,1567,48h,CREB -/-,2,2
+7.4,M,Exercise,Wildtype,1568,48h,CREB +/+,2,2
+7.4,M,Standard,Heterozygous,1572,48h,CREB +/-,2,2
+7.4,M,Enriched,Wildtype,1569,48h,CREB +/+,2,2
+7.4,M,Enriched,Heterozygous,1581,48h,CREB +/-,2,2
+7.4,M,Enriched,Heterozygous,1573,48h,CREB +/-,2,2
+7.4,M,Enriched,Homozygous,1575,48h,CREB -/-,2,2
+7.4,M,Standard,Homozygous,1567,Pre1,CREB -/-,-4,0
+7.4,M,Exercise,Wildtype,1568,Pre1,CREB +/+,-4,0
+7.4,M,Standard,Heterozygous,1572,Pre1,CREB +/-,-4,0
+7.4,M,Enriched,Wildtype,1569,Pre1,CREB +/+,-4,0
+7.4,M,Enriched,Heterozygous,1581,Pre1,CREB +/-,-4,0
+7.4,M,Enriched,Heterozygous,1573,Pre1,CREB +/-,-4,0
+7.4,M,Enriched,Homozygous,1575,Pre1,CREB -/-,-4,0
+7.4,M,Standard,Homozygous,1567,Pre2,CREB -/-,-3,0
+7.4,M,Exercise,Wildtype,1568,Pre2,CREB +/+,-3,0
+7.4,M,Standard,Heterozygous,1572,Pre2,CREB +/-,-3,0
+7.4,M,Enriched,Wildtype,1569,Pre2,CREB +/+,-3,0
+7.4,M,Enriched,Heterozygous,1581,Pre2,CREB +/-,-3,0
+7.4,M,Enriched,Heterozygous,1573,Pre2,CREB +/-,-3,0
+7.4,M,Enriched,Homozygous,1575,Pre2,CREB -/-,-3,0
+7.4,M,Standard,Homozygous,1567,1 week,CREB -/-,8,8
+7.4,M,Exercise,Wildtype,1568,1 week,CREB +/+,8,8
+7.4,M,Standard,Heterozygous,1572,1 week,CREB +/-,8,8
+7.4,M,Enriched,Wildtype,1569,1 week,CREB +/+,8,8
+7.4,M,Enriched,Heterozygous,1581,1 week,CREB +/-,8,8
+7.4,M,Enriched,Heterozygous,1573,1 week,CREB +/-,8,8
+7.4,M,Enriched,Homozygous,1575,1 week,CREB -/-,8,8
+7.4,M,Standard,Homozygous,1567,2 week,CREB -/-,16,16
+7.4,M,Exercise,Wildtype,1568,2 week,CREB +/+,16,16
+7.4,M,Standard,Heterozygous,1572,2 week,CREB +/-,16,16
+7.4,M,Enriched,Wildtype,1569,2 week,CREB +/+,16,16
+7.4,M,Enriched,Heterozygous,1581,2 week,CREB +/-,16,16
+7.4,M,Enriched,Heterozygous,1573,2 week,CREB +/-,16,16
+7.4,M,Enriched,Homozygous,1575,2 week,CREB -/-,16,16
+7.7,M,Standard,Heterozygous,1590,48h,CREB +/-,2,2
+7.1,M,Exercise,Heterozygous,1602,48h,CREB +/-,2,2
+7.1,M,Standard,Wildtype,1603,48h,CREB +/+,2,2
+7.1,M,Exercise,Homozygous,1604,48h,CREB -/-,2,2
+7.7,M,Exercise,Heterozygous,1593,48h,CREB +/-,2,2
+7.7,M,Enriched,Homozygous,1587,48h,CREB -/-,2,2
+7.7,M,Exercise,Wildtype,1588,48h,CREB +/+,2,2
+7.7,M,Standard,Heterozygous,1590,Pre1,CREB +/-,-4,0
+7.1,M,Exercise,Heterozygous,1602,Pre1,CREB +/-,-4,0
+7.1,M,Standard,Wildtype,1603,Pre1,CREB +/+,-4,0
+7.1,M,Exercise,Homozygous,1604,Pre1,CREB -/-,-4,0
+7.7,M,Exercise,Heterozygous,1593,Pre1,CREB +/-,-4,0
+7.7,M,Enriched,Homozygous,1587,Pre1,CREB -/-,-4,0
+7.7,M,Exercise,Wildtype,1588,Pre1,CREB +/+,-4,0
+7.1,M,Standard,Wildtype,1603,Pre2,CREB +/+,-3,0
+7.7,M,Enriched,Homozygous,1587,Pre2,CREB -/-,-3,0
+7.7,M,Standard,Heterozygous,1590,1 week,CREB +/-,8,8
+7.1,M,Exercise,Heterozygous,1602,1 week,CREB +/-,8,8
+7.1,M,Standard,Wildtype,1603,1 week,CREB +/+,8,8
+7.1,M,Exercise,Homozygous,1604,1 week,CREB -/-,8,8
+7.7,M,Exercise,Heterozygous,1593,1 week,CREB +/-,8,8
+7.7,M,Enriched,Homozygous,1587,1 week,CREB -/-,8,8
+7.7,M,Exercise,Wildtype,1588,1 week,CREB +/+,8,8
+7.7,M,Standard,Heterozygous,1590,2 week,CREB +/-,16,16
+7.1,M,Exercise,Heterozygous,1602,2 week,CREB +/-,16,16
+7.1,M,Standard,Wildtype,1603,2 week,CREB +/+,16,16
+7.1,M,Exercise,Homozygous,1604,2 week,CREB -/-,16,16
+7.7,M,Exercise,Heterozygous,1593,2 week,CREB +/-,16,16
+7.7,M,Enriched,Homozygous,1587,2 week,CREB -/-,16,16
+7.7,M,Exercise,Wildtype,1588,2 week,CREB +/+,16,16
