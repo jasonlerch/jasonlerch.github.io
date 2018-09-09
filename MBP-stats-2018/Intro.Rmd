@@ -1,0 +1,1045 @@
+---
+title: "MBP intro to statistics bootcamp"
+subtitle: "Day 1"
+author: "Jason Lerch"
+date: "2018/09/10"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+<style>
+.small {
+  font-size: 65%;
+}
+
+.medium {
+  font-size: 80%;
+}
+
+.smallcode { 
+
+}
+.smallcode .remark-code {
+  font-size: 50%
+}
+
+</style>
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Hello World
+
+The three challenges of statistical inference are<sup>1</sup>:
+
+.footnote[
+[1] From Andrew Gelman
+]
+
+--
+
+1. Generalizing from sample to population
+
+--
+
+2. Generalizing from control to treatment group
+
+--
+
+3. Generalizing from observed measurements to underlying constructs of interest
+
+---
+
+# Three laws of statistics
+
+.pull-left[
+
+Arthur C. Clarke's three laws<sup>1</sup>:
+
+1.  When a distinguished but elderly scientist states that something is possible, he is almost certainly right. When he states that something is impossible, he is very probably wrong.
+ 
+1. The only way of discovering the limits of the possible is to venture a little way past them into the impossible.
+
+1. Any sufficiently advanced technology is indistinguishable from magic.
+]
+
+--
+
+.pull-right[
+
+Andrew Gelman's updates<sup>2</sup>:
+
+1. When a distinguished but elderly scientist states that “You have no choice but to accept that the major conclusions of these studies are true,” don’t believe him.
+
+2. The only way of discovering the limits of the reasonable is to venture a little way past them into the unreasonable.
+
+3. Any sufficiently crappy research is indistinguishable from fraud.
+]
+
+--
+
+.small[
+[1] https://en.wikipedia.org/wiki/Clarke%27s_three_laws
+
+[2] http://andrewgelman.com/2016/06/20/clarkes-law-of-research/
+]
+
+---
+
+# The MBP statistics bootcamp
+
+Goals of this week:
+
+1. Teach the theory and practice of statistics
+
+1. Applied data analysis problem solving using R
+
+1. Think hard about truth and replicability in science
+
+--
+
+```{r, echo=F}
+suppressMessages({
+  library(huxtable)
+  library(tidyverse)
+})
+
+ht <- tribble_hux(
+  ~ Hour, ~ Monday, ~ Tuesday, ~ Wednesday, ~ Thursday, ~ Friday,
+  "9-12", NA, NA, NA, NA, NA,
+  "12-1", NA, NA, NA, NA, NA,
+  "1-3",  NA, NA, NA, NA, NA,
+  "3-4",  NA, NA, NA, NA, NA,
+  add_colnames = TRUE
+) %>%
+  set_left_padding(10) %>%
+  set_right_padding(10)
+
+bottom_border(ht)[1,] <- 1
+right_border(ht)[,1] <- 1
+
+ht[2,2] <- "Introduction, R, visualization, data munging"
+ht[4,2] <- "Group assignment #1"
+rowspan(ht)[2, 2] <- 2
+
+ht[2,3] <- "Linear models, testing proportions, hypothesis tests"
+ht[4,3] <- "Group assignment #2"
+rowspan(ht)[2,3] <- 2
+
+ht[4,4] <- "Machine learning, Bayesian statistics"
+rowspan(ht)[4,4] <- 2
+
+ht[4,5] <- "Truth and replicabity. Group assignment #3"
+rowspan(ht)[4,5] <- 2
+
+ht[2,6] <- "Presentations, exam"
+
+wrap(ht) <- TRUE
+
+escape_contents(ht) <- FALSE
+
+theme_basic(ht)
+```
+
+---
+
+# Grading
+
+Exams (concepts only, no R):
+
+```{r, echo=F}
+
+ht <- tribble_hux(
+  ~ "What", ~ "When", ~ "How much",
+  "Short exam", "Tuesday", "5%",
+  "Short exam", "Wednesday", "5%",
+  "Short exam", "Thursday", "5%",
+  "Final exam", "Friday", "35%",
+  add_colnames = TRUE)
+
+theme_basic(ht)
+
+
+```
+
+Group assignments and presentations (R analyses and concepts):
+
+```{r, echo=F}
+ht <- tribble_hux(
+  ~ "What", ~ "Due when", ~ "How much",
+  "Group assignment #1", "Tuesday", "10%",
+  "Group assignment #2", "Wednesday", "10%",
+  "Group assignment #3", "Friday", "10%",
+  "Final presentation", "Friday", "20%",
+  add_colnames = TRUE)
+
+theme_basic(ht)
+
+
+```
+
+---
+
+# Exams
+
+* true/false, multiple choice, and short paragraphs.
+
+* each class begins with ~ 10 minute, short exam covering previous day.
+
+* final exam 30-60 minutes.
+
+--
+
+.pull-left[
+Sample questions:
+
+
+
+_Describe the null hypothesis_
+
+_Identify elements of a box and whiskers plot (on a drawing)_
+
+_Discuss analysis pre-registration advantages and disadvantages_
+
+_TRUE/FALSE: if you compute a 95% confidence interval, you have a 95% chance of it containing the true value_
+]
+
+.pull-right[
+
+```{r, echo=FALSE}
+
+ggplot(data.frame(sample=rnorm(10000))) + 
+  aes(y=sample) + 
+  geom_boxplot() + 
+  xlab("") + 
+  ylab("") +
+  scale_x_continuous(breaks = NULL) + 
+  scale_y_continuous(breaks = NULL) +
+  theme_classic()
+
+```
+
+
+]
+
+
+---
+
+# Group assignments
+
+* split into small groups of 3-4.
+
+* we will assign groups.
+
+* will try to mix groups by R and programming expertise.
+
+* each group will be graded as a unit.
+
+* final presentation given by a member of the group with least R/programming expertise.
+
+---
+
+class: inverse, center, middle
+
+# Let's get started
+
+---
+
+# Statistical software
+
+.pull-left[
+
+Common software
+
+1. Excel
+
+1. SPSS
+
+1. SAS
+
+1. matlab
+
+1. python
+
+1. R
+]
+
+--
+
+.pull-right[
+
+Ups and downs of R
+
+1. Open source, free, and powerful.
+
+1. If a statistical test exists, it likely exists in R.
+
+1. Literate programming/self documenting analyses.
+
+1. Very strong in bioinformatics.
+
+1. Steeper learning curve.
+]
+
+---
+
+class: middle, center, inverse
+
+# Intro to R
+
+### Over to Mehran
+
+---
+
+class: inverse, middle, center
+
+# Reading and summarizing our data
+
+---
+
+# Intro to our dataset
+
+.pull-left[
+
+How do our brains change as we learn or undergo new experiences?
+
+Earliest evidence that our brains are _plastic_ at larger, or _mesoscopic_, scales came from a study of taxi drivers in London, UK.
+
+Mechanism of how that happens is unclear.
+
+]
+
+.pull-right[
+
+<img src="images/taxi.png" width="50%">
+
+]
+
+---
+
+# Mouse models
+
+.pull-left[
+
+We can create taxi driving mice.
+
+Use high-field MRI to get similar readout as in humans.
+
+Use genetic models to test hypotheses of implicated pathways.
+
+Use RNA sequencing to assess what changes per genotype or experimental group.
+
+<img src="images/taximouse.png">
+
+]
+
+.pull-right[
+
+<img src="images/mouseMRI.png" width="70%">
+
+]
+
+---
+
+# The dataset
+
+```{r, include=FALSE}
+#mice <- readRDS("mice.Rds")
+mice <- read.csv("mice.csv")
+volumes <- read.csv("volumes.csv", check.names = F)
+
+mice <- mice %>% inner_join(volumes)
+```
+
+--
+
+There are `r length(unique(mice$ID))` mice in this dataset, with MRI scans acquired at `r length(unique(mice$Timepoint))` timepoints.
+
+--
+
+We have 3 genotypes: `r levels(mice$Genotype)`
+
+--
+
+There are 4 environmental conditions: `r levels(mice$Condition)`
+
+--
+
+MRIs were acquired at every timepoint, and the brains automatically segmented into `r ncol(mice$vols_combined)` regions.
+
+--
+
+There are good reasons to believe that the hippocampus and the dentate gyrus of the hippocampus will be the most affected by the environmental interventions.
+
+--
+
+The effect of the three genotypes alone is interesting.
+
+--
+
+A separate cohort of mice was used for the RNA-seq experiment (but we'll get to that later in the course).
+
+---
+
+# Enrichment
+
+<video src="images/enrichment.mov" controls loop>
+
+
+
+---
+
+# Reading data
+
+A surprising amount of time in data analysis is spent in prepping data for visualization and analysis.
+
+```{r}
+library(tidyverse)
+library(forcats)
+
+mice <- read_csv("mice.csv")
+
+```
+
+---
+# Meet the mice
+
+```{r}
+str(mice, give.attr=FALSE)
+```
+
+---
+
+# Numeric variable: age
+
+```{r}
+mice %>%
+  summarise(mean=mean(Age),
+            min=min(Age),
+            max=max(Age))
+```
+
+---
+
+# Intro to pipes?
+
+---
+
+# Factors: Sex, Condition, Genotype
+
+.pull-left[
+
+```{r}
+mice %>%
+  group_by(Sex) %>%
+  summarise(n=n())
+```
+]
+
+
+.pull-right[
+```{r}
+mice %>% 
+  group_by(Genotype) %>% 
+  summarize(n=n())
+```
+]
+---
+
+# Subject descriptors: ID and Timepoint
+
+```{r}
+mice %>%
+  select(ID, Timepoint) %>%
+  head
+```
+
+---
+
+# Alternate encodings: Genotype
+
+```{r}
+mice %>%
+  select(Genotype, Mouse.Genotyping) %>%
+  head
+```
+
+---
+
+# Alternate encodings: Days of EE, DaysofEE0
+
+```{r}
+mice %>%
+  filter(ID == 901) %>%
+  select(Timepoint, DaysOfEE, DaysOfEE0) %>%
+  head
+```
+
+---
+
+# Overview of subject numbers
+
+```{r}
+with(mice,
+     ftable(Condition, Genotype, Timepoint))
+```
+
+---
+
+# Factors, revisited
+
+The Timepoint order makes no sense. Let's reorder
+
+```{r}
+mice <- mice %>%
+  mutate(Timepoint=fct_relevel(Timepoint, "Pre1", "Pre2", "24h", 
+                               "48h", "1 week", "2 week"))
+with(mice, ftable(Condition, Genotype, Timepoint))
+```
+
+---
+
+# Redo in tidyverse
+
+```{r}
+mice %>% 
+  group_by(Condition, Genotype, Timepoint) %>% 
+  summarise(n=n()) %>% spread(Timepoint, value=n)
+```
+
+
+---
+
+# Reading more data
+
+
+```{r}
+volumes <- read_csv("volumes.csv")
+```
+
+---
+
+# Inspecting the new data
+
+```{r}
+str(volumes)
+```
+
+
+---
+
+# Linking data
+
+.pull-left[
+
+```{r}
+volumes %>%
+  select(ID, Timepoint) %>%
+  head
+```
+
+]
+
+.pull-right[
+
+```{r}
+mice %>%
+  select(ID, Timepoint) %>%
+  head
+```
+
+
+]
+---
+
+# Joining data
+
+```{r}
+
+mice <- mice %>% 
+  inner_join(volumes) 
+
+str(mice)
+```
+
+
+---
+
+class: inverse, middle, center
+
+# Data visualization
+
+---
+
+# Data visualization
+
+Data visualization communicates your data to your audience - and can be how your data communicates with you.
+
+--
+
+Excellent guide to visualization:
+
+https://www.data-to-viz.com
+
+--
+
+Your task for later will be to look at the interesting variables in this dataset. For now, we will look at sex and the brain instead.
+
+---
+
+# Histogram
+
+```{r, fig.height=5, fig.width=12}
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram() 
+```
+
+---
+
+# Make it prettier
+
+```{r, fig.height=4.5, fig.width=12}
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram() +
+  xlab(bquote(Volume ~ (mm^3))) + #<<
+  ggtitle("Bed nucleus of stria terminalis") +  #<<
+  theme_gray(16) #<<
+```
+
+---
+
+# Histogram bins
+
+```{r, fig.height=5, fig.width=12}
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram(binwidth = 0.01) + #<<
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16) 
+```
+
+---
+
+# Facets
+
+```{r facets, fig.height=5, fig.width=12}
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram(binwidth = 0.01) +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16) +
+  facet_grid(Sex ~ .) #<<
+```
+
+---
+
+# Colours
+
+```{r colours, fig.height=5, fig.width=12}
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`, fill=Sex) + #<<
+  geom_histogram(binwidth = 0.01) +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16)
+```
+
+---
+
+
+![](`r knitr::fig_chunk("facets", "png")`)
+
+![](`r knitr::fig_chunk("colours", "png")`)
+
+---
+
+# Points
+
+
+```{r, fig.height=5, fig.width=12}
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_point() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16) 
+```
+
+???
+
+* Point out changed aes
+* Point out subtitle
+
+---
+
+# Points
+
+That's not very useful - too many points to see separation.
+
+```{r, fig.height=4, fig.width=12}
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_jitter() + #<<
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+# Boxplot
+
+Good view of data distribution
+
+```{r, fig.height=4.5, fig.width=12}
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_boxplot() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+![](images/boxplot.png)
+
+---
+
+# Ridge lines
+
+```{r, fig.height=4.3, fig.width=12}
+suppressMessages(library(ggridges))
+ggplot(mice) + 
+  aes(y=Sex, x=`bed nucleus of stria terminalis`) +
+  geom_density_ridges() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+
+---
+
+# Violins
+
+```{r, fig.height=4.5, fig.width=12}
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_violin() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+
+---
+class: smallcode
+
+# Combining plot types
+
+<!-- Code is cut off in rendered slide -->
+
+
+.pull-left[
+```{r c1, fig.show='hide'}
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`
+      ) +
+  geom_boxplot() +
+  geom_jitter(width=0.2, 
+              alpha=0.2) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(
+    Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+]
+
+.pull-right[
+
+![](`r knitr::fig_chunk("c1", "png")`)
+
+]
+
+---
+
+# Adding colour
+
+```{r c2, fig.show='hide', fig.width=12}
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot() +
+  geom_jitter(width=0.2, 
+              alpha=0.2) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(
+    Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+# Adding colour
+
+
+![](`r knitr::fig_chunk("c2", "png")`)
+
+---
+
+# Using colour for additional information
+
+```{r c3, fig.width=12, fig.show='hide'}
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+# Using colour for additional information
+
+![](`r knitr::fig_chunk("c3", "png")`)
+
+---
+
+# Using colour for additional information
+
+```{r c4, fig.width=12, fig.show='hide'}
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  scale_colour_viridis_d(option="C", end=0.8) + 
+  theme_classic(16)
+```
+
+---
+
+# Using colour for additional information
+
+![](`r knitr::fig_chunk("c4", "png")`)
+
+---
+
+# Factor order, again
+
+Apparently the factor ordering was lost in data joining?
+
+```{r c5, fig.width=12, fig.show='hide'}
+mice <- mice %>%
+  mutate(Timepoint=fct_relevel(Timepoint, "Pre1", "Pre2", "24h", 
+                               "48h", "1 week", "2 week"))
+
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  scale_colour_viridis_d(option="C", end=0.8) +
+  theme_classic(16)
+```
+
+---
+
+# Factor ordering, again
+
+![](`r knitr::fig_chunk("c5", "png")`)
+
+---
+
+# Better encoding of time
+
+```{r t1, fig.width=12, fig.show='hide'}
+
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+  theme_classic(16)
+
+```
+
+
+---
+
+# Better encoding of time
+
+![](`r knitr::fig_chunk("t1", "png")`)
+
+---
+
+# Combining colours and facets
+
+```{r t2, fig.width=12, fig.show='hide'}
+
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+  facet_grid(Genotype ~ .) + #<<
+  theme_classic(16)
+
+```
+
+
+---
+
+# Combining colours and facets
+
+![](`r knitr::fig_chunk("t2", "png")`)
+
+---
+
+# Adding lines
+
+```{r t3, fig.width=12, fig.show='hide'}
+
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+  stat_summary(fun.y = median, geom="line", #<<
+               position = #<<
+                 position_jitterdodge(jitter.width = 0.2)) + #<<
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+  facet_grid(Genotype ~ .) +
+  theme_classic(16)
+
+```
+
+---
+
+# Adding lines
+
+![](`r knitr::fig_chunk("t3", "png")`)
+
+---
+
+class: inverse, center, middle
+
+# Literate programming
+
+---
+
+# Literate programming
+
+.pull-left[
+
+### The Idea:
+
+* mix code, text, and figures in one document.
+
+* All analyses and their outputs remain in sync
+
+* Can work as a notebook
+
+]
+
+--
+
+.pull-right[
+
+### The Implementation:
+
+* rmarkdown
+    * simple markup language for text
+    * code embedded in document
+    * documents are compiled - or knitted - to produce output html or pdf
+    
+* Great alternative: Jupyter
+]
+
+---
+
+class: inverse, center, middle
+
+# Assignment
+
+---
+
+# Group assignment number 1
+
+.medium[
+
+1. Assemble into your assigned teams.
+
+1. Ensure that RStudio is running and you can load all required libraries.
+
+1. Load the required data
+
+1. Create an rmarkdown document that contains the following:
+
+    1. A summary table of the subject numbers per timepoint, genotype, and condition
+  
+    1. Visualization(s) of the difference in hippocampal volume by Genotype at the final timepoint.
+  
+    1. Visualization(s) of the difference in hippocampal volume by Condition at the final timepoint.
+  
+    1. Visualization(s) of the change over time by Condition and Genotype.
+  
+1. Make sure that all team members are listed as authors.
+
+1. Any questions: ask here in person, or email us (jason.lerch@utoronto.ca, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
+
+]

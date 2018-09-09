@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MBP intro to statistics bootcamp</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Jason Lerch" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# MBP intro to statistics bootcamp
+## Day 1
+### Jason Lerch
+### 2018/09/10
+
+---
+
+
+&lt;style&gt;
+.small {
+  font-size: 65%;
+}
+
+.medium {
+  font-size: 80%;
+}
+
+.smallcode { 
+
+}
+.smallcode .remark-code {
+  font-size: 50%
+}
+
+&lt;/style&gt;
+
+
+
+# Hello World
+
+The three challenges of statistical inference are&lt;sup&gt;1&lt;/sup&gt;:
+
+.footnote[
+[1] From Andrew Gelman
+]
+
+--
+
+1. Generalizing from sample to population
+
+--
+
+2. Generalizing from control to treatment group
+
+--
+
+3. Generalizing from observed measurements to underlying constructs of interest
+
+---
+
+# Three laws of statistics
+
+.pull-left[
+
+Arthur C. Clarke's three laws&lt;sup&gt;1&lt;/sup&gt;:
+
+1.  When a distinguished but elderly scientist states that something is possible, he is almost certainly right. When he states that something is impossible, he is very probably wrong.
+ 
+1. The only way of discovering the limits of the possible is to venture a little way past them into the impossible.
+
+1. Any sufficiently advanced technology is indistinguishable from magic.
+]
+
+--
+
+.pull-right[
+
+Andrew Gelman's updates&lt;sup&gt;2&lt;/sup&gt;:
+
+1. When a distinguished but elderly scientist states that “You have no choice but to accept that the major conclusions of these studies are true,” don’t believe him.
+
+2. The only way of discovering the limits of the reasonable is to venture a little way past them into the unreasonable.
+
+3. Any sufficiently crappy research is indistinguishable from fraud.
+]
+
+--
+
+.small[
+[1] https://en.wikipedia.org/wiki/Clarke%27s_three_laws
+
+[2] http://andrewgelman.com/2016/06/20/clarkes-law-of-research/
+]
+
+---
+
+# The MBP statistics bootcamp
+
+Goals of this week:
+
+1. Teach the theory and practice of statistics
+
+1. Applied data analysis problem solving using R
+
+1. Think hard about truth and replicability in science
+
+--
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 50%; margin-left: auto; margin-right: auto; ">
+<col><col><col><col><col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 1pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Hour</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Monday</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Tuesday</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Wednesday</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Thursday</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 10pt 4pt 10pt;">Friday</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 10pt 4pt 10pt;">9-12</td>
+<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Introduction, R, visualization, data munging</td>
+<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Linear models, testing proportions, hypothesis tests</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Presentations, exam</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 10pt 4pt 10pt;">12-1</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 10pt 4pt 10pt;">1-3</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Group assignment #1</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Group assignment #2</td>
+<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Machine learning, Bayesian statistics</td>
+<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Truth and replicabity. Group assignment #3</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 10pt 4pt 10pt;">3-4</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;"></td>
+</tr>
+</table>
+
+
+---
+
+# Grading
+
+Exams (concepts only, no R):
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 50%; margin-left: auto; margin-right: auto; ">
+<col><col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">What</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">When</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">How much</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Short exam</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Tuesday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">5%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Short exam</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Wednesday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">5%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Short exam</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Thursday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">5%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Final exam</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Friday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">35%</td>
+</tr>
+</table>
+
+
+Group assignments and presentations (R analyses and concepts):
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 50%; margin-left: auto; margin-right: auto; ">
+<col><col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">What</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">Due when</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 1pt 0pt; padding: 4pt 4pt 4pt 4pt;">How much</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Group assignment #1</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Tuesday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">10%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Group assignment #2</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Wednesday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">10%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Group assignment #3</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Friday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">10%</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Final presentation</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">Friday</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">20%</td>
+</tr>
+</table>
+
+
+---
+
+# Exams
+
+* true/false, multiple choice, and short paragraphs.
+
+* each class begins with ~ 10 minute, short exam covering previous day.
+
+* final exam 30-60 minutes.
+
+--
+
+.pull-left[
+Sample questions:
+
+
+
+_Describe the null hypothesis_
+
+_Identify elements of a box and whiskers plot (on a drawing)_
+
+_Discuss analysis pre-registration advantages and disadvantages_
+
+_TRUE/FALSE: if you compute a 95% confidence interval, you have a 95% chance of it containing the true value_
+]
+
+.pull-right[
+
+![](Intro_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+
+]
+
+
+---
+
+# Group assignments
+
+* split into small groups of 3-4.
+
+* we will assign groups.
+
+* will try to mix groups by R and programming expertise.
+
+* each group will be graded as a unit.
+
+* final presentation given by a member of the group with least R/programming expertise.
+
+---
+
+class: inverse, center, middle
+
+# Let's get started
+
+---
+
+# Statistical software
+
+.pull-left[
+
+Common software
+
+1. Excel
+
+1. SPSS
+
+1. SAS
+
+1. matlab
+
+1. python
+
+1. R
+]
+
+--
+
+.pull-right[
+
+Ups and downs of R
+
+1. Open source, free, and powerful.
+
+1. If a statistical test exists, it likely exists in R.
+
+1. Literate programming/self documenting analyses.
+
+1. Very strong in bioinformatics.
+
+1. Steeper learning curve.
+]
+
+---
+
+class: middle, center, inverse
+
+# Intro to R
+
+### Over to Mehran
+
+---
+
+class: inverse, middle, center
+
+# Reading and summarizing our data
+
+---
+
+# Intro to our dataset
+
+.pull-left[
+
+How do our brains change as we learn or undergo new experiences?
+
+Earliest evidence that our brains are _plastic_ at larger, or _mesoscopic_, scales came from a study of taxi drivers in London, UK.
+
+Mechanism of how that happens is unclear.
+
+]
+
+.pull-right[
+
+&lt;img src="images/taxi.png" width="50%"&gt;
+
+]
+
+---
+
+# Mouse models
+
+.pull-left[
+
+We can create taxi driving mice.
+
+Use high-field MRI to get similar readout as in humans.
+
+Use genetic models to test hypotheses of implicated pathways.
+
+Use RNA sequencing to assess what changes per genotype or experimental group.
+
+&lt;img src="images/taximouse.png"&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="images/mouseMRI.png" width="70%"&gt;
+
+]
+
+---
+
+# The dataset
+
+
+
+--
+
+There are 283 mice in this dataset, with MRI scans acquired at 6 timepoints.
+
+--
+
+We have 3 genotypes: CREB -/-, CREB +/-, CREB +/+
+
+--
+
+There are 4 environmental conditions: Enriched, Exercise, Isolated Standard, Standard
+
+--
+
+MRIs were acquired at every timepoint, and the brains automatically segmented into  regions.
+
+--
+
+There are good reasons to believe that the hippocampus and the dentate gyrus of the hippocampus will be the most affected by the environmental interventions.
+
+--
+
+The effect of the three genotypes alone is interesting.
+
+--
+
+A separate cohort of mice was used for the RNA-seq experiment (but we'll get to that later in the course).
+
+---
+
+# Enrichment
+
+&lt;video src="images/enrichment.mov" controls loop&gt;
+
+
+
+---
+
+# Reading data
+
+A surprising amount of time in data analysis is spent in prepping data for visualization and analysis.
+
+
+```r
+library(tidyverse)
+library(forcats)
+
+mice &lt;- read_csv("mice.csv")
+```
+
+```
+## Parsed with column specification:
+## cols(
+##   Age = col_double(),
+##   Sex = col_character(),
+##   Condition = col_character(),
+##   Mouse.Genotyping = col_character(),
+##   ID = col_integer(),
+##   Timepoint = col_character(),
+##   Genotype = col_character(),
+##   DaysOfEE = col_integer(),
+##   DaysOfEE0 = col_integer()
+## )
+```
+
+---
+# Meet the mice
+
+
+```r
+str(mice, give.attr=FALSE)
+```
+
+```
+## Classes 'tbl_df', 'tbl' and 'data.frame':	1392 obs. of  9 variables:
+##  $ Age             : num  8.5 8.5 8.5 9.5 9.5 8.5 8.5 9.5 8.5 9.5 ...
+##  $ Sex             : chr  "M" "M" "M" "M" ...
+##  $ Condition       : chr  "Enriched" "Standard" "Standard" "Enriched" ...
+##  $ Mouse.Genotyping: chr  "Heterozygous" "Heterozygous" "Heterozygous" "Wildtype" ...
+##  $ ID              : int  901 899 898 891 893 901 899 889 898 895 ...
+##  $ Timepoint       : chr  "Pre1" "Pre1" "Pre1" "Pre1" ...
+##  $ Genotype        : chr  "CREB +/-" "CREB +/-" "CREB +/-" "CREB +/+" ...
+##  $ DaysOfEE        : int  -4 -4 -4 -4 -4 -3 -3 -3 -3 -3 ...
+##  $ DaysOfEE0       : int  0 0 0 0 0 0 0 0 0 0 ...
+```
+
+---
+
+# Numeric variable: age
+
+
+```r
+mice %&gt;%
+  summarise(mean=mean(Age),
+            min=min(Age),
+            max=max(Age))
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 25.5555555555556%; margin-left: 0%; margin-right: auto; ">
+<col><col><col><tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">mean</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">min</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">max</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">6.58</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">3.1</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">10.1</td>
+</tr>
+</table>
+
+
+---
+
+# Intro to pipes?
+
+---
+
+# Factors: Sex, Condition, Genotype
+
+.pull-left[
+
+
+```r
+mice %&gt;%
+  group_by(Sex) %&gt;%
+  summarise(n=n())
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Sex</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">n</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">F</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">543</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">M</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">849</td>
+</tr>
+</table>
+
+]
+
+
+.pull-right[
+
+```r
+mice %&gt;% 
+  group_by(Genotype) %&gt;% 
+  summarize(n=n())
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Genotype</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">n</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">CREB -/-</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">426</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">CREB +/-</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">486</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">CREB +/+</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">480</td>
+</tr>
+</table>
+
+]
+---
+
+# Subject descriptors: ID and Timepoint
+
+
+```r
+mice %&gt;%
+  select(ID, Timepoint) %&gt;%
+  head
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">ID</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Timepoint</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">899</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">898</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">891</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">893</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre2</td>
+</tr>
+</table>
+
+
+---
+
+# Alternate encodings: Genotype
+
+
+```r
+mice %&gt;%
+  select(Genotype, Mouse.Genotyping) %&gt;%
+  head
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 22.2222222222222%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Genotype</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Mouse.Genotyping</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">CREB +/-</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Heterozygous</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">CREB +/-</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Heterozygous</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">CREB +/-</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Heterozygous</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">CREB +/+</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Wildtype</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">CREB +/+</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Wildtype</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">CREB +/-</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">Heterozygous</td>
+</tr>
+</table>
+
+
+---
+
+# Alternate encodings: Days of EE, DaysofEE0
+
+
+```r
+mice %&gt;%
+  filter(ID == 901) %&gt;%
+  select(Timepoint, DaysOfEE, DaysOfEE0) %&gt;%
+  head
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><col><tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Timepoint</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">DaysOfEE</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">DaysOfEE0</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">-4</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">0</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">Pre2</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">-3</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">0</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">24h</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">1</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">48h</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; padding: 4pt 4pt 4pt 4pt;">2</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">2</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">1 week</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">8</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">8</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">2 week</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">16</td>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">16</td>
+</tr>
+</table>
+
+
+---
+
+# Overview of subject numbers
+
+
+```r
+with(mice,
+     ftable(Condition, Genotype, Timepoint))
+```
+
+```
+##                            Timepoint 1 week 2 week 24h 48h Pre1 Pre2
+## Condition         Genotype                                          
+## Enriched          CREB -/-               24     25   7  24   24   24
+##                   CREB +/-               30     33  12  34   30   33
+##                   CREB +/+               27     30   8  30   27   28
+## Exercise          CREB -/-               22     21   0  21   20   18
+##                   CREB +/-               17     18   0  18   17   15
+##                   CREB +/+               19     19   0  19   19   16
+## Isolated Standard CREB -/-               14     14   0  14   13   14
+##                   CREB +/-               12     12   0  12   11   12
+##                   CREB +/+               17     17   0  17   17   14
+## Standard          CREB -/-               23     26   4  26   25   23
+##                   CREB +/-               29     34   9  34   32   32
+##                   CREB +/+               28     31   6  31   31   29
+```
+
+---
+
+# Factors, revisited
+
+The Timepoint order makes no sense. Let's reorder
+
+
+```r
+mice &lt;- mice %&gt;%
+  mutate(Timepoint=fct_relevel(Timepoint, "Pre1", "Pre2", "24h", 
+                               "48h", "1 week", "2 week"))
+with(mice, ftable(Condition, Genotype, Timepoint))
+```
+
+```
+##                            Timepoint Pre1 Pre2 24h 48h 1 week 2 week
+## Condition         Genotype                                          
+## Enriched          CREB -/-             24   24   7  24     24     25
+##                   CREB +/-             30   33  12  34     30     33
+##                   CREB +/+             27   28   8  30     27     30
+## Exercise          CREB -/-             20   18   0  21     22     21
+##                   CREB +/-             17   15   0  18     17     18
+##                   CREB +/+             19   16   0  19     19     19
+## Isolated Standard CREB -/-             13   14   0  14     14     14
+##                   CREB +/-             11   12   0  12     12     12
+##                   CREB +/+             17   14   0  17     17     17
+## Standard          CREB -/-             25   23   4  26     23     26
+##                   CREB +/-             32   32   9  34     29     34
+##                   CREB +/+             31   29   6  31     28     31
+```
+
+---
+
+# Redo in tidyverse
+
+
+```r
+mice %&gt;% 
+  group_by(Condition, Genotype, Timepoint) %&gt;% 
+  summarise(n=n()) %&gt;% spread(Timepoint, value=n)
+```
+
+```
+## # A tibble: 12 x 8
+## # Groups:   Condition, Genotype [12]
+##    Condition         Genotype  Pre1  Pre2 `24h` `48h` `1 week` `2 week`
+##    &lt;chr&gt;             &lt;chr&gt;    &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;    &lt;int&gt;
+##  1 Enriched          CREB -/-    24    24     7    24       24       25
+##  2 Enriched          CREB +/-    30    33    12    34       30       33
+##  3 Enriched          CREB +/+    27    28     8    30       27       30
+##  4 Exercise          CREB -/-    20    18    NA    21       22       21
+##  5 Exercise          CREB +/-    17    15    NA    18       17       18
+##  6 Exercise          CREB +/+    19    16    NA    19       19       19
+##  7 Isolated Standard CREB -/-    13    14    NA    14       14       14
+##  8 Isolated Standard CREB +/-    11    12    NA    12       12       12
+##  9 Isolated Standard CREB +/+    17    14    NA    17       17       17
+## 10 Standard          CREB -/-    25    23     4    26       23       26
+## 11 Standard          CREB +/-    32    32     9    34       29       34
+## 12 Standard          CREB +/+    31    29     6    31       28       31
+```
+
+
+---
+
+# Reading more data
+
+
+
+```r
+volumes &lt;- read_csv("volumes.csv")
+```
+
+```
+## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   ID = col_integer(),
+##   Timepoint = col_character()
+## )
+```
+
+```
+## See spec(...) for full column specifications.
+```
+
+---
+
+# Inspecting the new data
+
+
+```r
+str(volumes)
+```
+
+```
+## Classes 'tbl_df', 'tbl' and 'data.frame':	1392 obs. of  161 variables:
+##  $ amygdala                                          : num  9.84 10.3 10.53 10.39 10.57 ...
+##  $ anterior commissure: pars anterior                : num  1.42 1.48 1.5 1.48 1.41 ...
+##  $ anterior commissure: pars posterior               : num  0.392 0.428 0.382 0.444 0.463 ...
+##  $ basal forebrain                                   : num  4.72 4.96 4.93 5.16 5.24 ...
+##  $ bed nucleus of stria terminalis                   : num  1.24 1.31 1.28 1.35 1.32 ...
+##  $ cerebellar peduncle: inferior                     : num  0.908 0.967 0.919 0.917 0.959 ...
+##  $ cerebellar peduncle: middle                       : num  1.23 1.31 1.26 1.31 1.29 ...
+##  $ cerebellar peduncle: superior                     : num  0.991 0.848 0.905 1.004 0.941 ...
+##  $ cerebral aqueduct                                 : num  0.373 0.44 0.42 0.409 0.486 ...
+##  $ cerebral peduncle                                 : num  2.58 2.54 2.6 2.57 2.55 ...
+##  $ colliculus: inferior                              : num  5.46 5.6 5.34 5.66 5.29 ...
+##  $ colliculus: superior                              : num  9.52 9.83 9.37 9.85 9.8 ...
+##  $ corpus callosum                                   : num  14.1 14.3 14 14.6 14.1 ...
+##  $ corticospinal tract/pyramids                      : num  1.59 1.59 1.56 1.6 1.6 ...
+##  $ cuneate nucleus                                   : num  0.27 0.254 0.286 0.269 0.272 ...
+##  $ dentate gyrus of hippocampus                      : num  3.96 3.92 3.95 4.03 3.88 ...
+##  $ facial nerve (cranial nerve 7)                    : num  0.221 0.233 0.256 0.232 0.238 ...
+##  $ fasciculus retroflexus                            : num  0.214 0.212 0.192 0.192 0.211 ...
+##  $ fimbria                                           : num  2.67 2.9 2.73 2.74 2.85 ...
+##  $ fornix                                            : num  0.639 0.625 0.686 0.646 0.633 ...
+##  $ fourth ventricle                                  : num  0.879 0.832 0.87 0.878 0.892 ...
+##  $ fundus of striatum                                : num  0.0999 0.148 0.129 0.14 0.1407 ...
+##  $ globus pallidus                                   : num  3.19 3.2 3.04 3.15 3.07 ...
+##  $ habenular commissure                              : num  0.0197 0.0306 0.0211 0.0175 0.0248 ...
+##  $ hippocampus                                       : num  20.6 20.7 21.1 21.6 21.3 ...
+##  $ hypothalamus                                      : num  10.2 10.8 10.5 10.8 10.6 ...
+##  $ inferior olivary complex                          : num  0.303 0.356 0.33 0.375 0.271 ...
+##  $ internal capsule                                  : num  3.04 3.04 2.91 3.08 3.12 ...
+##  $ interpedunclar nucleus                            : num  0.278 0.275 0.297 0.299 0.27 ...
+##  $ lateral olfactory tract                           : num  0.758 0.718 0.73 0.726 0.746 ...
+##  $ lateral septum                                    : num  2.66 2.7 2.71 2.67 2.64 ...
+##  $ lateral ventricle                                 : num  2.54 2.7 2.51 2.62 2.52 ...
+##  $ mammillary bodies                                 : num  0.499 0.488 0.503 0.477 0.51 ...
+##  $ mammilothalamic tract                             : num  0.219 0.231 0.215 0.22 0.218 ...
+##  $ medial lemniscus/medial longitudinal fasciculus   : num  2.43 2.51 2.51 2.58 2.45 ...
+##  $ medial septum                                     : num  1.02 1.09 1.06 1.03 1.02 ...
+##  $ medulla                                           : num  28.1 28.9 28.9 28.2 28.3 ...
+##  $ midbrain                                          : num  13.8 14.7 14.2 14.2 14.4 ...
+##  $ nucleus accumbens                                 : num  4.06 4.01 4.23 3.99 3.97 ...
+##  $ olfactory bulbs                                   : num  26.4 25.9 26.1 26.7 26.4 ...
+##  $ olfactory tubercle                                : num  3.23 3.31 3.37 3.43 3.35 ...
+##  $ optic tract                                       : num  1.8 1.88 1.76 1.86 1.86 ...
+##  $ periaqueductal grey                               : num  4.05 4.13 3.95 4.19 4.33 ...
+##  $ pons                                              : num  17.5 18.3 17.9 17.7 18.5 ...
+##  $ pontine nucleus                                   : num  0.895 0.885 0.885 0.922 0.892 ...
+##  $ posterior commissure                              : num  0.139 0.171 0.135 0.155 0.128 ...
+##  $ pre-para subiculum                                : num  2.09 1.93 2 1.99 2.05 ...
+##  $ stratum granulosum of hippocampus                 : num  0.903 0.883 0.928 0.914 0.899 ...
+##  $ stria medullaris                                  : num  0.565 0.642 0.613 0.62 0.574 ...
+##  $ stria terminalis                                  : num  1.07 1.06 1.11 1.12 1.14 ...
+##  $ striatum                                          : num  22 22.3 22.2 22.8 22.8 ...
+##  $ subependymale zone / rhinocele                    : num  0.0576 0.0561 0.0539 0.0642 0.0576 ...
+##  $ superior olivary complex                          : num  0.909 0.899 0.98 0.857 0.878 ...
+##  $ thalamus                                          : num  17.9 18.3 18.2 18.4 17.8 ...
+##  $ third ventricle                                   : num  0.687 0.916 0.762 0.711 0.815 ...
+##  $ ventral tegmental decussation                     : num  0.104 0.142 0.125 0.118 0.133 ...
+##  $ lobules 1-2: lingula and central lobule (ventral) : num  2.34 2.23 2.21 2.32 2.38 ...
+##  $ lobule 3: central lobule (dorsal)                 : num  2.41 2.7 2.59 2.34 2.45 ...
+##  $ lobules 4-5: culmen (ventral and dorsal)          : num  5.14 5.22 5.22 5.1 4.97 ...
+##  $ lobule 6: declive                                 : num  3.12 3.33 3.2 3.11 3.07 ...
+##  $ lobule 7: tuber (or folium)                       : num  1.11 1.29 1.18 1.16 1.18 ...
+##  $ lobule 8: pyramis                                 : num  1.7 1.86 1.74 1.7 1.68 ...
+##  $ lobule 9: uvula                                   : num  3.21 3.09 3.12 2.87 2.93 ...
+##  $ lobule 10: nodulus                                : num  1.63 1.7 1.79 1.64 1.66 ...
+##  $ anterior lobule  (lobules 4-5)                    : num  1.96 1.89 1.97 1.77 1.98 ...
+##  $ simple lobule (lobule 6)                          : num  5.84 6.42 5.73 6.06 5.79 ...
+##  $ crus 1: ansiform lobule (lobule 6)                : num  5.16 5.58 5.27 5.14 5.3 ...
+##  $ crus 2: ansiform lobule (lobule 7)                : num  3.44 3.57 3.68 3.56 3.81 ...
+##  $ paramedian lobule (lobule 7)                      : num  4.39 4.55 4.69 4.57 4.6 ...
+##  $ copula: pyramis (lobule 8)                        : num  2.97 3.06 3.13 2.85 2.88 ...
+##  $ flocculus (FL)                                    : num  1.03 1.06 1.03 1.01 1.02 ...
+##  $ paraflocculus (PFL)                               : num  5.04 4.77 4.92 5.02 5.08 ...
+##  $ trunk of arbor vita                               : num  4.49 4.49 4.47 4.59 4.65 ...
+##  $ lobule 1-2 white matter                           : num  0.1042 0.0962 0.1093 0.1072 0.1101 ...
+##  $ lobule 3 white matter                             : num  0.286 0.284 0.291 0.252 0.268 ...
+##  $ trunk of lobules 1-3 white matter                 : num  0.175 0.158 0.159 0.173 0.168 ...
+##  $ lobules 4-5 white matter                          : num  0.796 0.785 0.803 0.851 0.803 ...
+##  $ lobules 6-7 white matter                          : num  0.857 0.868 0.911 0.909 0.883 ...
+##  $ lobule 8 white matter                             : num  0.137 0.125 0.114 0.128 0.119 ...
+##  $ trunk of lobules 6-8 white matter                 : num  0.1392 0.1239 0.0933 0.1159 0.1239 ...
+##  $ lobule 9 white matter                             : num  0.338 0.349 0.334 0.309 0.332 ...
+##  $ lobule 10 white matter                            : num  0.0962 0.0955 0.1006 0.097 0.1057 ...
+##  $ anterior lobule white matter                      : num  0.0977 0.0846 0.0911 0.0795 0.1028 ...
+##  $ simple lobule white matter                        : num  0.505 0.574 0.517 0.517 0.5 ...
+##  $ crus 1 white matter                               : num  0.509 0.505 0.486 0.504 0.507 ...
+##  $ trunk of simple and crus 1 white matter           : num  0.181 0.176 0.187 0.194 0.192 ...
+##  $ crus 2 white matter                               : num  0.249 0.251 0.25 0.265 0.27 ...
+##  $ paramedian lobule                                 : num  0.112 0.128 0.124 0.114 0.122 ...
+##  $ trunk of crus 2 and paramedian white matter       : num  0.356 0.355 0.389 0.398 0.385 ...
+##  $ copula white matter                               : num  0.0904 0.0919 0.0802 0.0795 0.0729 ...
+##  $ paraflocculus white matter                        : num  0.37 0.327 0.361 0.359 0.359 ...
+##  $ flocculus white matter                            : num  0.0467 0.0488 0.043 0.0445 0.0467 ...
+##  $ dentate nucleus                                   : num  0.275 0.289 0.278 0.308 0.283 ...
+##  $ nucleus interpositus                              : num  0.441 0.456 0.432 0.476 0.478 ...
+##  $ fastigial nucleus                                 : num  0.371 0.389 0.383 0.359 0.384 ...
+##  $ Cingulate cortex: area 24a                        : num  1.76 1.83 1.67 1.74 1.64 ...
+##  $ Cingulate cortex: area 24a'                       : num  0.856 0.846 0.816 0.819 0.74 ...
+##  $ Cingulate cortex: area 24b                        : num  1.49 1.31 1.34 1.31 1.29 ...
+##  $ Cingulate cortex: area 24b'                       : num  0.558 0.519 0.533 0.588 0.512 ...
+##   [list output truncated]
+##  - attr(*, "spec")=List of 2
+##   ..$ cols   :List of 161
+##   .. ..$ amygdala                                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ anterior commissure: pars anterior                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ anterior commissure: pars posterior               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ basal forebrain                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ bed nucleus of stria terminalis                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cerebellar peduncle: inferior                     : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cerebellar peduncle: middle                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cerebellar peduncle: superior                     : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cerebral aqueduct                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cerebral peduncle                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ colliculus: inferior                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ colliculus: superior                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ corpus callosum                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ corticospinal tract/pyramids                      : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ cuneate nucleus                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ dentate gyrus of hippocampus                      : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ facial nerve (cranial nerve 7)                    : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fasciculus retroflexus                            : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fimbria                                           : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fornix                                            : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fourth ventricle                                  : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fundus of striatum                                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ globus pallidus                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ habenular commissure                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ hippocampus                                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ hypothalamus                                      : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ inferior olivary complex                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ internal capsule                                  : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ interpedunclar nucleus                            : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lateral olfactory tract                           : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lateral septum                                    : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lateral ventricle                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ mammillary bodies                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ mammilothalamic tract                             : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ medial lemniscus/medial longitudinal fasciculus   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ medial septum                                     : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ medulla                                           : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ midbrain                                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ nucleus accumbens                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ olfactory bulbs                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ olfactory tubercle                                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ optic tract                                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ periaqueductal grey                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ pons                                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ pontine nucleus                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ posterior commissure                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ pre-para subiculum                                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ stratum granulosum of hippocampus                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ stria medullaris                                  : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ stria terminalis                                  : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ striatum                                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ subependymale zone / rhinocele                    : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ superior olivary complex                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ thalamus                                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ third ventricle                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ ventral tegmental decussation                     : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobules 1-2: lingula and central lobule (ventral) : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 3: central lobule (dorsal)                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobules 4-5: culmen (ventral and dorsal)          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 6: declive                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 7: tuber (or folium)                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 8: pyramis                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 9: uvula                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 10: nodulus                                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ anterior lobule  (lobules 4-5)                    : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ simple lobule (lobule 6)                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ crus 1: ansiform lobule (lobule 6)                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ crus 2: ansiform lobule (lobule 7)                : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ paramedian lobule (lobule 7)                      : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ copula: pyramis (lobule 8)                        : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ flocculus (FL)                                    : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ paraflocculus (PFL)                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ trunk of arbor vita                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 1-2 white matter                           : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 3 white matter                             : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ trunk of lobules 1-3 white matter                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobules 4-5 white matter                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobules 6-7 white matter                          : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 8 white matter                             : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ trunk of lobules 6-8 white matter                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 9 white matter                             : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ lobule 10 white matter                            : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ anterior lobule white matter                      : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ simple lobule white matter                        : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ crus 1 white matter                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ trunk of simple and crus 1 white matter           : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ crus 2 white matter                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ paramedian lobule                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ trunk of crus 2 and paramedian white matter       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ copula white matter                               : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ paraflocculus white matter                        : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ flocculus white matter                            : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ dentate nucleus                                   : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ nucleus interpositus                              : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ fastigial nucleus                                 : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ Cingulate cortex: area 24a                        : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ Cingulate cortex: area 24a'                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ Cingulate cortex: area 24b                        : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. ..$ Cingulate cortex: area 24b'                       : list()
+##   .. .. ..- attr(*, "class")= chr  "collector_double" "collector"
+##   .. .. [list output truncated]
+##   ..$ default: list()
+##   .. ..- attr(*, "class")= chr  "collector_guess" "collector"
+##   ..- attr(*, "class")= chr "col_spec"
+```
+
+
+---
+
+# Linking data
+
+.pull-left[
+
+
+```r
+volumes %&gt;%
+  select(ID, Timepoint) %&gt;%
+  head
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">ID</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Timepoint</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">899</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">898</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">891</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">893</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre2</td>
+</tr>
+</table>
+
+
+]
+
+.pull-right[
+
+
+```r
+mice %&gt;%
+  select(ID, Timepoint) %&gt;%
+  head
+```
+
+<table class="huxtable" style="border-collapse: collapse; margin-bottom: 2em; margin-top: 2em; width: 20%; margin-left: 0%; margin-right: auto; ">
+<col><col><tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0.4pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">ID</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0.4pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt; font-weight: bold;">Timepoint</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">899</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">898</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">891</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0pt 0.4pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">893</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0pt 0pt; padding: 4pt 4pt 4pt 4pt; background-color: rgb(242, 242, 242);">Pre1</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid; border-width: 0pt 0pt 0.4pt 0.4pt; padding: 4pt 4pt 4pt 4pt;">901</td>
+<td style="vertical-align: top; text-align: left; white-space: nowrap; border-style: solid; border-width: 0pt 0.4pt 0.4pt 0pt; padding: 4pt 4pt 4pt 4pt;">Pre2</td>
+</tr>
+</table>
+
+
+
+]
+---
+
+# Joining data
+
+
+```r
+mice &lt;- mice %&gt;% 
+  inner_join(volumes) 
+```
+
+```
+## Joining, by = c("ID", "Timepoint")
+```
+
+```
+## Warning: Column `Timepoint` joining factor and character vector, coercing
+## into character vector
+```
+
+```r
+str(mice)
+```
+
+```
+## Classes 'tbl_df', 'tbl' and 'data.frame':	1392 obs. of  168 variables:
+##  $ Age                                               : num  8.5 8.5 8.5 9.5 9.5 8.5 8.5 9.5 8.5 9.5 ...
+##  $ Sex                                               : chr  "M" "M" "M" "M" ...
+##  $ Condition                                         : chr  "Enriched" "Standard" "Standard" "Enriched" ...
+##  $ Mouse.Genotyping                                  : chr  "Heterozygous" "Heterozygous" "Heterozygous" "Wildtype" ...
+##  $ ID                                                : int  901 899 898 891 893 901 899 889 898 895 ...
+##  $ Timepoint                                         : chr  "Pre1" "Pre1" "Pre1" "Pre1" ...
+##  $ Genotype                                          : chr  "CREB +/-" "CREB +/-" "CREB +/-" "CREB +/+" ...
+##  $ DaysOfEE                                          : int  -4 -4 -4 -4 -4 -3 -3 -3 -3 -3 ...
+##  $ DaysOfEE0                                         : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ amygdala                                          : num  9.84 10.3 10.53 10.39 10.57 ...
+##  $ anterior commissure: pars anterior                : num  1.42 1.48 1.5 1.48 1.41 ...
+##  $ anterior commissure: pars posterior               : num  0.392 0.428 0.382 0.444 0.463 ...
+##  $ basal forebrain                                   : num  4.72 4.96 4.93 5.16 5.24 ...
+##  $ bed nucleus of stria terminalis                   : num  1.24 1.31 1.28 1.35 1.32 ...
+##  $ cerebellar peduncle: inferior                     : num  0.908 0.967 0.919 0.917 0.959 ...
+##  $ cerebellar peduncle: middle                       : num  1.23 1.31 1.26 1.31 1.29 ...
+##  $ cerebellar peduncle: superior                     : num  0.991 0.848 0.905 1.004 0.941 ...
+##  $ cerebral aqueduct                                 : num  0.373 0.44 0.42 0.409 0.486 ...
+##  $ cerebral peduncle                                 : num  2.58 2.54 2.6 2.57 2.55 ...
+##  $ colliculus: inferior                              : num  5.46 5.6 5.34 5.66 5.29 ...
+##  $ colliculus: superior                              : num  9.52 9.83 9.37 9.85 9.8 ...
+##  $ corpus callosum                                   : num  14.1 14.3 14 14.6 14.1 ...
+##  $ corticospinal tract/pyramids                      : num  1.59 1.59 1.56 1.6 1.6 ...
+##  $ cuneate nucleus                                   : num  0.27 0.254 0.286 0.269 0.272 ...
+##  $ dentate gyrus of hippocampus                      : num  3.96 3.92 3.95 4.03 3.88 ...
+##  $ facial nerve (cranial nerve 7)                    : num  0.221 0.233 0.256 0.232 0.238 ...
+##  $ fasciculus retroflexus                            : num  0.214 0.212 0.192 0.192 0.211 ...
+##  $ fimbria                                           : num  2.67 2.9 2.73 2.74 2.85 ...
+##  $ fornix                                            : num  0.639 0.625 0.686 0.646 0.633 ...
+##  $ fourth ventricle                                  : num  0.879 0.832 0.87 0.878 0.892 ...
+##  $ fundus of striatum                                : num  0.0999 0.148 0.129 0.14 0.1407 ...
+##  $ globus pallidus                                   : num  3.19 3.2 3.04 3.15 3.07 ...
+##  $ habenular commissure                              : num  0.0197 0.0306 0.0211 0.0175 0.0248 ...
+##  $ hippocampus                                       : num  20.6 20.7 21.1 21.6 21.3 ...
+##  $ hypothalamus                                      : num  10.2 10.8 10.5 10.8 10.6 ...
+##  $ inferior olivary complex                          : num  0.303 0.356 0.33 0.375 0.271 ...
+##  $ internal capsule                                  : num  3.04 3.04 2.91 3.08 3.12 ...
+##  $ interpedunclar nucleus                            : num  0.278 0.275 0.297 0.299 0.27 ...
+##  $ lateral olfactory tract                           : num  0.758 0.718 0.73 0.726 0.746 ...
+##  $ lateral septum                                    : num  2.66 2.7 2.71 2.67 2.64 ...
+##  $ lateral ventricle                                 : num  2.54 2.7 2.51 2.62 2.52 ...
+##  $ mammillary bodies                                 : num  0.499 0.488 0.503 0.477 0.51 ...
+##  $ mammilothalamic tract                             : num  0.219 0.231 0.215 0.22 0.218 ...
+##  $ medial lemniscus/medial longitudinal fasciculus   : num  2.43 2.51 2.51 2.58 2.45 ...
+##  $ medial septum                                     : num  1.02 1.09 1.06 1.03 1.02 ...
+##  $ medulla                                           : num  28.1 28.9 28.9 28.2 28.3 ...
+##  $ midbrain                                          : num  13.8 14.7 14.2 14.2 14.4 ...
+##  $ nucleus accumbens                                 : num  4.06 4.01 4.23 3.99 3.97 ...
+##  $ olfactory bulbs                                   : num  26.4 25.9 26.1 26.7 26.4 ...
+##  $ olfactory tubercle                                : num  3.23 3.31 3.37 3.43 3.35 ...
+##  $ optic tract                                       : num  1.8 1.88 1.76 1.86 1.86 ...
+##  $ periaqueductal grey                               : num  4.05 4.13 3.95 4.19 4.33 ...
+##  $ pons                                              : num  17.5 18.3 17.9 17.7 18.5 ...
+##  $ pontine nucleus                                   : num  0.895 0.885 0.885 0.922 0.892 ...
+##  $ posterior commissure                              : num  0.139 0.171 0.135 0.155 0.128 ...
+##  $ pre-para subiculum                                : num  2.09 1.93 2 1.99 2.05 ...
+##  $ stratum granulosum of hippocampus                 : num  0.903 0.883 0.928 0.914 0.899 ...
+##  $ stria medullaris                                  : num  0.565 0.642 0.613 0.62 0.574 ...
+##  $ stria terminalis                                  : num  1.07 1.06 1.11 1.12 1.14 ...
+##  $ striatum                                          : num  22 22.3 22.2 22.8 22.8 ...
+##  $ subependymale zone / rhinocele                    : num  0.0576 0.0561 0.0539 0.0642 0.0576 ...
+##  $ superior olivary complex                          : num  0.909 0.899 0.98 0.857 0.878 ...
+##  $ thalamus                                          : num  17.9 18.3 18.2 18.4 17.8 ...
+##  $ third ventricle                                   : num  0.687 0.916 0.762 0.711 0.815 ...
+##  $ ventral tegmental decussation                     : num  0.104 0.142 0.125 0.118 0.133 ...
+##  $ lobules 1-2: lingula and central lobule (ventral) : num  2.34 2.23 2.21 2.32 2.38 ...
+##  $ lobule 3: central lobule (dorsal)                 : num  2.41 2.7 2.59 2.34 2.45 ...
+##  $ lobules 4-5: culmen (ventral and dorsal)          : num  5.14 5.22 5.22 5.1 4.97 ...
+##  $ lobule 6: declive                                 : num  3.12 3.33 3.2 3.11 3.07 ...
+##  $ lobule 7: tuber (or folium)                       : num  1.11 1.29 1.18 1.16 1.18 ...
+##  $ lobule 8: pyramis                                 : num  1.7 1.86 1.74 1.7 1.68 ...
+##  $ lobule 9: uvula                                   : num  3.21 3.09 3.12 2.87 2.93 ...
+##  $ lobule 10: nodulus                                : num  1.63 1.7 1.79 1.64 1.66 ...
+##  $ anterior lobule  (lobules 4-5)                    : num  1.96 1.89 1.97 1.77 1.98 ...
+##  $ simple lobule (lobule 6)                          : num  5.84 6.42 5.73 6.06 5.79 ...
+##  $ crus 1: ansiform lobule (lobule 6)                : num  5.16 5.58 5.27 5.14 5.3 ...
+##  $ crus 2: ansiform lobule (lobule 7)                : num  3.44 3.57 3.68 3.56 3.81 ...
+##  $ paramedian lobule (lobule 7)                      : num  4.39 4.55 4.69 4.57 4.6 ...
+##  $ copula: pyramis (lobule 8)                        : num  2.97 3.06 3.13 2.85 2.88 ...
+##  $ flocculus (FL)                                    : num  1.03 1.06 1.03 1.01 1.02 ...
+##  $ paraflocculus (PFL)                               : num  5.04 4.77 4.92 5.02 5.08 ...
+##  $ trunk of arbor vita                               : num  4.49 4.49 4.47 4.59 4.65 ...
+##  $ lobule 1-2 white matter                           : num  0.1042 0.0962 0.1093 0.1072 0.1101 ...
+##  $ lobule 3 white matter                             : num  0.286 0.284 0.291 0.252 0.268 ...
+##  $ trunk of lobules 1-3 white matter                 : num  0.175 0.158 0.159 0.173 0.168 ...
+##  $ lobules 4-5 white matter                          : num  0.796 0.785 0.803 0.851 0.803 ...
+##  $ lobules 6-7 white matter                          : num  0.857 0.868 0.911 0.909 0.883 ...
+##  $ lobule 8 white matter                             : num  0.137 0.125 0.114 0.128 0.119 ...
+##  $ trunk of lobules 6-8 white matter                 : num  0.1392 0.1239 0.0933 0.1159 0.1239 ...
+##  $ lobule 9 white matter                             : num  0.338 0.349 0.334 0.309 0.332 ...
+##  $ lobule 10 white matter                            : num  0.0962 0.0955 0.1006 0.097 0.1057 ...
+##  $ anterior lobule white matter                      : num  0.0977 0.0846 0.0911 0.0795 0.1028 ...
+##  $ simple lobule white matter                        : num  0.505 0.574 0.517 0.517 0.5 ...
+##  $ crus 1 white matter                               : num  0.509 0.505 0.486 0.504 0.507 ...
+##  $ trunk of simple and crus 1 white matter           : num  0.181 0.176 0.187 0.194 0.192 ...
+##  $ crus 2 white matter                               : num  0.249 0.251 0.25 0.265 0.27 ...
+##  $ paramedian lobule                                 : num  0.112 0.128 0.124 0.114 0.122 ...
+##  $ trunk of crus 2 and paramedian white matter       : num  0.356 0.355 0.389 0.398 0.385 ...
+##  $ copula white matter                               : num  0.0904 0.0919 0.0802 0.0795 0.0729 ...
+##   [list output truncated]
+```
+
+
+---
+
+class: inverse, middle, center
+
+# Data visualization
+
+---
+
+# Data visualization
+
+Data visualization communicates your data to your audience - and can be how your data communicates with you.
+
+--
+
+Excellent guide to visualization:
+
+https://www.data-to-viz.com
+
+--
+
+Your task for later will be to look at the interesting variables in this dataset. For now, we will look at sex and the brain instead.
+
+---
+
+# Histogram
+
+
+```r
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram() 
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](Intro_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+
+---
+
+# Make it prettier
+
+
+```r
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram() +
+* xlab(bquote(Volume ~ (mm^3))) +
+* ggtitle("Bed nucleus of stria terminalis") +
+* theme_gray(16)
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](Intro_files/figure-html/unnamed-chunk-23-1.png)&lt;!-- --&gt;
+
+---
+
+# Histogram bins
+
+
+```r
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+* geom_histogram(binwidth = 0.01) +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16) 
+```
+
+![](Intro_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+
+---
+
+# Facets
+
+
+```r
+ggplot(mice) + 
+  aes(x=`bed nucleus of stria terminalis`) + 
+  geom_histogram(binwidth = 0.01) +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16) +
+* facet_grid(Sex ~ .)
+```
+
+![](Intro_files/figure-html/facets-1.png)&lt;!-- --&gt;
+
+---
+
+# Colours
+
+
+```r
+ggplot(mice) + 
+* aes(x=`bed nucleus of stria terminalis`, fill=Sex) +
+  geom_histogram(binwidth = 0.01) +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  ggtitle("Bed nucleus of stria terminalis") +  
+  theme_gray(16)
+```
+
+![](Intro_files/figure-html/colours-1.png)&lt;!-- --&gt;
+
+---
+
+
+![](Intro_files/figure-html/facets-1.png)
+
+![](Intro_files/figure-html/colours-1.png)
+
+---
+
+# Points
+
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_point() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16) 
+```
+
+![](Intro_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+
+???
+
+* Point out changed aes
+* Point out subtitle
+
+---
+
+# Points
+
+That's not very useful - too many points to see separation.
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+* geom_jitter() +
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+![](Intro_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+
+---
+
+# Boxplot
+
+Good view of data distribution
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_boxplot() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+![](Intro_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+
+---
+
+![](images/boxplot.png)
+
+---
+
+# Ridge lines
+
+
+```r
+suppressMessages(library(ggridges))
+ggplot(mice) + 
+  aes(y=Sex, x=`bed nucleus of stria terminalis`) +
+  geom_density_ridges() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  xlab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+```
+## Picking joint bandwidth of 0.0132
+```
+
+![](Intro_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
+
+
+---
+
+# Violins
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, y=`bed nucleus of stria terminalis`) +
+  geom_violin() + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+![](Intro_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
+
+
+---
+class: smallcode
+
+# Combining plot types
+
+&lt;!-- Code is cut off in rendered slide --&gt;
+
+
+.pull-left[
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`
+      ) +
+  geom_boxplot() +
+  geom_jitter(width=0.2, 
+              alpha=0.2) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(
+    Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+]
+
+.pull-right[
+
+![](Intro_files/figure-html/c1-1.png)
+
+]
+
+---
+
+# Adding colour
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot() +
+  geom_jitter(width=0.2, 
+              alpha=0.2) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all timepoints and genotypes") +
+  ylab(bquote(
+    Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+# Adding colour
+
+
+![](Intro_files/figure-html/c2-1.png)
+
+---
+
+# Using colour for additional information
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  theme_classic(16)
+```
+
+---
+
+# Using colour for additional information
+
+![](Intro_files/figure-html/c3-1.png)
+
+---
+
+# Using colour for additional information
+
+
+```r
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  scale_colour_viridis_d(option="C", end=0.8) + 
+  theme_classic(16)
+```
+
+---
+
+# Using colour for additional information
+
+![](Intro_files/figure-html/c4-1.png)
+
+---
+
+# Factor order, again
+
+Apparently the factor ordering was lost in data joining?
+
+
+```r
+mice &lt;- mice %&gt;%
+  mutate(Timepoint=fct_relevel(Timepoint, "Pre1", "Pre2", "24h", 
+                               "48h", "1 week", "2 week"))
+
+ggplot(mice) + 
+  aes(x=Sex, 
+      y=`bed nucleus of stria terminalis`,
+      colour=Timepoint) +
+  geom_boxplot() +
+  geom_jitter(alpha=0.2,
+              position = position_jitterdodge(jitter.width = 0.2)) +  
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle="Across all genotypes") +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  scale_colour_viridis_d(option="C", end=0.8) +
+  theme_classic(16)
+```
+
+---
+
+# Factor ordering, again
+
+![](Intro_files/figure-html/c5-1.png)
+
+---
+
+# Better encoding of time
+
+
+```r
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+  theme_classic(16)
+```
+
+
+---
+
+# Better encoding of time
+
+![](Intro_files/figure-html/t1-1.png)
+
+---
+
+# Combining colours and facets
+
+
+```r
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+* facet_grid(Genotype ~ .) +
+  theme_classic(16)
+```
+
+
+---
+
+# Combining colours and facets
+
+![](Intro_files/figure-html/t2-1.png)
+
+---
+
+# Adding lines
+
+
+```r
+ggplot(mice) + 
+  aes(x=DaysOfEE,
+      y=`bed nucleus of stria terminalis`,
+      colour=Sex) +
+  geom_boxplot(aes(group=interaction(Timepoint, Sex))) + 
+  geom_jitter(alpha=0.25, position = 
+                position_jitterdodge(jitter.width = 0.2)) + 
+* stat_summary(fun.y = median, geom="line",
+*              position =
+*                position_jitterdodge(jitter.width = 0.2)) +
+  ylab(bquote(Volume ~ (mm^3))) + 
+  xlab("Days of enrichment") + 
+  ggtitle("Bed nucleus of stria terminalis",
+          subtitle = "Change over time") + 
+  facet_grid(Genotype ~ .) +
+  theme_classic(16)
+```
+
+---
+
+# Adding lines
+
+![](Intro_files/figure-html/t3-1.png)
+
+---
+
+class: inverse, center, middle
+
+# Literate programming
+
+---
+
+# Literate programming
+
+.pull-left[
+
+### The Idea:
+
+* mix code, text, and figures in one document.
+
+* All analyses and their outputs remain in sync
+
+* Can work as a notebook
+
+]
+
+--
+
+.pull-right[
+
+### The Implementation:
+
+* rmarkdown
+    * simple markup language for text
+    * code embedded in document
+    * documents are compiled - or knitted - to produce output html or pdf
+    
+* Great alternative: Jupyter
+]
+
+---
+
+class: inverse, center, middle
+
+# Assignment
+
+---
+
+# Group assignment number 1
+
+.medium[
+
+1. Assemble into your assigned teams.
+
+1. Ensure that RStudio is running and you can load all required libraries.
+
+1. Load the required data
+
+1. Create an rmarkdown document that contains the following:
+
+    1. A summary table of the subject numbers per timepoint, genotype, and condition
+  
+    1. Visualization(s) of the difference in hippocampal volume by Genotype at the final timepoint.
+  
+    1. Visualization(s) of the difference in hippocampal volume by Condition at the final timepoint.
+  
+    1. Visualization(s) of the change over time by Condition and Genotype.
+  
+1. Make sure that all team members are listed as authors.
+
+1. Any questions: ask here in person, or email us (jason.lerch@utoronto.ca, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
+
+]
+    </textarea>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
