@@ -4,7 +4,7 @@
     <title>Logistic Regression</title>
     <meta charset="utf-8">
     <meta name="author" content="Mehran Karimzadeh" />
-    <meta name="date" content="2018-09-11" />
+    <meta name="date" content="2018-09-12" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # Logistic Regression
 ### Mehran Karimzadeh
-### September 11, 2018
+### September 12, 2018
 
 ---
 
@@ -44,49 +44,11 @@ knitr::opts_chunk$set(echo = FALSE)
 # required_packages = c("caret", "tree", "randomForest",
 #                       "cowplot", "e1071")
 # install.packages(required_packages)
-suppressMessages(require(tidyverse))
-suppressMessages(require(cowplot))
+require(tidyverse)
+require(cowplot)
 mice_df = read_csv("mice.csv")
-```
-
-```
-## Parsed with column specification:
-## cols(
-##   Age = col_double(),
-##   Sex = col_character(),
-##   Condition = col_character(),
-##   Mouse.Genotyping = col_character(),
-##   ID = col_integer(),
-##   Timepoint = col_character(),
-##   Genotype = col_character(),
-##   DaysOfEE = col_integer(),
-##   DaysOfEE0 = col_integer()
-## )
-```
-
-```r
 volume_df = read_csv("volumes.csv")
-```
-
-```
-## Parsed with column specification:
-## cols(
-##   .default = col_double(),
-##   ID = col_integer(),
-##   Timepoint = col_character()
-## )
-```
-
-```
-## See spec(...) for full column specifications.
-```
-
-```r
 mice = inner_join(mice_df, volume_df)
-```
-
-```
-## Joining, by = c("ID", "Timepoint")
 ```
 ---
 # Logistic regression
@@ -124,10 +86,23 @@ ggplot(mice, aes(x=striatum, y=amygdala.group)) +
 ## Why we can't use linear model for classification?
 * Suppose we want to predict seizure,
   stroke, or overdose given some measurements from patients
+
+--
+
 * If we model them as 1, 2, and 3 respectively, we are assuming order
+
+--
+
 * Even in case of binary variables, our estimates may exceed range of [0, 1],
   making the interpretation unnecessarily hard
+
+--
+
 * Any other reasons that contradict assumptions of the linear model?
+
+--
+
+* Read this [blogpost](http://thestatsgeek.com/2015/01/17/why-shouldnt-i-use-linear-regression-if-my-outcome-is-binary)
 ---
 ## Logistic function
 
@@ -150,11 +125,6 @@ ggplot(out_df, aes(x=X, y=Y)) + geom_line()
 
 ---
 ## Linear model for binary variables?
-
-
-```
-## Warning: Removed 14 rows containing missing values (geom_smooth).
-```
 
 ![](logistic-regression_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 ---
@@ -209,7 +179,7 @@ ggplot(out_df, aes(x=X, y=Y)) + geom_line()
 
 --
 
-*Let's implement it in R!
+* Let's implement it in R!
 ---
 ## K-NN algorithm
 * Split data to training and test
@@ -235,11 +205,12 @@ test_df = mice[-idx_train, ]
 
 ```r
 get_neighbours = function(test_data, train_df, K=5){
-  print(test_data)
   merged_df = rbind(test_data, train_df)
-  dist_df = as.matrix(dist(merged_df))
+  dist_df = as.matrix(dist(merged_df, method="euclidean"))
   distances = as.numeric(dist_df[1, ])
   idx_out = order(distances, decreasing=FALSE)[2:(K + 1)]
+  ## Deduct 1 so the indices map to train_df instead of merged_df
+  idx_out = idx_out - 1
   return(idx_out)
 }
 ```
@@ -259,1125 +230,6 @@ for(i in 1:nrow(test_df)){
    test_df$Posterior[i] = prob
 }
 ```
-
-```
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.4     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.2     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.1     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.9     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.1     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.1     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.5     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.7     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     15.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.8     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.9     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.6     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.9     14.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.0     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.9     14.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     13.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.6     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.0     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.3     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.0     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.5     13.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.8     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.5     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     15.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.3     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.6     13.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.9     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.6     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.7     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.5     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.7     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.8     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.7     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.5     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.0     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.5     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     13.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     13.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.1     12.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.9     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.8     13.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     13.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     15.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.4     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.1     12.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.6     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.8     13.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.9     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.3     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.8     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     13.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.9     13.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.7     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     13.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     13.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.5     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.9     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.7     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     13.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.6     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     13.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.4     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     18.4     12.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.2     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.4     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.3     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     13.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.8     15.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.5     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.0     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.6     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.9     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.7     13.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     18.8     13.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     17.8     12.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.3     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.3     15.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     15.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.5     15.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.0     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.4     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.1     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.2     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.5     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.6     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.7     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.4     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.9     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.4     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.1     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     13.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.2     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.6     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.1     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.7     14.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.5     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.2     15.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.3     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.7     14.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     24.3     14.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.7     14.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.5     13.7
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.0     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     19.7     14.0
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.7     14.2
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     14.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     15.1
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.6     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.9     13.6
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.5     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     21.1     14.5
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     23.2     14.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.2     13.4
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.1     13.8
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     20.5     13.9
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.8     14.3
-## # A tibble: 1 x 2
-##   striatum midbrain
-##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1     22.0     14.3
-```
 ---
 ## Calculating threshold-based metrics
 
@@ -1391,17 +243,17 @@ print(as.data.frame(confMat$byClass))
 
 ```
 ##                      confMat$byClass
-## Sensitivity                0.5338346
-## Specificity                0.3767123
-## Pos Pred Value             0.4382716
-## Neg Pred Value             0.4700855
-## Precision                  0.4382716
-## Recall                     0.5338346
-## F1                         0.4813559
-## Prevalence                 0.4767025
-## Detection Rate             0.2544803
-## Detection Prevalence       0.5806452
-## Balanced Accuracy          0.4552735
+## Sensitivity                0.8432836
+## Specificity                0.8000000
+## Pos Pred Value             0.7957746
+## Neg Pred Value             0.8467153
+## Precision                  0.7957746
+## Recall                     0.8432836
+## F1                         0.8188406
+## Prevalence                 0.4802867
+## Detection Rate             0.4050179
+## Detection Prevalence       0.5089606
+## Balanced Accuracy          0.8216418
 ```
 
 ```r
@@ -1409,7 +261,7 @@ print(paste("Accuracy =", signif(confMat$overall["Accuracy"], 3)))
 ```
 
 ```
-## [1] "Accuracy = 0.452"
+## [1] "Accuracy = 0.821"
 ```
 ---
 ## Plotting performance
@@ -1466,30 +318,7 @@ volume_df$amygdala.group = ifelse(volume_df$amygdala &gt; 10, 1, 0)
 train_df = volume_df[idx_train, ]
 test_df = volume_df[-idx_train, ]
 tree_model = tree(factor(amygdala.group) ~.-amygdala, train_df)
-summary(tree_model)
-```
-
-```
-## 
-## Classification tree:
-## tree(formula = factor(amygdala.group) ~ . - amygdala, data = train_df)
-## Variables actually used in tree construction:
-##  [1] "hippocampus"                               
-##  [2] "Posteromedial.cortical.amygdaloid.area"    
-##  [3] "optic.tract"                               
-##  [4] "pons"                                      
-##  [5] "Secondary.visual.cortex..mediolateral.area"
-##  [6] "Secondary.visual.cortex..lateral.area"     
-##  [7] "bed.nucleus.of.stria.terminalis"           
-##  [8] "Cingulate.cortex..area.24a"                
-##  [9] "crus.2.white.matter"                       
-## [10] "medulla"                                   
-## [11] "olfactory.bulbs"                           
-## [12] "globus.pallidus"                           
-## [13] "lateral.septum"                            
-## Number of terminal nodes:  18 
-## Residual mean deviance:  0.4358 = 477.2 / 1095 
-## Misclassification error rate: 0.07817 = 87 / 1113
+# summary(tree_model)
 ```
 ---
 ## 
@@ -1502,7 +331,7 @@ print(paste("Accuracy =", acc_tree))
 ```
 
 ```
-## [1] "Accuracy = 0.839"
+## [1] "Accuracy = 0.853"
 ```
 
 ```r
@@ -1528,7 +357,7 @@ print(paste("Accuracy RF =", acc_rf, "and tree =", acc_tree))
 ```
 
 ```
-## [1] "Accuracy RF = 0.892 and tree = 0.839"
+## [1] "Accuracy RF = 0.892 and tree = 0.853"
 ```
 ---
 ## Feature importance by random forest
@@ -1543,7 +372,8 @@ print(paste("Accuracy RF =", acc_rf, "and tree =", acc_tree))
 ```r
 imp_df = as.data.frame(importance(rf_model))
 imp_df$Feature = rownames(imp_df)
-imp_df = imp_df[order(imp_df$MeanDecreaseGini, decreasing=TRUE)[1:10], ]
+imp_df = imp_df[
+  order(imp_df$MeanDecreaseGini, decreasing=TRUE)[1:10], ]
 imp_df$Feature = factor(
   imp_df$Feature,
   levels=imp_df$Feature[order(imp_df$MeanDecreaseGini)])
@@ -1558,6 +388,18 @@ ggplot(imp_df) +
 ```
 
 ![](logistic-regression_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+---
+
+# Assignment
+&lt;!--1. Compare accuracy of K-NN with logistic regression in predicting amygdala size on test dataset.
+
+2. Split mice data into training, test, and validation. Optimize *K* hyperparameter
+  of *K*-NN so the model has a higher performance in predicting amygdala size on test dataset. Report at least two different measures of binary classification on validation data. Use knn function in R.
+
+3. Use random forest to predict genotype given volume of all regions in the brain. Optimize the number of trees in the random forest. Compare your training and validation accuracy, specificity, and sensitivity for each genotype (with a plot). Which variables have the highest feature importance (show in a plot)?
+
+4. Why do we split data into training, test, and validation?
+--&gt;
     </textarea>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
