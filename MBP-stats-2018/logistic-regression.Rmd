@@ -310,13 +310,4 @@ ggplot(imp_df) +
   geom_bar(stat="identity", fill="purple") +
   coord_flip()
 ```
----
-# Assignment
-1. Compare accuracy of K-NN with logistic regression in predicting amygdala size on test dataset.
 
-2. Split mice data into training, test, and validation. Optimize *K* hyperparameter
-  of *K*-NN so the model has a higher performance in predicting amygdala size on test dataset. Report at least two different measures of binary classification on validation data. Use knn function in R.
-
-3. Use random forest to predict genotype given volume of all regions in the brain. Optimize the number of trees in the random forest. Compare your training and validation accuracy, specificity, and sensitivity for each genotype (with a plot). Which variables have the highest feature importance (show in a plot)?
-
-4. Why do we split data into training, test, and validation?
