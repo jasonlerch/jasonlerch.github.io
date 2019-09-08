@@ -12,8 +12,9 @@
 class: center, middle, inverse, title-slide
 
 # MBP intro to statistics bootcamp
+## <a href="https://jasonlerch.github.io/MBP-stats-2019/" class="uri">https://jasonlerch.github.io/MBP-stats-2019/</a>
 ### Jason Lerch
-### 2019/09/09 - 2019/09/13
+### Day 1
 
 ---
 
@@ -111,6 +112,12 @@ Goals of this week:
 
 1. Think hard about truth and replicability in science
 
+Slides, recommended readings, and extra resources here:
+
+https://jasonlerch.github.io/MBP-stats-2019/
+
+(Will try and have slides for each day up the night before)
+
 ---
 
 # The MBP statistics bootcamp
@@ -126,9 +133,9 @@ Goals of this week:
 </tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 1pt 0pt 0pt; padding: 4pt 10pt 4pt 10pt;">9-12</td>
-<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Introduction. Data organization, descriptive statistics, plotting, basic linear models. </td>
-<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Probability in all its glory. Multiple linear models, interactions, p values, multiple comparisons. </td>
-<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Hypothesis testing, searching for truth, and the crisis of replicability</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Introduction. Data organization, descriptive statistics, plotting, basic models. </td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Probability in all its glory. Multiple linear models, interactions, p values. </td>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Hypothesis testing, searching for truth, multiple comparisons, and the crisis of replicability</td>
 <td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Putting it all together – analyzing a biomedical dataset from beginning to end. Review</td>
 <td style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 10pt 4pt 10pt;">Presentations, exam</td>
 </tr>
@@ -306,100 +313,7 @@ Ups and downs of R
 1. Steeper learning curve.
 ]
 
----
 
-
-.pull-left[
-### Team Bayes
-
-
-
-### Team Cox
-
-
-
-]
-
-.pull-right[
-### Team Bonferroni
-
-
-
-### Team Efron
-
-
-
-]
-
----
-
-.pull-left[
-
-### Team Fisher
-
-
-
-### Team Gelman
-
-
-]
-
-.pull-right[
-
-### Team Neyman
-
-
-
-### Team Nightingale
-
-
-
-]
-
----
-
-.pull-left[
-
-### Team Pearson
-
-
-
-### Team Ripley
-
-
-]
-
-.pull-right[
-
-### Team Spearman
-
-
-
-### Team Szturm de Sztrem
-
-
-]
-
----
-
-.pull-left[
-
-### Team Tibshirani
-
-
-
-### Team Tufte
-
-
-
-]
-
-.pull-right[
-
-### Team Tukey
-
-
-]
 
 ---
 
@@ -483,9 +397,6 @@ There are good reasons to believe that the hippocampus and the dentate gyrus of 
 
 The effect of the three genotypes alone is interesting.
 
---
-
-A separate cohort of mice was used for the RNA-seq experiment (but we'll get to that later in the course).
 
 ---
 
@@ -2218,7 +2129,7 @@ rbinom(10, 1, 0.5)
 ```
 
 ```
-##  [1] 1 1 0 0 1 0 1 0 0 1
+##  [1] 0 0 1 0 1 0 1 1 0 1
 ```
 
 
@@ -2247,7 +2158,7 @@ sum(distribution==1)
 ```
 
 ```
-## [1] 136
+## [1] 139
 ```
 
 --
@@ -2258,7 +2169,7 @@ rbinom(1, 266, 0.5)
 ```
 
 ```
-## [1] 145
+## [1] 121
 ```
 
 ???
@@ -2286,7 +2197,7 @@ head(females)
 ```
 
 ```
-## [1] 134 135 129 117 130 127
+## [1] 132 138 135 136 125 140
 ```
 
 --
@@ -2300,7 +2211,7 @@ head(females2)
 ```
 
 ```
-## [1] 124 141 135 129 139 122
+## [1] 125 129 149 139 131 133
 ```
 
 
@@ -2314,7 +2225,7 @@ head(females)
 ```
 
 ```
-## [1] 134 135 129 117 130 127
+## [1] 132 138 135 136 125 140
 ```
 
 ```r
@@ -2612,15 +2523,9 @@ with(baseline, chisq.test(Sex, Genotype))
 
 So the choice of sex was almost certainly non-random. Did it matter?
 
---
-
 * Chi-squared test to assess contingency tables.
 
---
-
 * test outcome against known distribution
-
---
 
 * the sex bias was shared by all genotypes - p value indicated this could easily have occurred by random chance.
 ]
@@ -2691,7 +2596,7 @@ class: inverse, center, middle
   
 1. Make sure that all team members are listed as authors.
 
-1. Any questions: ask here in person, or email us (jason.lerch@utoronto.ca, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
+1. Any questions: ask here in person, or email us (jason.lerch@ndcn.ox.ac.uk, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
 
 ]
     </textarea>
