@@ -1,7 +1,8 @@
 ---
 title: "MBP intro to statistics bootcamp"
+subtitle: https://jasonlerch.github.io/MBP-stats-2019/
 author: "Jason Lerch"
-date: "2019/09/09 - 2019/09/13"
+date: "Day 1"
 output:
   xaringan::moon_reader:
     chakra: libs/remark-latest.min.js
@@ -107,6 +108,12 @@ Goals of this week:
 
 1. Think hard about truth and replicability in science
 
+Slides, recommended readings, and extra resources here:
+
+https://jasonlerch.github.io/MBP-stats-2019/
+
+(Will try and have slides for each day up the night before)
+
 ---
 
 # The MBP statistics bootcamp
@@ -131,15 +138,15 @@ ht <- tribble_hux(
 bottom_border(ht)[1,] <- 1
 right_border(ht)[,1] <- 1
 
-ht[2,2] <- "Introduction. Data organization, descriptive statistics, plotting, basic linear models. "
+ht[2,2] <- "Introduction. Data organization, descriptive statistics, plotting, basic models. "
 ht[3,2] <- "Group assignment #1"
 #rowspan(ht)[2, 2] <- 2
 
-ht[2,3] <- "Probability in all its glory. Multiple linear models, interactions, p values, multiple comparisons. "
+ht[2,3] <- "Probability in all its glory. Multiple linear models, interactions, p values. "
 ht[3,3] <- "Group assignment #2"
 #rowspan(ht)[2,3] <- 2
 
-ht[2,4] <- "Hypothesis testing, searching for truth, and the crisis of replicability"
+ht[2,4] <- "Hypothesis testing, searching for truth, multiple comparisons, and the crisis of replicability"
 #rowspan(ht)[4,4] <- 2
 
 ht[3,4] <- "Group assignment #3"
@@ -299,100 +306,7 @@ Ups and downs of R
 1. Steeper learning curve.
 ]
 
----
 
-
-.pull-left[
-### Team Bayes
-
-
-
-### Team Cox
-
-
-
-]
-
-.pull-right[
-### Team Bonferroni
-
-
-
-### Team Efron
-
-
-
-]
-
----
-
-.pull-left[
-
-### Team Fisher
-
-
-
-### Team Gelman
-
-
-]
-
-.pull-right[
-
-### Team Neyman
-
-
-
-### Team Nightingale
-
-
-
-]
-
----
-
-.pull-left[
-
-### Team Pearson
-
-
-
-### Team Ripley
-
-
-]
-
-.pull-right[
-
-### Team Spearman
-
-
-
-### Team Szturm de Sztrem
-
-
-]
-
----
-
-.pull-left[
-
-### Team Tibshirani
-
-
-
-### Team Tufte
-
-
-
-]
-
-.pull-right[
-
-### Team Tukey
-
-
-]
 
 ---
 
@@ -482,9 +396,6 @@ There are good reasons to believe that the hippocampus and the dentate gyrus of 
 
 The effect of the three genotypes alone is interesting.
 
---
-
-A separate cohort of mice was used for the RNA-seq experiment (but we'll get to that later in the course).
 
 ---
 
@@ -1619,6 +1530,6 @@ class: inverse, center, middle
   
 1. Make sure that all team members are listed as authors.
 
-1. Any questions: ask here in person, or email us (jason.lerch@utoronto.ca, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
+1. Any questions: ask here in person, or email us (jason.lerch@ndcn.ox.ac.uk, mehran.karimzadehreghbati@mail.utoronto.ca) and we promise to answer quickly.
 
 ]
