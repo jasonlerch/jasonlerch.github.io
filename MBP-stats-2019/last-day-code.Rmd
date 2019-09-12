@@ -1,0 +1,206 @@
+---
+title: "Last day"
+output: html_notebook
+---
+
+
+
+```{r}
+library(tidyverse)
+
+df <- read_csv("~/Dropbox/data/mbp-stats-bootcamp/example-trial-data.csv")
+```
+
+```{r}
+df %>% head
+```
+
+```{r}
+df %>% group_by(Group, Age) %>% summarise(n=n()) %>% spread(Age, n)
+```
+
+
+```{r}
+library(ggplot2)
+library(RColorBrewer)
+
+
+
+colours <- c("purple", "light green", "green", "black")
+
+p <- position_jitterdodge(jitter.width = 2, dodge.width = 4)
+df %>% ggplot() + aes(x=Age, y=BV, colour=Group) + geom_jitter(position=p, alpha=0.3) + stat_summary(fun.data=mean_cl_normal, geom="pointrange", position=p) + stat_summary(fun.y=mean, geom="line", position=p) + scale_colour_manual(values=colours)
+
+```
+
+```{r}
+library(broom)
+df %>% filter(Age == 50) %>% lm(BV ~ Group, .) %>% tidy
+```
+
+```{r}
+df %>% filter(Age == 80) %>% lm(BV ~ Group, .) %>% tidy
+```
+
+```{r}
+library(lmerTest)
+df <- df %>% mutate(normAge = Age - 50)
+l1 <- lmer(BV ~ Group + normAge + (1|ID), data=df)
+l2 <- lmer(BV ~ Group * normAge + (1|ID), data=df)
+l3 <- lmer(BV ~ Group * poly(normAge, 2) + (1|ID), data=df)
+```
+
+```{r}
+df %>% mutate(l1 = fitted(l1), 
+              l2 = fitted(l2),
+              l3 = fitted(l3)) %>% 
+  ggplot() + 
+  aes(x=normAge, y=BV, colour=Group) + 
+  geom_jitter(position=p, alpha=0.1) + 
+  #stat_summary(fun.data=mean_cl_normal, geom="pointrange", position=p) +
+  #stat_summary(fun.y=mean, geom="line", position=p) +
+  #scale_colour_manual(values=colours) + 
+  stat_summary(aes(y=l1), fun.y=mean, geom="line", linetype=2) +
+  stat_summary(aes(y=l2), fun.y=mean, geom="line", linetype=3) + 
+  stat_summary(aes(y=l3), fun.y=mean, geom="line", linetype=1)
+  #geom_smooth(method="lm", formula=y ~ poly(x,2), se=F)
+```
+
+```{r}
+summary(l1)
+```
+
+```{r}
+summary(l2)
+```
+
+```{r}
+df %>% group_by(Age, Group) %>% summarise(m=mean(BV)) %>% spread(Age, m)
+```
+
+```{r}
+summary(l3)
+```
+```{r}
+anova(l3)
+```
+
+```{r}
+library(forcats)
+
+df2 <- df %>% filter(Age < 85 & Group != "React80")
+```
+
+```{r}
+df2 %>% ggplot() + aes(x=normAge, y=BV, colour=Group) + geom_jitter(position=p, alpha=0.3) + stat_summary(fun.data=mean_cl_normal, geom="pointrange", position=p) + stat_summary(fun.y=mean, geom="line", position=p) 
+```
+
+```{r}
+l1 <- lmer(BV ~ Group + normAge + (1|ID), df2)
+l2 <- lmer(BV ~ Group * normAge + (1|ID), df2)
+```
+
+```{r}
+df2 %>% mutate(l1 = fitted(l1), 
+              l2 = fitted(l2)) %>% 
+  ggplot() + 
+  aes(x=normAge, y=BV, colour=Group) + 
+  geom_jitter(position=p, alpha=0.1) + 
+  #stat_summary(fun.data=mean_cl_normal, geom="pointrange", position=p) +
+  #stat_summary(fun.y=mean, geom="line", position=p) +
+  #scale_colour_manual(values=colours) + 
+  stat_summary(aes(y=l1), fun.y=mean, geom="line", linetype=2) +
+  stat_summary(aes(y=l2), fun.y=mean, geom="line", linetype=3)
+  #geom_smooth(method="lm", formula=y ~ poly(x,2), se=F)
+```
+
+```{r}
+summary(l2)
+```
+
+```{r}
+library(broom.mixed)
+GroupFunc_Age0 <- tidy(l2)$estimate[1]
+GroupReact50_Age0 <- tidy(l2)$estimate[1] + tidy(l2)$estimate[2]
+
+GroupFunc_Age30 <- tidy(l2)$estimate[1] + (tidy(l2)$estimate[4]*30)
+GroupReact50_Age30 <-  tidy(l2)$estimate[1] + tidy(l2)$estimate[2] + ((tidy(l2)$estimate[4]+tidy(l2)$estimate[5])*30)
+
+c(GroupFunc_Age0, GroupFunc_Age30, GroupReact50_Age0, GroupReact50_Age30)
+```
+
+```{r}
+simTrialData <- function(
+  func_at_0 = 423,
+  react50_at_0 = 382,
+  silent_at_0 = 372,
+  sd_at_0 = 20,
+  age_func = 0,
+  age_react=0.2,
+  age_silent=-0.2,
+  sd_age=0.1,
+  n_per_group=30) {
+  
+  outcome = data.frame(
+    group=rep(c("Func", "React50", "Silent"), each=n_per_group),
+    baseline = 0,
+    followup = 0
+  )
+  outcome$baseline[outcome$group == "Func"] <- rnorm(n_per_group,
+                                                     func_at_0, 
+                                                     sd_at_0)
+  outcome$baseline[outcome$group == "React50"] <- rnorm(n_per_group,
+                                                     react50_at_0, 
+                                                     sd_at_0)
+  outcome$baseline[outcome$group == "Silent"] <- rnorm(n_per_group,
+                                                     silent_at_0, 
+                                                     sd_at_0)
+  outcome$followup[outcome$group == "Func"] <- rnorm(n_per_group,
+                                                     age_func, 
+                                                     sd_age)
+  outcome$followup[outcome$group == "React50"] <- rnorm(n_per_group,
+                                                        age_react, 
+                                                        sd_age)
+  outcome$followup[outcome$group == "Silent"] <- rnorm(n_per_group,
+                                                       age_silent, 
+                                                       sd_age)
+  outcome$followup <- outcome$followup + outcome$baseline
+  return(outcome)
+}
+```
+
+```{r}
+library(tidyverse)
+trialData <- simTrialData(react50_at_0 = 423, silent_at_0 = 423, sd_at_0 = 10, sd_age=5, age_silent = -5, age_react = 5)
+
+longTrialdata <- trialData %>% mutate(id=1:n()) %>% gather(time, volume, baseline, followup) %>% mutate(age=ifelse(time == "baseline", 0, 30))
+```
+
+```{r}
+library(ggplot2)
+p <- position_jitterdodge(jitter.width = 2, dodge.width = 3)
+ggplot(longTrialdata) + aes(x=age, y=volume, colour=group) + geom_jitter(position=p) + stat_summary(fun.y=mean, geom="line", position=p)
+```
+
+```{r}
+library(lme4)
+l1 <- lmer(volume ~ age*group+(1|id), data=longTrialdata)
+l3 <- lm(followup ~ baseline + group, trialData)
+l4 <- trialData %>% mutate(diff=followup-baseline) %>% lm(diff ~ group, .)
+l5 <- lm(followup ~ group, trialData)
+```
+
+```{r}
+summary(l1)
+summary(l3)
+summary(l4)
+summary(l5)
+```
+
+
+
+```{r}
+summary(l4)
+```
+volume ~ group*age
+volume ~ group+age+age^2+group:age+group:age^2
