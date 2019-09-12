@@ -1,0 +1,104 @@
+---
+title: "Analyses from beginning to end"
+subtitle: "Day 4"
+author: "Jason Lerch"
+output:
+  xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+<style>
+.small {
+  font-size: 65%;
+}
+
+.medlarge {
+  font-size: 95%;
+}
+
+.medium {
+  font-size: 80%;
+}
+
+.footnote {
+  font-size: 75%;
+  color: gray;
+}
+
+.smallcode { 
+
+}
+.smallcode .remark-code {
+  font-size: 50%
+}
+
+.smallercode { 
+
+}
+.smallercode .remark-code {
+  font-size: 75%
+}
+
+</style>
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Hello World
+
+Only a few slides today - most time will be taken up in interactive data analysis
+
+
+---
+
+# The presentation
+
+First note: room change. Rather than the exam centre, we'll meet in PMH 7-605 (same as day 1) for the presentation. We can then either have the exam there too or move to the exam centre.
+
+No need to create a presentation - just make sure to have sent your html output from today's assignment.
+
+2 minutes to present your core conclusions.
+
+1-2 minutes of questions from me.
+
+---
+
+# The assignment
+
+Take the "real" data, and
+
+(1) Analyze with the pre-registered plan from yesterday.
+
+(2) Reanalyze with any updated analyses you want to explore.
+
+(3) Describe your recommendation regarding whether the new therapeutic is worth adopting and why.
+
+Note: each group has different data this time; get your data here
+
+https://jasonlerch.github.io/MBP-stats-2019/last-assignment-data/Yates.csv
+
+(replacing "Yates" with your group name)
+
+---
+
+# The exam
+
+14 questions
+
+Very similar in style to what you've seen from the quizzes
+
+Includes interpreting of plots, interpreting of linear model outputs, true/false and multiple choice questions on p values, multiple comparisons, data splitting, statistical power, and the crisis of replication.
+
+No R coding required.
+
+No formula's need memorizing.
+
+Nothing new from today - today is revisiting what we've discussed the last three days
+
+Nothing from the papers except what was explicitly discussed in class.
